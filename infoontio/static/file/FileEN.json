@@ -1,0 +1,211 @@
+﻿{ 
+    "head":{
+        "contactUs":"Contact Us",
+        "home":"Home",
+        "OntScenarios":"Scenarios",
+        "OntTech":"Technology",
+        "language":"语言",
+        "zh":"中",
+        "En":"En",
+        "documents":"Documents",
+        "OntIntroduction":"Introductory White Paper",
+        "OntECOWP":"Ecosystem White Paper",
+        "OntTechWP":"Technology White Paper (coming soon)",
+        "OntTechYP":"Technology Yellow Paper (TBA)",
+        "OntGoveYP":"Governance White Paper (TBA)",
+        "joinus":"Join Ont",
+        "News":"News"
+  
+    },
+  "firstPage": { 
+      "titleZH": "A Public Platform for Building a Decentralized Trust Ecosystem",
+      "slogan1": "A Public Platform for Building a Decentralized Trust Ecosystem" 
+  },
+  "warningPage":{
+    "warningTitle":"Notice",
+    "warningMsg":"At present Ontology is focusing on technology research and development, the economic model is still under development. There are no private sales, ICOs, or other related plans for token distribution as of yet. Please do not believe information posted on non-official channels."
+  },
+  "valuePage": { 
+      "firstTitle1": "Ontology",  
+      "descriptionlist":[
+            {
+                "description":"Ontology is a ",
+                "blod":false
+            },          
+            {
+                "description":"blockchain/distributed ledger ",
+                "blod":true
+            },          
+            {
+                "description":"network which combines ",
+                "blod":false
+            },          
+            {
+                "description":"distributed identity verification, data exchange, data collaboration, procedure protocols, communities, attestation, ",
+                "blod":true
+            },          
+            {
+                "description":"and various industry-specific modules. Together this builds the infrastructure for a peer-to-peer trust network which is ",
+                "blod":false
+            },          
+            {
+                "description":"cross-chain, cross-system, cross-industry, cross-application, and cross-device.",
+                "blod":true
+            }
+      ]
+  },
+  "painPointPage":{
+      "firstTitle1": "Current Issues in Trust Networks", 
+      "secondTitle1": "Distrust ",
+      "secondTitle2": "impedes collaboration.",
+      "painPointList": [
+        {
+            "title": "Poor Privacy Protection",
+            "description": "Users do not have control of their own identity information.",
+            "icon":"icon-yinsi "
+        },
+        {
+            "title": "Ineffective Identity Authentication",
+            "description": "Authentication methods are fragmented and have poor cross-region compatibility.",
+            "icon":"icon-shenfenzhengming "
+        },
+        {
+            "title": "Data Rights Management",
+            "description": "Users often are unable to use their own data and cannot authorize its use.",
+            "icon":"icon-rights "
+        },
+        {
+            "title": "Untapped Data Value",
+            "description": "Users lose out on trading potential of their data.",
+            "icon":"icon-icon-test "
+        },
+        {
+            "title": "Data Management Monopolization",
+            "description": "With multiple verification systems it is difficult to compile comprehensive identity portfolios.",
+            "icon":"icon-ren "
+        },
+        {
+            "title": "Data Exchange Security Issues",
+            "description": "Security risks make data exchange an unpopular choice.",
+            "icon":"icon-chengben "
+        },
+        {
+            "title": "Trust Issues in Collaborative Systems",
+            "description": "Lack of shared authority means it is hard to reach consensus between different groups.",
+            "icon":"icon-xiezuo "
+        },
+        {
+            "title": "Weak Reputation Systems",
+            "description": "There is a lack of comprehensive reputation and identity management systems.",
+            "icon":"icon-icon-test1 "
+        },
+        {
+            "title": "More Issues",
+            "description": "Equity management, identifying fake information, making charitable donations...",
+            "icon":"icon-more "
+        }
+      ]
+  },
+  "visionPage":{
+    "firstTitle1": " Vision", 
+    "description1_1": "An integrated and diverse distributed trust network.",
+    "description1_2": "The tool for building a trust ecosystem.",
+    "description3": "Ontology incorporates multiple trust types into an integrated protocol system. From this partners build decentralized trust systems suited to them."
+  },
+  "ECOPage":{
+    "firstTitle1": "Ecosystem", 
+    "ECOList": [
+      {
+          "description": "Ontology provides the foundation for distributed application services. Smooth collaboration between systems assures a solid trust network."
+      }
+    ]
+  },
+  "applicationPage":{
+    "firstTitle1": "A future built on trust.", 
+    "secondTitle1": "Applicable Scenarios",   
+    "applicationList": [
+      {
+          "title": "Multi-Source Identity System for People",
+          "description": "Users can collect and manage their own identity data from various sources including public institutions, banks, businesses, family, colleagues, and friends.",
+          "icon":"icon-ren ",
+          "id":"page1"
+      },
+      {
+        "title": "Multi-Source Identity System for Objects",
+        "description": "Digital identities of physical objects can be registered into the distributed network under the supervision of the product owners and/or producers.",
+        "icon":"icon-wupin ",
+        "id":"page2"
+    },
+      {
+          "title": "Distributed Data Exchange",
+          "description": "In the data exchange system all data (with consent of the owner) can be discovered and traded whilst meeting individual privacy requirements.",
+          "icon":"icon-exchange-arrow-h ",
+          "id":"page3"
+      },
+      {
+          "title": "Distributed Collaboration",
+          "description": "Transparent records of participants, authorities, and activity create an ideal collaborative environment.",
+          "icon":"icon-Flow_02 ",
+          "id":"page4"   
+      },
+      {
+          "title": "Distributed Equity Management",
+          "description": "The distributed equity management system  allows for safe circulation of data and multi-party evaluation.",
+          "icon":"icon-guanli ",
+          "id":"page5"
+      },
+      {
+          "title": "Distributed Community Management",
+          "description": "The distributed community system allows for easy moderation of users and content.",
+          "icon":"icon-shequndajian ",
+          "id":"page6"
+      },
+      {
+          "title": "Distributed Content Exchange",
+          "description": "Content can be easily exchanged while guaranteeing rights of the producer.",
+          "icon":"icon-jiaoyi ",
+          "id":"page7"
+      },
+      {
+          "title": "Distributed Reputation System",
+          "description": "The reputation management system uses past activity and other data to evaluate participants in the network.",
+          "icon":"icon-pingjia ",
+          "id":"page8"
+      },
+      {
+          "title": "Distributed Financial Services",
+          "description": "Ontology helps build strong credit records, allowing individuals to receive fairer interests rates from financial institutions.",
+          "icon":"icon-jinrong ",
+          "id":"page9"
+      },
+      {
+        "title": "More Scenarios",
+        "description": "Payments and purchases, media, software development, government systems, insurance, product databases, manufacturing standards, healthcare...",
+        "icon":"icon-more ",
+        "id":"pageMore"
+      }
+    ]
+  },
+  "mailsubscribePage":{
+    "firstTitle1":"Notice",
+    "secondTitle1": "",
+    "mailaddress":"Email address",
+    "name":"Name",
+    "telephone":"Phone",
+    "statement":"We have sent out the KYC results of Ontology’s first community reward event to all newsletter subscribers. We will announce on our Twitter when ONT has been distributed. Please note that all emails are only sent from newsletter@email.ont.io.",
+    "thanks2":"Ontology will not have any form of presale, public sale, or private sale. Please be extra cautious and keep an eye out for scams.",
+    "company":"Company",
+    "errorMsg1":"You have subscribed",
+    "errorMsg2":"Please fill out the required fields",
+    "errorMsg3":"Please type in a valid email address.",
+    "subscribe":"Subscribe",
+    "must":"Required",
+    "option":"Optional",
+    "subscribeSuccess":"Subscription Successful",
+    "prompt1":"",
+    "prompt2":"You can keep up to date with Ontology on social media."
+  },
+  "footerPage":{
+    "OntologyNetwork":"Ontology"
+  }
+}

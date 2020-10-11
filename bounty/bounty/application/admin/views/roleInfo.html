@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>ECMS管理系统 |用心服务 思微知著 </title>
+     <{include file="library/Hlink.html" }>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>权限设置-<{if isset($role)}>编辑<{else}>添加<{/if}>权限组 <small>管理中心操作权限及分组设置</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+ <form id="role_form" method="get" class="form-horizontal">
+                                <input type="hidden" name="role_id" id="role_id" value="<{if isset($role['role_id'])}><{$role['role_id']}><{/if}>">
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label"><em>*</em>权限组</label>
+                                    <span class="err"></span>
+
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="role_name" maxlength="40" name="role_name" value="<{if isset($role['role_name'])}><{$role['role_name']}><{/if}>" class="input-txt">
+                                        <span class="help-block m-b-none">  
+为权限组设置特定名称，便于添加管理员时选择使用</span>
+                                    </div>
+                                </div>  
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">角色备注说明</label>
+                                    <span class="err"></span>
+
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="role_comments" maxlength="40" name="role_comments" value="<{if isset($role['role_comments'])}><{$role['role_comments']}><{/if}>" class="input-txt">
+                                        <span class="help-block m-b-none">  
+角色的备注说明</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="col-sm-2 control-label">设置权限</label>
+                                    <div class="col-sm-10">
+
+                                        <!-- <div class="form-group" style="background:#eeeeee;height: 40px;padding:5px 15px;"> -->
+                                        <div class="checkbox i-checks">
+                                            <label><input type="checkbox" value="" class="all"> <i></i> 全选</label>
+                                        </div>
+                                        <!-- </div> -->
+                                        <span class="help-block m-b-none">勾选后选中全部操作功能，可根据需要从设置详情中进行分组设置。</span>
+                                    </div>
+                                </div>
+                               权限操作设置详情
+                                    <{foreach from=$privs item='priv' }>
+                                <div class="checkframe">
+
+
+                                    <div class="form-group" style="background:#eeeeee;height: 40px;padding:5px 15px;">
+                                        <div class="checkbox i-checks">
+                                            <label><input type="checkbox" value="" class="level1"> <i></i><{$priv.action_comment}></label>
+                                        </div>
+                                    </div>
+                                        <{foreach from=$priv.list item='s_priv'}>
+                                        <div class="form-group erji" style="margin:5px;">
+                                            <label class="col-sm-2 r-border">
+                                                <div class="checkbox i-checks">
+                                                    <label class="lv2"><input type="checkbox" <{if isset($role['role_actions'])&&in_array($s_priv.action_code, $role['role_actions'])}>checked<{/if}> value="<{$s_priv.action_code}>" name="permission[]" class="level2"> <i></i><{$s_priv.action_comment}></label>
+                                                </div>
+                                            </label>
+                                            <div class="col-sm-10 sanji">
+                                                <{if isset($s_priv.list)}>
+                                                <{foreach from=$s_priv.list item='ss_priv'}>
+
+                                                    <label class="checkbox-inline i-checks"><input  type="checkbox" <{if isset($role)}><{if in_array($ss_priv.action_code, $role['role_actions'])}>checked<{/if}><{/if}> name="permission[]" value="<{$ss_priv.action_code}>" class="level3"><{$ss_priv.action_comment}></label>
+                                                    <{if isset($ss_priv.list)}>
+
+                                                       
+
+                                                     <{/if}>
+                                                     
+                                                <{/foreach}>
+                                            <{/if}>
+                                            </div>
+                                        </div>
+                                        <{/foreach}>
+                                    <div class="hr-line-dashed" style="margin:0px;"></div>
+                                </div>
+                                    <{/foreach}>
+                                <div class="hr-line-dashed" style="margin:0px;"></div>
+                                <div style="margin-top:10px;text-align:center">
+                                    <button id="submitBtn" type="button" class="btn btn-sm btn-success">提 交</button>
+                                </div>
+                            </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+       <{include file="library/Copyright.html" }>
+        <!-- /footer content -->
+      </div>
+    </div>
+     <{include file="library/Flink.html" }>
+	
+  </body>
+      <!-- iCheck -->
+    <script src="<{TEMPLE}>js/jquery.validate.min.js"></script> 
+   <!--  <script src="<{TEMPLE}>js/iCheck/icheck.min.js"></script>
+    <script src="<{TEMPLE}>js/iCheck/icheck.min.js"></script> -->
+    <!-- jquery validate -->
+     <!-- <script src="<{TEMPLE}>js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="<{TEMPLE}>js/plugins/validate/messages_zh.min.js"></script> -->
+    <script>
+    //全选.全不选
+    var flag=true; 
+    $('.all').click(function(){ 
+        if(flag){ 
+            $(":checkbox").prop('checked',true);
+             flag=false;
+        }else{
+            $(":checkbox").prop('checked',false);
+            flag=true;
+        }
+    })
+    // $(document).on("click","input[type=checkbox]",function(){
+    //     if($(this).prop('checked',true)){
+    //         $(this).prop('checked',false)
+    //         console.log(1)
+    //     }else if($(this).prop('checked',false)){
+    //         $(this).prop('checked',true)
+    //         console.log(2)
+    //     }
+    // })
+
+    $(document).on("click",".level1",function(){
+         if($(this).prop('checked')==true){
+            $(this).closest(".checkframe").find(".level3").prop('checked',true);
+            $(this).closest(".checkframe").find(".level2").prop('checked',true);
+       }else{   
+            $(this).closest(".checkframe").find(".level3").prop('checked',false);
+            $(this).closest(".checkframe").find(".level2").prop('checked',false);
+       } 
+    })
+    $(document).on("click",".level2",function(){
+        if($(this).prop('checked')==true){
+        $(this).closest(".form-group").find(".level3").prop('checked',true);
+       }else{
+            $(this).closest(".form-group").find(".level3").prop('checked',false);
+       } 
+    })
+    
+    </script>
+    <script>
+        $(document).ready(function(){
+            //按钮先执行验证再提交表单
+            $("#submitBtn").click(function(){
+                if($("#role_form").valid()){
+                    var chk_value =[]; 
+                    $('input[type="checkbox"]:checked').each(function(){ 
+                    chk_value.push($(this).val()); 
+                    }); 
+                    if(chk_value == ''){
+                        layer.msg('权限不能为空');
+                        return false;
+                    }
+
+                    var t = '<{isset($role["role_id"])}>';//判断是否有用户信息,以确定添加还是编辑
+                    var data = $("#role_form").serialize(); //序列化的参数
+                    // $("#add_form").submit();
+                    if(t){
+                        url = 'role_edit';
+                    }else {
+                        url = 'role_edit';
+                    }
+                   $.ajax({  
+                    url:url,
+                    type:'post',
+                    data:data,
+                    dataType:'json',
+                    success:function(res){
+                        if(res.state){
+                            layer.msg(res.msg);
+                            window.setTimeout("window.location.href='<{base_url('admin.php/sites/role')}>'", 1000);
+
+                        }else {
+                            layer.msg(res.msg);
+                        }
+                    }
+                  })
+                }
+            });
+            
+
+            $("#role_form").validate({
+                highlight: function (element) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                success: function (element) {
+                    element.closest('.form-group').removeClass('has-error').addClass('has-success');
+                },
+                errorElement: "span",
+                errorPlacement: function (error, element) {
+                    if (element.is(":radio") || element.is(":checkbox")) {
+                        error.appendTo(element.parent().parent().parent());
+                    } else {
+                        error.appendTo(element.parent());
+                    }
+                },
+                errorClass: "help-block m-b-none",
+                validClass: "help-block m-b-none",
+
+                onsubmit: false ,//提交时验证
+                
+                rules : {
+                    role_name : {
+                        required : true,
+                        maxlength : 8,
+                        minlength:4,
+                            remote  : {
+                                url :'role_check_name',
+                                type:'get',
+                                data:{
+                                    role_name : function(){
+                                        return $('#role_name').val();
+                                    },
+                                    role_id : function(){
+                                        return $('input[name="role_id"]').val();
+                                    }
+                                }
+                            }
+                    }
+                    
+                },
+                messages : {
+                    role_name : {
+                        remote   : '<i class="fa fa-exclamation-circle"></i>该权限组已存在,请更换为其他名字',
+                        required : '<i class="fa fa-exclamation-circle"></i>请输入角色名称且至少4个字符',
+                        maxlength :'<i class="fa fa-exclamation-circle"></i>字符长度不能超过8个字符',
+                        minlength :'<i class="fa fa-exclamation-circle"></i>请输入角色名称且至少4个字符'
+                        
+                    }
+
+                }   
+            });
+        });
+
+    </script>
+</html>

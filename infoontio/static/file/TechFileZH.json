@@ -1,0 +1,142 @@
+{ 
+  "head":{
+      "contactUs":"找到我们",
+      "OntScenarios":"本体场景",
+      "OntTech":"本体技术",
+      "language":"Language",
+      "zh":"中",
+      "En":"En",
+      "documents":"文档",
+      "OntIntroduction":"本体介绍",
+      "OntECOWP":"本体生态白皮书",
+      "OntTechWP":"本体技术白皮书",
+      "OntGoveYP":"本体技术黄皮书",
+      "joinus":"加入本体"
+  },
+  "techPage": { 
+      "id":"techPage",
+      "firstTitle1": "技术哲学：全球化、开放、开源"
+  },
+  "techlist":[
+
+    {   
+        "id":"page1",
+        "url":"/static/img/appPage/app1.png",
+        "firstTitle1": "分布式信任框架", 
+        "Descriptionlist": [
+          {
+              "description": "本体基于"
+          },
+          {
+              "description": "分布式身份标识协议OIP"
+          },
+          {
+              "description": "和"
+          },
+          {
+              "description": "多源身份认证协议OMSA"
+          },
+          {
+              "description": "连接分散的信任源，通过零知识证明等密码学算法实现了一套严密的"
+          },
+          {
+              "description": "可信声明体系"
+          },
+          {
+              "description": "，从而实现现实世界的信任导入以及信任的高效传递和交互。"
+          }
+        ]
+    },
+    {   
+        "id":"page2",
+        "url":"/static/img/appPage/app1.png",
+        "firstTitle1": "全方位的隐私保护机制", 
+        "Descriptionlist": [
+          {
+              "description": "本体在数据交互流程设计上全面遵守国际通用"
+          },
+          {
+              "description": "UMA协议规范"
+          },
+          {
+              "description": "，并广泛运用了包括"
+          },
+          {
+              "description": "全同态加密FHE"
+          },
+          {
+              "description": "等密码学算法组件，从流程、算法多个维度保证用户隐私和数据协作安全，使数据所有者真正成为成为数据的主人。"
+          }
+        ]
+    },
+    {   
+        "id":"page3",
+        "url":"/static/img/appPage/app1.png",
+        "firstTitle1": "去中心化数据交换协议", 
+        "Descriptionlist": [
+          {
+              "description": "针对中心化数据交易所的痛点如：数据缓存、隐私数据未经用户授权、数据版权无法保护等，本体基于一致性账本技术、"
+          },
+          {
+              "description": "密码学数据保护"
+          },
+          {
+              "description": "技术实现数据"
+          },
+          {
+              "description": "点对点"
+          },
+          {
+              "description": "交换或协作，全程"
+          },
+          {
+              "description": "无缓存。"
+          }
+        ]
+    },
+    {   
+        "id":"page4",
+        "url":"/static/img/appPage/app1.png",
+        "firstTitle1": "智能合约体系", 
+        "Descriptionlist": [
+          {
+              "description": "使用自主研发的go语言版 "
+          },
+          {
+              "description": "NVM虚拟机"
+          },
+          {
+              "description": "作为智能合约的执行环境，可以为本体应用层框架实现智能控制逻辑。NVM虚拟机具备"
+          },
+          {
+              "description": "图灵完备性"
+          },
+          {
+              "description": "，可以实现任意逻辑，同时具有高度的确定性，可保障在技术上实现“输入一样，输出一样”，避免了container/docker的不确定性。此外，通过自主研发的编译器，将Java Bytecode，C# MSIL等中间语言编译为区块链虚拟机的指令。从而使智能合约的开发者不需要学习新的语言，就能使用熟悉的Java、C/C#、Go等编程语言编写智能合约，大大"
+          },
+          {
+              "description": "降低了使用门槛"
+          }
+        ]
+    },
+    {   
+        "id":"page5",
+        "url":"/static/img/appPage/app1.png",
+        "firstTitle1": "开放的应用框架", 
+        "Descriptionlist": [
+          {
+              "description": "提供丰富的应用组件、协议、SDK和API，为各种场景的去中心化DApps应用构建提供"
+          },
+          {
+              "description": "快速、低成本"
+          },
+          {
+              "description": "的接入"
+          }
+        ]
+    }
+  ],            
+  "footerPage":{
+    "OntologyNetwork":"本体"
+  }
+}

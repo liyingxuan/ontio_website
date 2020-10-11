@@ -1,0 +1,114 @@
+
+.main .inner{
+	width: 495px;
+	margin: 0 auto;
+	padding-top: 55px;
+}
+.main .inner h3{
+	margin-top: 37px;
+	line-height: 170px;
+	font-size: 30px;
+	color: #32a4be;
+	text-align: center;
+	text-transform: capitalize;
+}
+.main .inner ul{
+	margin-bottom: 96px;
+}
+.main .inner ul li{
+	position: relative;
+	margin-bottom: 13px;
+	background: url(../images/developer/02.jpg)no-repeat;
+	width: auto;
+	height: 69px;
+	padding-left: 80px;
+	font-size: 18px;
+	line-height: 69px;
+	color: #fff;
+}
+.main .inner ul li .posi{
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-radius: 5px;
+	overflow: hidden;
+	width: 70px;
+	height: 69px;
+	background: url(../images/developer/03.jpg)no-repeat;
+}
+.main .inner ul li:nth-of-type(4) .posi,.main .inner ul li:nth-of-type(5) .posi{
+	background: url(../images/developer/gray_03.jpg)no-repeat;
+}
+.main .inner .github{
+	display: none;
+}
+.main .inner .github img{
+	width: 105px;
+    margin: 0 auto;
+	display: block;
+}
+.main .inner .github a{
+	display: block;
+	margin: 20px auto 80px;
+	height: 70px;
+	width: 290px;
+	background: #32a4be url(../images/developer/01.png)no-repeat 70% 50%;
+	line-height: 70px;
+	text-align: center;
+	color: #fff;
+	font-size: 25px;
+	border-radius: 5px;
+	text-transform: capitalize;
+	padding-right: 35px;
+}
+.main .inner .opendoc a{
+	display: block;
+	margin: 20px auto 80px;
+	height: 70px;
+	width: 495px;
+	background: #32a4be url(../images/developer/01.png)no-repeat 95% 50%;
+	line-height: 70px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	border-radius: 5px;
+	text-transform: capitalize;
+}
+.main .inner .opendoc img{
+	width: 105px;
+    margin: 0 auto;
+	display: block;
+}
+
+
+
+@media screen and (max-width:1200px){
+
+}
+
+@media screen and (max-width:980px){
+
+}
+@media screen and (max-width:768px){
+	#banner .view,#main .content,#main .downloads .con,#main .container{
+		width: 600px;
+	}
+}
+@media screen and (max-width:480px){
+
+	.main .inner{
+		 width: auto;
+	 }
+	.main .inner ul{
+		width: 90%;
+		margin: 0 auto;
+	}
+	.main .inner ul li{
+		padding-left: 67px;
+		font-size: 12px;
+	}
+	.main .inner .opendoc a{
+		font-size: 18px;
+		width: 90%;
+	}
+}

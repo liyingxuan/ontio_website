@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>ECMS管理系统 |用心服务 思微知著 </title>
+      <{include file="library/Hlink.html" }>
+      <link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="<{TEMPLE}>js/layui/css/layui.css">
+      <script src="<{TEMPLE}>js/layui/layui.js"></script>
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>节点基本信息 </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="form" data-parsley-validate="" class="form-horizontal form-label-left" novalidate=""  method="post" enctype="multipart/form-data">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">节点名称 <span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="hidden" value="<{if isset($id)}><{$id}><{/if}>" id="article_id" name="article_id">
+                          <input type="text" value="<{if isset($article.title)}><{$article.title}><{/if}>" name="article_title" id="article_title" required="required" class="form-control col-md-7 col-xs-12">
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">地区</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.shorttitle)}><{$article.shorttitle}><{/if}>" name="article_shorttitle" id="article_shorttitle"  class="form-control col-md-7 col-xs-12">
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="last-name">自定义属性 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'h')!==FALSE}> checked="" <{/if}> value="h" name="article_flag[]">头条[h]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'c')!==FALSE}> checked="" <{/if}>  value="c" name="article_flag[]">推荐[c]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'f')!==FALSE}> checked="" <{/if}> value="f" name="article_flag[]">幻灯[f]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'s')!==FALSE}> checked="" <{/if}> value="s" name="article_flag[]">滚动[s]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'b')!==FALSE}> checked="" <{/if}> value="b" name="article_flag[]">加粗[b]
+                            </label>                                                
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'j')!==FALSE}> checked="" <{/if}> value="j" name="article_flag[]">跳转[j]
+                            </label>                        
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">TAG标签 
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.label)}><{$article.label}><{/if}>" name="article_label" id="article_label"  class="form-control col-md-7 col-xs-12"><small>(','号分开)</small>
+                        </div>
+                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">权重  
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.weight)}><{$article.weight}><{/if}>" name="article_weight" id="article_weight"  class="form-control col-md-3 col-xs-12">(越小越靠前)
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">栏目 <span class="required">*</span></label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                          <select class="select2_single form-control" tabindex="-1" name="article_typeid" id="article_typeid" required="required">
+                            <{if isset($column)&&!empty($column)}>
+                                  <{foreach from=$column item='v'}>
+                                    <option <{if isset($article.typeid) && $article.typeid == <{$v.id}>}>selected<{/if}> value="<{$v.id}>"><{$v.typename}></option>
+                                  <{/foreach}>
+                            <{else}>
+                                <option value="">暂无栏目，请前往添加</option>
+                            <{/if}>
+                          </select>
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">缩略图 
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                           <input type="file" class="form-control" id="article_litpic" name="article_litpic" placeholder="本地上传">
+                           <span class="fa fa-cloud-upload form-control-feedback right" aria-hidden="true"></span>
+                           <span class="err" style="color: red;"></span>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <button type="button" id="add" class="btn btn-outline btn-primary">
+              <i class="fa fa-th aria-hidden="true"></i> 站内选择
+              </button>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">关键字 
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                          <input value="<{if isset($article.keywords)}><{$article.keywords}><{/if}>" name="article_keywords" id="article_keywords" class="date-picker form-control col-md-7 col-xs-12"  type="text" >
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">作　者 
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button" value="<{if isset($article.writer)}><{$article.writer}><{/if}>" name="article_writer" id="article_writer">
+                            <div class="input-group-btn">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">选择 <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                <{if isset($writer)&&!empty($writer)}>
+                                      <{foreach from=$writer item='v'}>
+                                        <li><a onclick="$('#article_writer').val($(this).text());"><{$v.writer}></a></li>
+                                      <{/foreach}>
+                                <{else}>
+                                    <option value="">暂无可选作者，请手动填入</option>
+                                <{/if}>
+                              </ul>
+                            </div>
+                            <!-- /btn-group -->
+                          </div>
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">内容摘要 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea name="article_description" id="article_description"   class="form-control"  data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message=".." data-parsley-validation-threshold="10"><{if isset($article.description)}><{$article.description}><{/if}></textarea>
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                      </div>
+                     
+                      <div class="x_title">
+                    <h2>节点介绍 </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                       <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="last-name">附加选项  
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+                           <label> <input type="checkbox" value="">下载远程图片和资源</label>
+                             <label> <input type="checkbox" value="">删除非站内链接 </label>
+                             <label>  <input type="checkbox" value="">提取第一个图片为缩略图 </label>
+                        </div>
+                       </div>
+                        <div class="form-group">
+                                <script id="add_body" name="add_body"  type="text/plain" ><{if isset($article.body)}><{$article.body}><{/if}></script>
+                                <!-- 配置文件 -->
+                                <script type="text/javascript" src="<{HTTPROOT}>/plugins/Ueditor/ueditor.config.js"></script>
+                                <!-- 编辑器源码文件 -->
+                                <script type="text/javascript" src="<{HTTPROOT}>/plugins/Ueditor/ueditor.all.js"></script>
+                                <!-- 实例化编辑器 -->
+                                <script type="text/javascript">
+                                var ue = UE.getEditor('add_body',{initialFrameHeight:400});
+                                </script>
+                        </div>
+                    </div>
+                    
+                     <div class="x_title">
+                    <h2>高级参数 </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                       <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">浏览次数
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.click)}><{$article.click}><{/if}>" name="article_click" id="article_click" class="form-control col-md-7 col-xs-12">
+                        </div>
+                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">发布时间 
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" name="article_pubdate" class="demo-input form-control" placeholder="请选择日期" id="article_pubdate" value="<{if isset($article.pubdate)}><{date('Y-m-d H:i:s',$article.pubdate)}><{/if}>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">阅读权限  <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="padding-top: 8px;">
+                          <input type="radio" <{if isset($article.arcrank)}> <{if ($article.arcrank == 1)}>checked<{/if}> <{else}>checked<{/if}> value="1" name="article_arcrank">开放阅读
+                          <input type="radio" <{if isset($article.arcrank) && ($article.arcrank == 0)}> checked <{/if}>  value="0" name="article_arcrank">待审核
+                        </div>
+                      </div>
+                   </div>
+                   
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                          <button type="button" class="btn btn-primary" onclick="history.go(-1)">返 回</button>
+                          <button type="submit" id="form-submit" class="btn btn-success">提 交</button>
+                        </div>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <{include file="library/Copyright.html" }>
+      <!-- /footer content -->
+      </div>
+      </div>
+      <{include file="library/Flink.html" }>
+    <script type="text/javascript" src="<{TEMPLE}>js/jquery.form.js"></script>
+    <script src="<{TEMPLE}>js/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#article_pubdate' //指定元素
+                ,type: 'datetime'
+            });
+          });
+          $("#form-submit").click(function(){ 
+            if($("#form").valid()){
+                  $("#form").ajaxSubmit({
+                      url:'node_add',
+                      success:function(res) {
+                          if( jQuery.type(res) === "string"){
+                             res=JSON.parse(res)
+                          }
+                          if(res.state=='403'){
+                            top.location.href='<{base_url("admin.php/index/login")}>';
+                            return false;
+                          }
+                          if(res.state){
+                              layer.msg(res.msg);
+                              window.setTimeout("window.location.href='<{base_url('admin.php/articles/node')}>'", 1000);
+                          }else {
+                              layer.msg(res.msg);
+                          }
+                      }
+                  })
+
+            }
+          });
+
+          $("#form").validate({
+                  errorPlacement: function(error, element){
+                      var error_td = element.siblings('span.err');
+                      error_td.append(error);
+                  }
+                  ,onsubmit: false 
+                  ,rules: {
+                    article_title: {
+                        required: true
+                    }
+                    ,article_typeid : {
+                         required : true,
+                    }
+                    ,link_pic:{
+                         article_litpic:'PNG|JPG|JPEG|BMP'//图片只能是PNG|JPG|JPEG|BMP格式
+                    } 
+                    // ,article_keywords : {
+                    //      required : true,
+                    // }
+                    // ,article_description : {
+                    //      required : true,
+                    // }
+                    // ,article_shorttitle : {
+                    //      required : true,
+                    // }
+                     
+                }
+                ,messages: {
+                    article_title : {
+                        required : '<i class="fa fa-exclamation-circle"></i>请填写节点名称',
+                    }
+                    ,article_typeid:{
+                        required : '<i class="fa fa-exclamation-circle"></i>请选择栏目',
+                    }
+                    ,link_pic:{
+                        accept: '<i class="fa fa-exclamation-circle"></i>只能上传PNG|JPG|JPEG|BMP格式图片'
+                    }
+                    // ,article_keywords:{
+                    //     required : '<i class="fa fa-exclamation-circle"></i>请填写关键字',
+                    // }
+                    // ,article_description:{
+                    //     required : '<i class="fa fa-exclamation-circle"></i>请填写内容摘要',
+                    // }
+                    // ,article_shorttitle:{
+                    //     required : '<i class="fa fa-exclamation-circle"></i>请填写职位',
+                    // }
+                }
+          }); 
+        
+      });
+    </script>
+  </body>
+</html>

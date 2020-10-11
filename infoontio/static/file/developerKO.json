@@ -1,0 +1,20 @@
+{       
+  "Cooperation":{
+    "id":"communityPage",
+    "firstTitle1":"협력/제휴",
+    "secondTitle1":"저희와 함께 분산 신뢰 네트워크를 만들어가는 데 관심 있으시다면 연락해주시기 바랍니다.",
+    "helpmsg":"사업개발팀에는 영어나 중국어로 연락해주시기 바랍니다.",
+    "name":"단체명",
+    "contact":"이메일",
+    "detail":"단체에 대한 소개와 함께 온톨로지와 어떻게 협력하실 수 있는지에 대해 작성해주세요.",
+    "send":"보내기",
+    "warnMsg":"모든 빈 칸을 채워주세요.",
+    "field":"분야",
+    "phone":"전화번호",
+    "thanksword":"협력할 방안을 찾게 되면 연락 드리겠습니다. 감사합니다.",
+    "back":"반환"
+  },
+  "footerPage":{
+    "OntologyNetwork":"本体网络"
+  }
+}

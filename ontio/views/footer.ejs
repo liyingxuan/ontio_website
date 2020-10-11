@@ -1,0 +1,70 @@
+<div id="back_up"></div>
+<footer id="footer">
+    <div class="inner">
+        <div class="top clearfix">
+            <div class="left">
+                <img src="images/index_logo_03.png" />
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a target="view_window" href="{{language.d150}}"><img src="images/footer_01.png"/></a></li>
+                    <li><a target="view_window" href="{{language.d151}}"><img src="images/footer_02.png"/></a></li>
+                    <li><a target="view_window" href="{{language.d152}}"><img src="images/footer_03.png"/></a></li>
+                    <li><a target="view_window" href="{{language.d153}}"><img src="images/footer_04.png"/></a></li>
+                    <li><a target="view_window" href="{{language.d154}}"><img src="images/footer_05.png"/></a></li>
+                    <li><a target="view_window" href="{{language.d155}}"><img src="images/footer_06.png"/></a></li>
+                    <li><a  href="mailto:contact@ont.io"><img src="images/footer_08.png"/></a></li>
+                    <li><a target="view_window" href="https://github.com/ontio"><img src="images/footer_07.png"/></a></li>
+                    <li><a target="view_window" href="https://www.linkedin.com/company/ontology-network-official/"><img src="images/footer_09.png"/></a></li>
+                    <!--<li><img src="images/footer_07.png"/></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="center clearfix">
+            <ul class="dl">
+                <li>
+                    <ul class="down_list">
+                        <li><a href="/" ng-bind="language.d147"></a></li>
+                        <li><a href="/about" ng-bind="language.d96"></a></li>
+                        <li><a href="{{language.d103}}" ng-bind="language.d97"></a></li>
+                        <li><a href="{{language.d100}}" ng-bind="language.d95"></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="down_list">
+                        <li><a href="/documents" ng-bind="language.d94"></a></li>
+                        <li><a href="{{language.d102}}" ng-bind="language.d98"></a></li>
+                        <li><a href="{{language.d101}}" ng-bind="language.d99"></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="wei" ng-if="language.d148">
+                <div class="right">
+                    <p class="one">wechat</p>
+                    <img src="images/footer_08.jpg"/>
+                </div>
+                <div class="foot_posi">
+                    <a href="javascript:" class="mo">{{key_lang}}<img src="images/foot_posi.png"/></a>
+                    <ul>
+                        <li><a href="javascript:" ng-click="lang('cn')">中文</a></li>
+                        <li><a href="javascript:" ng-click="lang('en')">English</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dot">Copyright © 2018 The Ontology Team</div>
+    </div>
+</footer>
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/style.js"></script>
+<% if(page == 'index'){ %>
+<script src="./js/index.js"></script>
+<%}else if(page == 'about'){%>
+<script src="./js/resize.js"></script>
+<script src="./js/about.js"></script>
+<%}else if(page == 'developer'){%>
+<script src="./js/developer.js"></script>
+<%}%>
+</body>
+</html>

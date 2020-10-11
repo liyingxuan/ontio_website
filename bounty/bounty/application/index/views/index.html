@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><{if isset($page.seotitle) and !empty($page.seotitle)}><{$page.seotitle}><{/if}></title>
+	<meta name='keyword' content='<{if isset($page.keywords) and !empty($page.keywords)}><{$page.keywords}><{/if}>'>
+	<meta name='description' content='<{if isset($page.description) and !empty($page.description)}><{$page.description}><{/if}>'>
+    <{include file="library/inMeta.html" }>
+    <link rel="stylesheet" href="<{TEMPLE}>css/swiper-4.3.5.min.css">
+    <link rel="stylesheet" href="<{TEMPLE}>css/NanumSquare-master/nanumsquare.css"/>
+    <link rel="stylesheet" type="text/css" href="<{TEMPLE}>css/common.css" />
+    <script src="<{TEMPLE}>js/swiper-4.3.5.min.js"></script>
+    <link rel="stylesheet" href="<{TEMPLE}>css/main.css"/>
+</head>
+<body>
+<{include file="library/header.html" }>    
+        <div id="browser" style="z-index:1;background-repeat: no-repeat;background-size: 100%;">
+            <!-- <div  id="toptarget" ></div> -->
+            <{if isset($advlist)&&!empty($advlist)}>
+            <section class="banner-box">
+                <div class="" style="padding-right:0px;padding-left:0px;">
+                    <div class="">
+                        <div class="banner-limit">
+                            <div class="swiper-container" style="height:100%;padding:16px 0;">
+                                    <div class="swiper-wrapper">
+                                    <{foreach from=$advlist item='info' key=key }>
+                                  <!--   <div class="swiper-slide   <{if $key eq 0}>swiper-ml <{/if}>" style="height:100%"><a href="<{$info.adv_link}>" target="_blank"> <img  alt="<{$info.adv_title}>" src="http://demo.cssmoban.com/cssthemes4/btst_71_zalliance/images/pic2.jpg"></a></div> -->
+                                    <div class="swiper-slide <{if $key eq 0}>swiper-ml <{/if}>" ><a href="<{$info.adv_link}>" target="_blank"> <img  style="width: 100%;height100%" alt="<{$info.adv_title}>" src="<{HTTPROOT}><{$info.adv_content}>"></a></div>
+                                    <{/foreach}>
+                                    </div>
+                                </div>
+                            <!-- Add Pagination -->
+                             <{if count($advlist) ge 5 }>
+                            <div class="swiper-button-next hidden-md"></div>
+                            <div class="swiper-button-prev hidden-md"></div>
+                            <{/if}>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <{/if}>
+            
+            <section style="background:#F5F2F2;padding-top:32px">
+            	    <{if isset($data)&&!empty($data)}>
+                        <{foreach from=$data item='v'}>
+                <div class="container dapp-list-area">
+                <h1 class="dapp-list-title"><{$v['0']['typename']}> List</h1>
+                <p  style="border-top:1px solid rgba(170,179,180,1);margin-top:12px;"></p>
+                <{foreach from=$v item='info'}>
+                <div  class="dapp-list col-sm-6" v-for="dappList in dappLists" v-bind:key="dappList.name">
+                    <div style="position:relative;height:108px;">
+                        <img class="list-img"  alt=""  src="<{HTTPROOT}><{$info.litpic}>">
+                        <div style="margin-left:124px;position:absolut">
+                            <h2 class="list-name" ><{$info.title}></h2>
+                           <{if isset($info.shorttitle)&&!empty($info.shorttitle)}> <p class="list-tag" ><{$info.shorttitle}></p><{/if}>
+                            <{if isset($info.source)&&!empty($info.source)}><h6><a target="_blank"  class="list-developer" href="<{$info.source}>">Developer<i class="icon-angle-right" style="margin-left:5px"></i></a></h6><{/if}>
+                        </div>
+                    </div>
+                    <div  style="margin-top:8px;">
+                        <button class="list-link btn-grey"  onclick="toBlank('<{$info.source}>')">Link <img class="arrow" src="<{TEMPLE}>img/icon/arrow-small-w.svg" alt=""></button>
+                        <!--<button class="list-download btn-grey">Download <img class="arrow" src="<{TEMPLE}>img/icon/arrow-small-w.svg" alt=""></button>
+                        <button class="list-github btn-white" >GitHub <img class="arrow" src="<{TEMPLE}>img/icon/arrow-small-g.svg" alt=""></button>-->
+                    </div>
+                    <p class="list-content"><{$info.description}></p>
+                </div>
+                 <{/foreach}>
+            </div>
+            <{/foreach}>
+              <{/if}>
+        </section>
+      </div>
+<{include file="library/bfooter.html" }>   
+<script>
+var loopLength = '<{if count($advlist>5)}>true<{else}>false<{/if}>';
+var sildeW,between;
+if($(window).width()>1500){
+    sildeW  = 'auto';
+    between = 16
+}else if($(window).width()<1526&&$(window).width()>768){
+    sildeW  = 'auto';
+    between = 16
+}else if($(window).width()<767&&$(window).width()>480){
+    sildeW  = 'auto';
+    between = 16;
+}else if($(window).width()<=480){
+    sildeW  = 'auto';
+    between = 16
+}
+$(window).resize(function() {
+    if($(window).width()>1472){
+		 var width = $(window).width();
+	    var ml = (width - 1472)/2;
+	    $(".swiper-ml").css("margin-left",ml+"px")
+	}
+
+    if($(window).width()>1500){
+    sildeW  = 'auto';
+    }else if($(window).width()<1526&&$(window).width()>768){
+        sildeW  = 'auto';
+        between = 16
+    }else if($(window).width()<767&&$(window).width()>480){
+        sildeW  = 'auto';
+        between = 16
+    }else if($(window).width()<=480){
+        sildeW  = 'auto';
+        between = 16
+    }
+    var swiper = new Swiper('.swiper-container', { /*banner*/
+    keyboardControl : true,
+    slidesPerView: sildeW ,
+    spaceBetween: between,
+    loop:false,
+    freeMode : true,
+    disableOnInteraction: false,
+    navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+    grabCursor: true,
+    });
+});
+
+var swiper = new Swiper('.swiper-container', { /*banner*/
+  keyboardControl : true,
+  slidesPerView: sildeW ,
+  spaceBetween: between,
+  loop:false,
+  freeMode : true,
+  navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+  grabCursor: true,
+});
+
+function toBlank(href){
+    window.open(href,'_blank')
+}
+window.onload=function(){
+	if($(window).width()>1472){
+		 var width = $(window).width();
+	    var ml = (width - 1472)/2;
+	    $(".swiper-ml").css("margin-left",ml+"px")
+	}
+   
+}
+
+
+</script>     
+</body>
+</html>

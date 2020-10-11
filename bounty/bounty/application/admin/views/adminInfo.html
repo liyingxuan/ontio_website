@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		  <title>ECMS管理系统 |用心服务 思微知著 </title>
+		  <{include file="library/Hlink.html" }>
+		 <link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>管理员<{if isset($admin)}>编辑<{else}>添加<{/if}><small><{if isset($admin)}>重置密码后下次登录生效<{/if}></small></h2>
+									 <input type="hidden" name="admin_id" value="<{if isset($admin)}> <{$admin.admin_id}> <{/if}>" />
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;">
+				
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_name">账号 <span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="admin_name" name="admin_name" required="required" value="<{if isset($admin['admin_name'])}><{$admin['admin_name']}><{/if}>"   <{if isset($admin) && $admin.admin_is_super==1}> readonly ="true"<{/if}> class="form-control col-md-7 col-xs-12">
+										  <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 3-15位字符，可由中文、英文、数字及“_”、“-”组成。</span>
+				                        </div>
+				                      </div>
+									  <div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12">角色<span class="required">*</span></label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+										  <select class="select2_single form-control" tabindex="-1"  name="role_id" required="required">
+										   <{if isset($roles)}>
+											 <{foreach from=$roles item=role}>
+												<option <{if isset($admin)}> <{if $admin.role_id eq $role.role_id }> selected <{/if}><{/if}> value=" <{$role.role_id}> " > <{$role.role_name}></option>
+											 <{/foreach}>
+											<{/if}>
+										  </select>
+										</div>
+									  </div>
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_ture_name">真实姓名
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="admin_ture_name"  name="admin_ture_name"  class="form-control col-md-7 col-xs-12" value="<{if isset($admin['admin_ture_name'])}><{$admin['admin_ture_name']}><{/if}>">
+				                        </div>
+				                      </div>
+				                      <div class="form-group">
+				                        <label for="admin_pwd" class="control-label col-md-3 col-sm-3 col-xs-12">密码<span class="required">*</span></label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input id="admin_pwd" class="form-control col-md-7 col-xs-12" type="password" name="admin_pwd"  required="required" value="<{if isset($admin['admin_pwd'])}><{$admin['admin_pwd']}><{/if}>">
+				                        </div>
+				                      </div>
+						             <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_tel">联系电话
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="admin_tel"  name="admin_tel"  class="form-control col-md-7 col-xs-12" value="<{if isset($admin['admin_tel'])}><{$admin['admin_tel']}><{/if}>">
+				                        </div>
+				                      </div>
+				                      <div class="ln_solid"></div>
+				                      <div class="form-group">
+				                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				                          <button type="submit" id="submitBtn" class="btn btn-success" >提 交</button>
+				                        </div>
+				                      </div>
+				
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+			<!-- /footer content -->
+			</div>
+			</div>
+			<{include file="library/Flink.html" }>
+
+	</body>
+	<script type="text/javascript" src="<{HTTPROOT}>plugins/jQuery_md5/jQuery.md5.js"></script>
+    <script type="text/javascript" src="<{HTTPROOT}>plugins/jQuery_md5/jQuery.md5.add.js"></script>
+	<script>
+//按钮先执行验证再提交表
+$(document).ready(function(){
+    //按钮先执行验证再提交表单
+    $("#submitBtn").click(function(){
+        var pwd = $("#admin_pwd").val();
+         $("#admin_pwd").val(pwd_addMD5(pwd));//重置表单内容
+          $.ajax({  
+            url:'admin_edit',
+            type:'post',
+            data:$("#add_form").serialize(),
+            dataType:'json',
+            success:function(res){
+                if(res.state){
+                    layer.msg(res.msg);
+                    window.setTimeout("window.location.href='<{base_url('admin.php/sites/admin')}>'", 1000);
+                }else {
+                    layer.msg(res.msg);
+                }
+            }
+          })
+    });
+});
+
+</script> 
+</html>

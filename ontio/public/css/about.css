@@ -1,0 +1,120 @@
+/*main*/
+#main {
+  width: 30.0rem;
+  margin: 0 auto;
+  padding-top: 2.0rem;
+  font-family: SourceSansPro-Regular, "Microsoft YaHei", sans-serif !important;
+}
+
+#main .about_title {
+  text-align: center;
+  color: #32a4be;
+  font-size: 1.0rem;
+  font-weight: lighter;
+  margin-top: 1.85rem;
+  font-family: SourceSansPro-light, "Microsoft YaHei", sans-serif !important;
+}
+
+#main .line_time {
+  display: none;
+  margin-top: 1.95rem;
+}
+
+#main .line_time > img {
+  width: 100%;
+}
+
+#main .network_Introduction .title {
+  display: none;
+  font-size: 1.0rem;
+  color: #32a4be;
+  text-align: center;
+  margin-top: 2.65rem;
+}
+
+#main .network_Introduction .text {
+  font-size: 0.45rem;
+  line-height: 0.7rem;
+  margin-top: 0.875rem;
+  padding: 0 1.7rem;
+}
+
+#main .middle_text {
+  position: relative;
+  width: 14.25rem;
+  margin: 1.9rem auto 0;
+}
+
+#main .middle_text i.icon_bar {
+  display: block;
+  width: 0.1rem;
+  height: 100%;
+  background-color: #32a4be;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#main .middle_text p.text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.75rem;
+  font-size: 0.45rem;
+  line-height: 0.6rem;
+}
+
+#main .footer_text {
+  margin-top: 1.9rem;
+  margin-bottom: 1.9rem;
+}
+
+#main .footer_text ul {
+  display: flex;
+  padding: 0 1.7rem;
+}
+
+#main .footer_text ul li {
+  width: 7.625rem;
+  position: relative;
+  overflow: hidden;
+  margin-right: 1.625rem;
+}
+
+#main .footer_text ul li:last-child {
+  margin-right: 0;
+}
+
+#main .footer_text ul li p.text {
+  font-size: 0.4rem;
+  color: #000;
+  line-height: 0.6rem;
+  margin-bottom: 48px;
+}
+
+#main .footer_text ul li i.icon_bar {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.1rem;
+  background-color: #32a4be;
+}
+
+#main .road_map {
+  display: none;
+  margin-top: 2.75rem;
+  margin-bottom: 2.9rem;
+}
+
+#main .road_map p.title {
+  font-size: 1.0rem;
+  color: #32a4be;
+  text-align: center;
+}
+
+#main .road_map_img {
+  width: 100%;
+  margin-top: 1.55rem;
+}
+

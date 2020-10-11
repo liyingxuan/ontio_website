@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" ng-app="public">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./css/NanumSquare-master/nanumsquare.css">
+    <link rel="stylesheet" href="./css/result.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <% if(page == 'index'){ %>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index_media.css">
+    <%}else if(page == 'about'){%>
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/about_media.css">
+    <%}else if(page == 'developer'){%>
+    <link rel="stylesheet" href="./css/developer.css">
+    <%}else if(page == 'news'){%>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" href="./css/news.css">
+    <%}else if(page == 'view'){%>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" href="./css/view.css">
+    <%}else if(page == 'team'){%>
+  <link rel="stylesheet" type="text/css" href="./css/team.css">
+    <%}%>
+    <title>Ontology</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113878921-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113878921-1');
+    </script>
+</head>
+<body ng-controller="language">
+<nav id="nav">
+    <div class="content">
+        <a href="/" class="logo"><img src="./images/index_logo_03.png" alt="logo"></a>
+        <ul class="menu">
+            <li><a href="/" ng-bind="language.d1"></a></li>
+            <li><a href="{{language.d2durl}}" ng-bind="language.d2"></a></li>
+            <li><a href="{{language.d2url}}" ng-bind="language.d2a"></a></li>
+           <!--  <li><a href="{{language.d100}}" ng-bind="language.d3"></a></li> -->
+            <li><a href="{{language.d3004url}}" ng-bind="language.d3004"></a></li>
+            <li><a href="{{language.d1001}}" ng-bind="language.d3001"></a></li>
+            <li><a href="{{language.d3002url}}" ng-bind="language.d3002" target="_blank"></a></li>
+            <li><a href="{{language.d3003url}}" ng-bind="language.d3003" target="_blank"></a></li>
+            <li class="active"><a href="javascript:" ng-bind="language.d4"></a>
+                <ul class="two">
+                    <li><a href="{{language.d100}}" ng-bind="language.d3"></a></li>
+                    <li><a href="{{language.d102}}" ng-bind="language.d5"></a></li>
+                    <!--<li><a href="http://info.ont.io/event" ng-bind="language.d6"></a></li>-->
+                    <li><a href="{{language.d101}}" ng-bind="language.d7"></a></li>
+                    <li><a href="{{language.d103}}" ng-bind="language.d9"></a></li>
+                    <li><a href="/about" ng-bind="language.d8"></a></li>
+                    <div class="arrow_down"></div>
+                </ul>
+            </li>
+            <li class="last_menu" ><a href="javascript:" ></a><span ng-bind="language.dlang" ></span>
+                <ul class="one">
+                    <li><a href="javascript:" ng-click="lang('en')"class="nokoreanlang">English</a></li>
+                    <li><a href="javascript:" ng-click="lang('cn')"class="nokoreanlang">中文</a></li>
+                    <li><a href="javascript:" ng-click="lang('ko')" class="koreanlang">한국어</a></li>
+                    <li><a href="javascript:" ng-click="lang('jp')" class="nokoreanlang">日本語</a></li>
+                    <div class="arrow_down"></div>
+                </ul>
+            </li>
+            <!--<li><a href="javascript:">Language <i class="icon_arrow"></i></a></li>-->
+            <!--<li>
+                <form action="">
+                    <input type="text" placeholder="Search">
+                    <i class="icon_search"></i>
+                </form>
+            </li>-->
+        </ul>
+    </div>
+    <div class="mobile_btn active">
+        <span></span>
+        <strong></strong>
+        <i></i>
+    </div>
+</nav>
+<div id="mobile_nav">
+    <ul class="menu">
+        <li><a href="/" ng-bind="language.d1"></a></li>
+        <li><a href="{{language.d2durl}}" ng-bind="language.d2"></a></li>
+        <li><a href="{{language.d2url}}" ng-bind="language.d2a"></a></li>
+        <li><a href="{{language.d3004url}}" ng-bind="language.d3004"></a></li>
+        <li><a href="{{language.d1001}}" ng-bind="language.d3001"></a></li>
+        <li><a href="{{language.d3002url}}" ng-bind="language.d3002" target="_blank"></a></li>
+        <li><a href="{{language.d3003url}}" ng-bind="language.d3003" target="_blank"></a></li>
+        <li><a href="{{language.d100}}" ng-bind="language.d3"></a></li>
+        <li><a href="{{language.d102}}" ng-bind="language.d5"></a></li>
+        <li><a href="{{language.d101}}" ng-bind="language.d7"></a></li>
+        <li><a href="{{language.d103}}" ng-bind="language.d9"></a></li>
+        <li><a href="/about" ng-bind="language.d8"></a></li>
+        <li>
+            <a href="javascript:">Language</a>
+            <ul class="lang_menu">
+                <li><a href="javascript:" ng-click="lang('en')" class="nokoreanlang">English</a></li>
+                <li><a href="javascript:" ng-click="lang('cn')" class="nokoreanlang">中文</a></li>
+                <li><a href="javascript:" ng-click="lang('ko')" class="koreanlang">한국어</a></li>
+                <li><a href="javascript:" ng-click="lang('jp')" class="nokoreanlang">日本語</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

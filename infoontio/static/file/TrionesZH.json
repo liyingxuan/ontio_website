@@ -1,0 +1,301 @@
+﻿{ 
+    "Triones": { 
+        "id":"Triones",
+        "firstTitle1": "",  
+        "secondTitle1":"",
+        "list":[
+
+            {
+                "title":"本体北斗种子节点第二轮招募细则",
+                "secondtitle":"",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"本体作为新一代多链式公有链平台，致力于建立一个开源、开放、协同的分布式信任生态。信任生态的建立依托于本体基础链网的技术、应用和治理，本体做为链网体系，将采用 “北斗共识集群” 模型架构（详情请见北斗共识集群经济模型设计原理）。这是一个在分布式程度、高性能扩展支持和激励机制上进行综合平衡的创新性治理模型。北斗共识网络的节点将由来自世界各地的社区、专业机构和极客组成，早在今年6月初，我们进行了第一轮种子节点（Ontology Triones Seed Node）招募，最终通过评选的 33 个节点正在稳定运行中。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"本体今日正式开启本体北斗种子节点（Ontology Triones Seed Node）第二轮招募，建设公开广泛运行的全球化链网体系。对于节点的参与者，本体除了整个链网体系的基础性ONG消耗（网络费用、存储费用、合约费用、其他增值服务）之外，本体还将从社区激励中额外拿出每年1% ONG来激励共识节点集群的参与者。"
+            },
+            {
+                "title":"",
+                "secondtitle":"本体第二轮北斗种子节点招募指引",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"1. 第二轮总计招募 16 个节点；"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"2. 符合【准入条件】的候选者，可即刻提交候选人申请（准入条件可在下方查看）；"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"3. 我们将于 UTC 2018 年 10 月 15 日 00:00 启动节点招募，11 月 8 日 23:59 截止报名，报名结束后，在11月15日 23:59 竞选结束前节点申请者可以增加抵押余额;"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"4. 报名过程中同时进行筛选；"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"5. 候选人通过审核后，网站将公开候选人信息和实时抵押余额，发布候选人排名动态结果，结束时按排名前后入选。详情请届时密切关注本体官网；"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"6. 实时抵押余额只可增加，不能减少。一旦发现减少，将即刻取消资格；"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"7. 若有节点成功入选后自行退出，我们将按照顺序补录后续节点。"
+            },
+            {
+                "title":"",
+                "secondtitle":"本体北斗种子节点准入条件",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"1.  参与种子节点招募的候选人至少抵押200,000 ONT。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"2.  候选人需要提供符合条件的软硬件网络环境 。详情参见下面节点软件和硬件环境要求。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"3.  候选人须完整填写申请问卷。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"4.  候选人须承诺完成ONT ID完整信任认证。"
+            },
+            {
+                "title":"",
+                "secondtitle":"本体北斗种子节点评估维度",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"候选人行业经验与声誉。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"候选人技术资源和研发能力。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"候选人团队组成。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"候选人社区支持程度。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"候选人额外的资源支持。"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"候选人长久支持运营的经济实力。"
+            },
+
+          {
+              "title":"Ontology Triones Seed节点软硬件和网络环境要求",
+              "secondtitle":"",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"概述",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Ontology是新一代公有基础链项目 & 分布式信任协作平台。可以很好的部署和运行在 X86架构服务器环境及主流虚拟化环境，并支持绝大多数的主流硬件网络。作为一款高性能区块链，Ontology支持主流的 Linux 操作系统环境。"
+          },
+          {
+              "title":"",
+              "secondtitle":"Linux 操作系统版本要求",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"",
+              "table":{
+                  "head":[
+                    {"headitem":"Linux 操作系统平台"},
+                    {"headitem":"版本"}
+                  ],
+                  "content":[
+                        [
+                            {"contentitem":"Red Hat Enterprise Linux"},
+                            {"contentitem":"7.3 及以上"}
+                        ],
+                        [ 
+                            {"contentitem":"CentOS"},
+                            {"contentitem":"7.1 及以上"}
+                        ],
+                        [ 
+                            {"contentitem":"Oracle Enterprise Linux"},
+                            {"contentitem":"7.3 及以上"}
+                        ],
+                        [ 
+                            {"contentitem":"Ubuntu LTS"},
+                            {"contentitem":"16.04 及以上"}
+                        ]
+                  ]
+              }
+          },
+          {
+              "title":"",
+              "secondtitle":"服务器要求",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Ontology 支持部署和运行在 Intel x86-64 架构的 64 位通用硬件服务器平台。对于节点服务器硬件配置有以下要求和建议："
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"",
+              "table":{
+                  "head":[
+                    {"headitem":"组件"},
+                    {"headitem":"CPU"},
+                    {"headitem":"内存"},
+                    {"headitem":"本地存储"},
+                    {"headitem":"网络"},
+                    {"headitem":"服务器数量"}
+                  ],
+                  "content":[
+                        [
+                            {"contentitem":"Ontology"},
+                            {"contentitem":"8核+"},
+                            {"contentitem":"32 GB+"},
+                            {"contentitem":"SSD 1TB"},
+                            {"contentitem":"万兆网卡"},
+                            {"contentitem":"不超过4台"}
+                        ]
+                  ]
+              }
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"注："
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"云服务推荐提供商：AWS with DdoS防护，Azure(国际) with DdoS防护，Google Cloud with load-balance"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"如果仅验证功能，建议使用 Docker Compose 部署方案单机进行测试。"
+          },
+          {
+              "title":"",
+              "secondtitle":"网络要求",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Ontology 作为开源高性能分布式账本技术平台，需要确保一定延迟条件来保障性能水平：1.）到种子节点列表的ping值不超过 300 ms*  2）节点外网带宽 >= 50 mb"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"其正常运行需要网络环境提供如下的网络端口配置要求，管理员可根据实际环境中 Ontology 组件部署的方案，在网络侧和主机侧启用相关端口："
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"",
+              "table":{
+                  "head":[
+                    {"headitem":"组件"},
+                    {"headitem":"默认端口"},
+                    {"headitem":"说明"}
+                  ],
+                  "content":[
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20336/20337"},
+                            {"contentitem":"本地/远程RPC 端口"}
+                        ],
+                        [
+                            {"contentitem":"Ontology CLI"},
+                            {"contentitem":"20000"},
+                            {"contentitem":"CLI签名服务端口"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20338"},
+                            {"contentitem":"节点互通信接口端口"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20339"},
+                            {"contentitem":"节点共识通道接口（可选）"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20334"},
+                            {"contentitem":"RESTFUL服务端口"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20335"},
+                            {"contentitem":"WEB SOCKET服务通信端口"}
+                        ]
+                  ]
+              }
+          },
+          {
+              "title":"",
+              "secondtitle":"客户端 Web 浏览器要求",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Ontology 提供了explorer.ont.io可视化监控工具。建议用户采用高版本的微软 IE, Google Chrome，Mozilla Firefox 访问浏览器入口。"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"本体基金会拥有最终解释权*"
+          }
+        ],
+    "send":"马上申请",
+    "node":"节点页面"
+    }
+  }

@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	    <title><{if isset($page.seotitle) and !empty($page.seotitle)}><{$page.seotitle}><{/if}></title>
+	    <meta name='keyword' content='<{if isset($page.keywords) and !empty($page.keywords)}><{$page.keywords}><{/if}>'>
+	    <meta name='description' content='<{if isset($page.description) and !empty($page.description)}><{$page.description}><{/if}>'>
+	    <{include file="library/inMeta.html" }>
+		<link rel="stylesheet" href="<{TEMPLE}>css/NanumSquare-master/nanumsquare.css">
+		<script type="text/javascript" src="<{TEMPLE}>js/bootstrap-dropdown-on-hover.min.js"></script>
+		<script type="text/javascript" src="<{TEMPLE}>js/skrollr.js"></script>
+		<script type="text/javascript" src="<{TEMPLE}>js/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="<{TEMPLE}>js/jsencrypt.js"></script>
+		<script type="text/javascript" src="<{TEMPLE}>js/base64.js"></script>
+		<script type="text/javascript" src="<{TEMPLE}>js/3.14e505bc887a2e7c454b.js"></script>
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-113878921-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-113878921-1');
+		</script>
+	<style>
+			html {
+				height: 100%;
+			}
+			
+			body {
+				font-family: -apple-system, system-ui, BlinkMacSystemFont, Neue Haas Grotesk Text Pro, Arial Nova, Segoe UI, Helvetica Neue, PingFang SC, Microsoft YaHei, SourceHanSans-Regular, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial, sans-serif;
+				/*         background-color: #212124; */
+				background-color: white;
+				overflow-x: hidden;
+				height: 100%;
+			}
+			
+			a {
+				cursor: pointer;
+			}
+		</style>
+		<style type="text/css">
+			@media only screen and (max-width:400px) {
+			.bounty-head{
+			    padding-right: 10px !important;
+			    padding-left: 10px !important;
+			}
+			.bounty-desc{
+			    padding-right: 10px !important;
+			    padding-left: 10px !important;display: inline-block;
+			}}
+			@media only screen and (max-width:400px) {
+				.head-float {
+					float: left;
+					width: 100%;
+				}
+			}
+			
+			.cooperation-wrapper {
+				max-width: 930px;
+				margin: auto;
+				display: block
+			}
+			
+			.cooperation-input:focus,
+			.cooperation-textarea:focus {
+				border: 2px solid #32a4be
+			}
+			
+			.cooperation-button {
+				height: 50px;
+				width: 260px;
+				font-family: var(--Light-font-ZH);
+				color: #32a4be;
+				background-color: #fff;
+				font-size: 22px;
+				border: 1px solid #32a4be;
+				border-radius: 25px
+			}
+			
+			.cooperation-button:focus {
+				outline: 0 auto -webkit-focus-ring-color
+			}
+			
+			.cooperation-warnMsg {
+				color: #324349;
+				font-weight: 700
+			}
+			
+			.cooperation-thank {
+				text-align: center
+			}
+			
+			.cooperation-textarea:focus {
+				outline: 0 auto -webkit-focus-ring-color
+			}
+			
+			@media only screen and (min-width:768px) {
+				.cooperation-input {
+					padding: 0 8px;
+					height: 50px;
+					max-width: 480px
+				}
+				.cooperation-input,
+				.cooperation-textarea {
+					width: 100%;
+					background-color: #edf8ff;
+					border: 1px solid #8e9496
+				}
+				.cooperation-textarea {
+					padding: 8px;
+					height: 240px;
+					max-width: 620px
+				}
+				.padding0-left {
+					padding-left: 0!important;
+					padding-right: 10px!important
+				}
+				.padding0-right {
+					padding-left: 10px!important;
+					padding-right: 0!important
+				}
+			}
+			
+			@media only screen and (max-width:768px) {
+				.cooperation-input {
+					padding: 0 8px;
+					height: 50px
+				}
+				.cooperation-input,
+				.cooperation-textarea {
+					width: 100%;
+					background-color: #edf8ff;
+					border: 1px solid #8e9496
+				}
+				.cooperation-textarea {
+					padding: 8px;
+					height: 240px
+				}
+				.padding0-left,
+				.padding0-right {
+					padding: 0!important
+				}
+				.margin3-top-m {
+					margin-top: 24px!important
+				}
+			}
+			
+			input:focus {
+				border: 2px solid #32a4be
+			}
+			
+			:focus {
+				outline: 0 auto -webkit-focus-ring-color
+			}
+			
+			#bounty-banner {
+				background-position-x: 90%;
+				background-position-y: 100%;
+				background-repeat: no-repeat
+			}
+			
+			@media screen and (max-width:768px) {
+				.container-padding-first-dev {
+					padding-top: 45px
+				}
+			}
+			
+			
+			.bounty-banner-wrapper {
+				background-color: #06262b
+			}
+			
+			.dev-content-container {
+				margin-left: auto;
+				margin-right: auto
+			}
+			
+			@media screen and (max-width:1200px) {
+				.dev-content-container {
+					width: 100%
+				}
+			}
+			
+			@media screen and (min-width:1200px) {
+				.dev-content-container {
+					width: 1200px
+				}
+			}
+			
+			.bou-head {
+				color: #fff;
+				font-family: SourceSansPro-light;
+				font-size: 40px;
+				padding: 32px 0
+			}
+			
+			.dev-doc-title {
+				color: #fff;
+				font-family: SourceSansPro-Semibold;
+				font-size: 24px;
+				font-weight: 500
+			}
+			
+			.dev-doc-text {
+				color: #fff;
+				font-family: SourceSansPro-Regular;
+				font-size: 22px;
+				line-height: 30px
+			}
+			
+			.dev-doc-text,
+			.dev-doc-text-wrapper {
+				padding-top: 12px
+			}
+			
+			.dev-letter-title {
+				color: #fff;
+				font-family: SourceSansPro-Regular;
+				font-size: 16px
+			}
+			
+			.dev-letter-title-wrapper {
+				padding-top: 32px
+			}
+			
+			.doc-link-wrapper {
+				padding-top: 8px;
+				padding-bottom: 32px
+			}
+			
+			.wp-link-wrapper {
+				padding-top: 12px
+			}
+			
+			.dev-link {
+				color: #fff;
+				text-decoration: underline
+			}
+			
+			.dev-link,
+			.dev-link:hover {
+				font-family: SourceSansPro-Regular;
+				font-size: 16px
+			}
+			
+			.dev-link:hover {
+				color: #32a4be
+			}
+			
+			.dev-link:visited {
+				color: #c2e7f3;
+				font-family: SourceSansPro-Regular;
+				font-size: 16px
+			}
+			
+			.dev-btn-size {
+				height: 40px;
+				width: 200px;
+				cursor: pointer
+			}
+			
+			.dev-btn-size:active {
+				background-color: #c2e7f3
+			}
+			
+			.dev-btn-w {
+				font-size: 18px;
+				font-family: SourceSansPro-Semibold;
+				color: #32a4be;
+				background-color: #fff;
+				text-align: center;
+				line-height: 38px
+			}
+			
+			.dev-btn-b,
+			.dev-btn-w {
+				font-weight: 500
+			}
+			
+			.dev-btn-g {
+				color: #fff;
+				background-color: #2cbe4e;
+				line-height: 38px
+			}
+			
+			.dev-btn-g,
+			.dev-btn-o {
+				font-size: 18px;
+				font-family: SourceSansPro-Semibold;
+				text-align: center;
+				font-weight: 500
+			}
+			
+			.dev-btn-o {
+				border: 1px solid #cb7e00
+			}
+			
+			.dev-btn-o,
+			.dev-btn-s {
+				color: #cb7e00;
+				line-height: 36px
+			}
+			
+			.dev-btn-s {
+				font-size: 18px;
+				font-family: SourceSansPro-Semibold;
+				border: 1px solid #32a4be;
+				text-align: center;
+				font-weight: 500
+			}
+			
+			.doc-wrapper {
+				padding: 0 32px 72px
+			}
+			
+			.Bounty-active-wrapper {
+				background-color: #001b1e;
+				padding-bottom: 96px
+			}
+			
+			.bountydesc-text-banner {
+				padding-top: 12px
+			}
+			
+			.bountydesc-text-banner,
+			.bountydesc-text-banner1 {
+				font-family: SourceSansPro-Regular;
+				font-size: 18px;
+				color: #fff;
+				text-align: center
+			}
+			
+			.bountydesc-text-banner1 {
+				padding-bottom: 64px
+			}
+			
+			.bountydesc-text-banner2 {
+				font-family: SourceSansPro-Regular;
+				font-size: 18px;
+				color: #fff;
+				text-align: center;
+				padding-top: 12px;
+				padding-bottom: 12px
+			}
+			
+			.bounty-claim-item {
+				border: 2px solid #32a4be;
+				min-height: 350px
+			}
+			
+			.bounty-claim-img {
+				padding-top: 32px;
+				padding-bottom: 16px;
+				width: 121px
+			}
+			
+			.bounty-claim-text {
+				font-family: SourceSansPro-Bold;
+				font-size: 18px;
+				color: #fff;
+				text-align: center;
+				max-width: 170px;
+				margin: auto
+			}
+			
+			.bounty-claim-text-wrapper {
+				text-align: center;
+				min-height: 65px
+			}
+			
+			.bounty-claim-bouns-wrapper {
+				text-align: center;
+				padding-top: 32px;
+				padding-bottom: 24px
+			}
+			
+			.bounty-claim-bouns {
+				font-family: SourceSansPro-Semibold;
+				font-size: 24px;
+				color: #cb7e00;
+				text-align: center;
+				line-height: 18px;
+				font-weight: 500
+			}
+			
+			.bounty-claim-btn-wrapper {
+				background-color: #32a4be;
+				height: 40px;
+				cursor: pointer
+			}
+			
+			.bounty-claim-btn {
+				color: #fff;
+				font-weight: 500
+			}
+			
+			.bounty-claim-btn,
+			.bounty-claim-btn-disable {
+				font-family: SourceSansPro-Semibold;
+				font-size: 18px;
+				text-align: center;
+				line-height: 40px
+			}
+			
+			.bounty-claim-btn-disable {
+				color: #9e9e9e;
+				font-weight: 600
+			}
+			
+			.bounty-more-warpper {
+				padding-top: 64px;
+				padding-bottom: 96px;
+				cursor: pointer
+			}
+			
+			.bounty-more-warpper:hover {
+				color: #32a4be
+			}
+			
+			.bounty-more-img {
+				padding-bottom: 16px
+			}
+			
+			.bounty-more-text {
+				font-family: SourceSansPro-Bold;
+				font-size: 18px;
+				color: #fff;
+				text-align: center;
+				line-height: 18px
+			}
+			
+			.bounty-head {
+				font-family: SourceSansPro-Semibold;
+				font-size: 24px;
+				color: #32a4be;
+				font-weight: 500
+			}
+			
+			.bounty-head-wrapper {
+				padding-top: 32px;
+				padding-bottom: 24px
+			}
+			
+			.bounty-claim-item-warpper {
+				padding-bottom: 20px
+			}
+			
+			.bounty-head-progerss {
+				color: #2cbe4e
+			}
+			
+			.Bounty-progress-wrapper {
+				background-color: #06262b
+			}
+			
+			.bounty-progress-item-warpper {
+				padding-bottom: 20px
+			}
+			
+			.bounty-progress-by {
+				font-family: SourceSansPro-Bold;
+				font-size: 14px;
+				color: #fff;
+				text-align: right;
+				line-height: 14px;
+				font-weight: 700
+			}
+			
+			.bou-cutline {
+				padding-bottom: 24px;
+				margin-top: 24px;
+				border-top: 2px solid #fff;
+				background-attachment: #001b1e
+			}
+			
+			.bounty-btn-text {
+				font-family: SourceSansPro-Bold;
+				font-size: 14px;
+				color: #fff;
+				text-align: center;
+				line-height: 14px;
+				font-weight: 700
+			}
+			
+			.bounty-btn-text:hover {
+				color: #32a4be
+			}
+			
+			.bounty-btn-text-disable {
+				font-family: SourceSansPro-Bold;
+				font-size: 14px;
+				color: #888;
+				text-align: center;
+				line-height: 14px;
+				font-weight: 700
+			}
+			
+			.bounty-progress-btn-wrapper {
+				padding-bottom: 24px
+			}
+			
+			.bou-cutline-progress {
+				padding-bottom: 24px;
+				margin-top: 48px;
+				background-attachment: #001b1e
+			}
+			
+			.bounty-done-bouns {
+				color: #32a4be;
+				line-height: 18px;
+				text-align: left;
+				padding-left: 0!important
+			}
+			
+			.bounty-done-bouns,
+			.bounty-head-progerss {
+				font-family: SourceSansPro-Semibold,sans-serif;
+				font-size: 24px;
+				font-weight: 500
+			}
+			
+			.bounty-head-progerss {
+				color: #fff
+			}
+			
+			.bou-cutline-done {
+				padding-bottom: 96px;
+				margin-top: 48px;
+				border-top: 2px solid #fff;
+				background-attachment: #001b1e
+			}
+			
+			@media screen and (max-width:768px) {
+				.bounty-claim-item-hide {
+					z-index: -1;
+					position: absolute;
+					transform: translateY(-100%);
+					min-height: 350px;
+					border: 2px solid #32a4be;
+					width: calc(100% - 64px);
+					background-color: rgba(0, 0, 0, .94);
+					max-height: 350px
+				}
+				.bounty-claim-item {
+					border: 2px solid #32a4be;
+					min-height: 350px;
+					background-color: #001b1e
+				}
+				.bounty-claim-item:hover {
+					opacity: .1
+				}
+				.bounty-claim-item-wrapper,
+				.bounty-progress-item-warpper {
+					padding: 0 32px 20px!important
+				}
+				.bounty-cut-wrapper {
+					padding: 0 32px!important
+				}
+				.bounty-progress-item {
+					border: 1px solid #fff;
+					min-height: 243px;
+					padding: 24px
+				}
+				.bounty-progress-bouns-wrapper {
+					padding: 20px 0 0
+				}
+				.bounty-progress-by-wrapper {
+					text-align: center;
+					padding-top: 10px
+				}
+				.bounty-progress-text-wrapper {
+					text-align: center;
+					min-height: 65px
+				}
+			}
+			
+			@media screen and (min-width:768px) {
+				.bounty-progress-text-wrapper {
+					text-align: left;
+					min-height: 65px
+				}
+				.bounty-claim-item-hide {
+					z-index: -1;
+					position: absolute;
+					transform: translateY(-100%);
+					min-height: 350px;
+					border: 2px solid #32a4be;
+					width: calc(100% - 20px);
+					background-color: rgba(0, 0, 0, .94);
+					max-height: 350px
+				}
+				.bounty-claim-item {
+					border: 2px solid #32a4be;
+					min-height: 350px;
+					background-color: #001b1e
+				}
+				.bounty-claim-item:hover {
+					opacity: .1
+				}
+				.bounty-claim-item-wrapper {
+					padding-bottom: 20px!important
+				}
+				.bounty-progress-item-warpper {
+					padding: 20px!important
+				}
+				.bounty-progress-item-warpper-wrapper {
+					padding-left: 0!important;
+					padding-right: 0!important
+				}
+				.bounty-cut-wrapper {
+					padding: 0 20px!important
+				}
+				.bounty-progress-item {
+					border: 1px solid #fff;
+					min-height: 203px;
+					padding: 24px
+				}
+				.bounty-progress-by-wrapper {
+					text-align: right
+				}
+			}
+			
+			@media screen and (min-width:940px) {
+				.bounty-progress-bouns {
+					font-family: SourceSansPro-Semibold;
+					font-size: 24px;
+					color: #2cbe4e;
+					line-height: 18px;
+					font-weight: 500;
+					text-align: left;
+					padding-left: 0!important
+				}
+				.bounty-progress-text {
+					font-family: SourceSansPro-Bold;
+					font-size: 18px;
+					color: #fff;
+					font-weight: 700
+				}
+			}
+			
+			@media screen and (max-width:940px) and (min-width:768px) {
+				.bounty-progress-bouns {
+					font-family: SourceSansPro-Semibold;
+					font-size: 18px;
+					color: #2cbe4e;
+					line-height: 18px;
+					font-weight: 500;
+					text-align: left;
+					padding-left: 0!important
+				}
+				.bounty-progress-text {
+					font-family: SourceSansPro-Bold;
+					font-size: 16px;
+					color: #fff;
+					font-weight: 700
+				}
+			}
+			
+			@media screen and (max-width:768px) {
+				.bounty-progress-bouns {
+					font-family: SourceSansPro-Semibold;
+					font-size: 24px;
+					color: #2cbe4e;
+					line-height: 18px;
+					font-weight: 500;
+					text-align: center;
+					padding-left: 0!important
+				}
+				.bounty-progress-text {
+					font-family: SourceSansPro-Bold;
+					font-size: 18px;
+					color: #fff;
+					font-weight: 700
+				}
+			}
+			
+			.bounty-more-text1 {
+				color: #c2e7f3;
+				text-align: center;
+				line-height: 22px;
+				margin-top: 16px
+			}
+			
+			.bounty-more-text1,
+			.hiden-desc {
+				font-family: SourceSansPro-Regular;
+				font-size: 16px
+			}
+			
+			.hiden-desc {
+				padding: 32px 16px;
+				color: #fff;
+				line-height: 25px;
+				text-align: left
+			}
+			
+			@media screen and (max-width:350px) {
+				.bounty-progress-item {
+					border: 1px solid #fff;
+					min-height: 291px!important;
+					padding: 24px
+				}
+			}
+			
+			.dev-btn-b {
+				font-size: 18px;
+				font-family: SourceSansPro-Semibold;
+				color: #fff;
+				background-color: #32a4be;
+				text-align: center;
+				line-height: 38px;
+				font-weight: 600
+			}
+			
+			.bounty_contact_url {
+				font-weight: 600;
+				color: #32a4be
+			}
+			
+			.bounty_contact_url:hover {
+				color: #32a4be;
+				opacity: .8
+			}
+			
+			@media screen and (max-width:1000px) and (min-width:768px) {
+				.bounty-new-text {
+					font-size: 24px;
+					color: #fff;
+					font-family: SourceSansPro-Regular;
+					line-height: 2
+				}
+				.bounty-slowmist-text {
+					font-size: 18px;
+					color: #fff;
+					font-family: SourceSansPro-Regular;
+					line-height: 2;
+					max-width: 340px;
+    				margin: 0 auto;
+				}
+			}
+			
+			@media screen and (min-width:1000px) {
+				.bounty-new-text {
+					font-size: 32px;
+					color: #fff;
+					font-family: SourceSansPro-Regular;
+					line-height: 2
+				}
+				.bounty-slowmist-text {
+					font-size: 18px;
+					color: #fff;
+					font-family: SourceSansPro-Regular;
+					line-height: 2;
+					max-width: 340px;
+    				margin: 0 auto;
+				}
+			}
+			
+			@media screen and (max-width:768px) {
+				.bounty-new-text {
+					font-size: 24px;
+					color: #fff;
+					font-family: SourceSansPro-Regular;
+					line-height: 1.6
+				}
+				.bounty-slowmist-text {
+					font-size: 18px;
+					color: #fff;
+					font-family: SourceSansPro-Regular;
+					line-height: 1.6;
+					max-width: 340px;
+    				margin: 0 auto;
+				}
+				.bounty-new-text-wrapper {
+					margin: 20px 0
+				}
+			}
+			
+			@media screen and (max-width:768px) {
+				.bounty-new-warpper-warpper {
+					padding: 56px 0 0;
+					padding-left: 0!important;
+					padding-right: 0!important
+				}
+				.bounty-new-content {
+					padding-top: 32px;
+					padding-left: 32px!important;
+					padding-right: 32px!important;
+					padding-bottom: 32px
+				}
+				.bounty-tool-warpper-new {
+					padding: 0 0 20px!important
+				}
+			}
+			
+			@media screen and (min-width:768px) {
+				.bounty-new-warpper-warpper {
+					padding: 56px 0 0
+				}
+				.bounty-new-content {
+					padding-top: 19px;
+					padding-left: 32px!important;
+					padding-right: 32px!important;
+					padding-bottom: 19px
+				}
+				.bounty-tool-warpper-new {
+					padding: 0 10px 0 0
+				}
+			}
+			
+			.bou-btn-d {
+				font-size: 18px;
+				font-family: SourceSansPro-Semibold;
+				color: #fff;
+				border: 1px solid #fff;
+				text-align: center;
+				line-height: 36px;
+				font-weight: 600
+			}
+			
+			.bounty-new-img {
+				height: 62px
+			}
+			
+			.dev-btn-size-sf {
+				height: 40px;
+				width: 128px;
+				cursor: pointer
+			}
+			
+			.dev-btn-size-sf:hover {
+				background-color: #ffffff1a
+			}
+			
+		</style>
+		<style type="text/css">
+			::selection {
+				color: #e8e8e8;
+				background: gray
+			}
+			
+			@font-face {
+				font-family: iconfont;
+				src: url("//at.alicdn.com/t/font_456464_5htd3kmvxhynl8fr.eot?t=1517830394885");
+				src: url("//at.alicdn.com/t/font_456464_5htd3kmvxhynl8fr.eot?t=1517830394885#iefix") format("embedded-opentype"), url("data:application/x-font-woff;charset=utf-8;base64,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") format("woff"), url("//at.alicdn.com/t/font_456464_5htd3kmvxhynl8fr.ttf?t=1517830394885") format("truetype"), url("//at.alicdn.com/t/font_456464_5htd3kmvxhynl8fr.svg?t=1517830394885#iconfont") format("svg")
+			}
+			
+			.iconfont {
+				font-family: iconfont!important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale
+			}
+			
+			.icon-facebook:before {
+				content: "\E601"
+			}
+			
+			.icon-cntencentwechat:before {
+				content: "\E638"
+			}
+			
+			.icon-more:before {
+				content: "\E607"
+			}
+			
+			.icon-linkedin:before {
+				content: "\E676"
+			}
+			
+			.icon-email:before {
+				content: "\E6A6"
+			}
+			
+			.icon-aaa:before {
+				content: "\E600"
+			}
+			
+			.icon-yinsi:before {
+				content: "\E614"
+			}
+			
+			.icon-twitter:before {
+				content: "\EC9C"
+			}
+			
+			.icon-chengben:before {
+				content: "\E6BF"
+			}
+			
+			.icon-language:before {
+				content: "\E6E3"
+			}
+			
+			.icon-icon:before {
+				content: "\E64B"
+			}
+			
+			.icon-reddit:before {
+				content: "\E7D9"
+			}
+			
+			.icon-duorenyonghu-copy:before {
+				content: "\E628"
+			}
+			
+			.icon-b:before {
+				content: "\E602"
+			}
+			
+			.icon-weixin:before {
+				content: "\E630"
+			}
+			
+			.icon-shequndajian:before {
+				content: "\E73F"
+			}
+			
+			.icon-dingdangdaigaishenfenzhenghao:before {
+				content: "\E6B3"
+			}
+			
+			.icon-telegram:before {
+				content: "\E715"
+			}
+			
+			.icon-shenfenzhengming:before {
+				content: "\E707"
+			}
+			
+			.icon-wupin:before {
+				content: "\E79B"
+			}
+			
+			.icon-ren:before {
+				content: "\E654"
+			}
+			
+			.icon-QQqun:before {
+				content: "\E69D"
+			}
+			
+			.icon-icon-test:before {
+				content: "\E605"
+			}
+			
+			.icon-xiezuo:before {
+				content: "\E639"
+			}
+			
+			.icon-slack1:before {
+				content: "\E7FD"
+			}
+			
+			.icon-Flow_02:before {
+				content: "\E70B"
+			}
+			
+			.icon-jiaoyi:before {
+				content: "\E63B"
+			}
+			
+			.icon-icon-test1:before {
+				content: "\E999"
+			}
+			
+			.icon-rights:before {
+				content: "\E712"
+			}
+			
+			.icon-slack:before {
+				content: "\E658"
+			}
+			
+			.icon-jinrong:before {
+				content: "\E645"
+			}
+			
+			.icon-exchange-arrow-h:before {
+				content: "\E640"
+			}
+			
+			.icon-shiming:before {
+				content: "\E62E"
+			}
+			
+			.icon-guanli:before {
+				content: "\E6D5"
+			}
+			
+			.icon-pingjia:before {
+				content: "\E632"
+			}
+			
+			.icon-medium-monogram:before {
+				content: "\E9B5"
+			}
+			
+			.icon-discord:before {
+				content: "\E66E"
+			}
+			
+			.body-content {
+				padding-left: 15px;
+				padding-right: 15px
+			}
+			
+			.carousel-caption p {
+				font-size: 20px;
+				line-height: 1.4
+			}
+			
+			.carousel-inner .item img[src$=".svg"] {
+				width: 100%
+			}
+			
+			#qrCode {
+				margin: 15px
+			}
+			
+			@media screen and (max-width:767px) {
+				.carousel-caption {
+					display: none
+				}
+			}
+			
+			.blog-content img {
+				max-width: 100%;
+				height: auto
+			}
+		</style>
+		<style type="text/css">
+			li,
+			ul {
+				list-style: none
+			}
+			
+			.navbar-brand {
+				padding-top: 20px;
+				padding-bottom: 20px;
+				height: 60px
+			}
+			
+			.nav.navbar-nav.pop-menu>li a,
+			.nav.navbar-nav.pop-menu>li span {
+				display: inline-block;
+				color: #fff;
+				font-family: OpenSansLight, Microsoft YaHei;
+				vertical-align: middle;
+				font-weight: 500
+			}
+			
+			.navbar-inverse,
+			.navbar-inverse .navbar-collapse {
+				border: none
+			}
+			
+			.nav>li {
+				display: block
+			}
+			
+			.dropdown-menu {
+				background: transparent;
+				border: none;
+				box-shadow: none
+			}
+			
+			.dropdown-menu li a {
+				width: 100%
+			}
+			
+			.main-footer {
+				background: #fff;
+				padding: 35px 0 0;
+				color: #6c6c6c;
+				width: 100%;
+				text-align: center
+			}
+			
+			.footer-link {
+				padding: 0
+			}
+			
+			.footer-link li {
+				display: inline-block;
+				width: 22%;
+				line-height: 2.5
+			}
+			
+			.footer-link li span.iconfont {
+				vertical-align: middle;
+				font-size: 40px
+			}
+			
+			.footer-link li a {
+				display: inline-block;
+				width: 100px;
+				color: #6c6c6c
+			}
+			
+			.footer-logo {
+				height: 70px
+			}
+			
+			.footer-logo img {
+				height: inherit
+			}
+			
+			.nav.navbar-nav.pop-menu ul.dropdown-menu {
+				background-color: #fff
+			}
+			
+			#more_list,
+			.nav.navbar-nav.pop-menu ul.dropdown-menu li.menu-item a {
+				text-align: right
+			}
+			
+			#more_list {
+				position: absolute;
+				right: 0;
+				display: none;
+				padding: 0
+			}
+			
+			#more_list a {
+				padding: 10px 20px
+			}
+			
+			#more_list li {
+				background: #e4e4e4;
+				background: hsla(0, 0%, 89%, .95)
+			}
+			
+			.navbar-brand {
+				padding: 5px 15px
+			}
+			
+			.navbar-brand img {
+				height: 100%
+			}
+			
+			@media only screen and (max-width:780px) {
+				.navbar-brand {
+					padding: 5px 0
+				}
+				.nav.navbar-nav.pop-menu {
+					margin: 0 -15px
+				}
+				.main-footer {
+					padding: 20px 0
+				}
+				.footer-link li {
+					width: 48%;
+					line-height: 1.8
+				}
+				.footer-link li span.iconfont {
+					font-size: 30px
+				}
+				.footer-logo {
+					height: 50px
+				}
+			}
+		</style>
+		<style type="text/css">
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+				margin: 0
+			}
+			
+			body {
+				padding-top: 60px
+			}
+			
+			.h1,
+			.h2,
+			.h3,
+			h1,
+			h2,
+			h3 {
+				margin: 0;
+				font-weight: 100
+			}
+			
+			.col-lg-1,
+			.col-lg-2,
+			.col-lg-3,
+			.col-lg-4,
+			.col-lg-5,
+			.col-lg-6,
+			.col-lg-7,
+			.col-lg-8,
+			.col-lg-9,
+			.col-lg-10,
+			.col-lg-11,
+			.col-lg-12,
+			.col-md-1,
+			.col-md-2,
+			.col-md-3,
+			.col-md-4,
+			.col-md-5,
+			.col-md-6,
+			.col-md-7,
+			.col-md-8,
+			.col-md-9,
+			.col-md-10,
+			.col-md-11,
+			.col-md-12,
+			.col-sm-1,
+			.col-sm-2,
+			.col-sm-3,
+			.col-sm-4,
+			.col-sm-5,
+			.col-sm-6,
+			.col-sm-7,
+			.col-sm-8,
+			.col-sm-9,
+			.col-sm-10,
+			.col-sm-11,
+			.col-sm-12,
+			.col-xs-1,
+			.col-xs-2,
+			.col-xs-3,
+			.col-xs-4,
+			.col-xs-5,
+			.col-xs-6,
+			.col-xs-7,
+			.col-xs-8,
+			.col-xs-9,
+			.col-xs-10,
+			.col-xs-11,
+			.col-xs-12 {
+				padding-right: 10px;
+				padding-left: 10px
+			}
+			
+			.h1,
+			h1 {
+				font-size: 46px
+			}
+			
+			.h2,
+			h2 {
+				font-size: 32px
+			}
+			
+			.h3,
+			h3 {
+				font-size: 16px;
+				font-weight: 700
+			}
+			
+			.t1 {
+				font-size: 23px
+			}
+			
+			.t2 {
+				font-size: 18px
+			}
+			
+			.t3 {
+				font-size: 14px
+			}
+			
+			.link2 {
+				font-size: 17px
+			}
+			
+			.link2:hover {
+				text-decoration: none
+			}
+			
+			.m1 {
+				margin: 60px auto
+			}
+			
+			.m2 {
+				margin: 42px auto
+			}
+			
+			.m3 {
+				margin: 20px auto
+			}
+			
+			.padding_normal {
+				padding: initial 100px
+			}
+			
+			.p1 {
+				padding: 60px
+			}
+			
+			.p2 {
+				padding: 40px
+			}
+			
+			.p3 {
+				padding: 20px
+			}
+			
+			.bold-font {
+				font-weight: 600
+			}
+			
+			.body-content {
+				padding-bottom: 50px
+			}
+			
+			.desktop-show {
+				display: inline-block
+			}
+			
+			.mobile-show {
+				display: none
+			}
+			
+			.light-text {
+				color: #aaa
+			}
+			
+			.midpoint {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto
+			}
+			
+			.posi-rela {
+				position: relative
+			}
+			
+			.posi-fixed {
+				position: fixed
+			}
+			
+			.text-white {
+				color: #fff
+			}
+			
+			.dis-table {
+				display: table
+			}
+			
+			.dis-table-row {
+				display: table-row
+			}
+			
+			.dis-table-cell {
+				display: table-cell;
+				vertical-align: middle
+			}
+			
+			@media only screen and (max-width:1200px) {
+				.link2 {
+					font-size: 17px
+				}
+				.m1 {
+					margin: 26px auto
+				}
+				.m2 {
+					margin: 20px auto
+				}
+				.m3 {
+					margin: 12px auto
+				}
+				.padding_normal {
+					padding: initial 22px
+				}
+				.p1 {
+					padding: 40px
+				}
+				.p2 {
+					padding: 20px
+				}
+				.p3 {
+					padding: 12px
+				}
+				.desktop-show {
+					display: none
+				}
+				.mobile-show {
+					display: inline-block
+				}
+			}
+			
+			@media only screen and (max-width:780px) {
+				body {
+					padding-top: 90px
+				}
+				.body-content {
+					padding-bottom: 20px
+				}
+				.h1,
+				h1 {
+					font-size: 22px
+				}
+				.h2,
+				h2 {
+					font-size: 18px
+				}
+				.h3,
+				h3 {
+					font-size: 13px
+				}
+				.t1 {
+					font-size: 18px
+				}
+				.t2 {
+					font-size: 16px
+				}
+				.t3 {
+					font-size: 12px
+				}
+				.p1 {
+					padding: 20px 0
+				}
+			}
+		</style>
+		<style type="text/css">
+			body {
+				overflow-x: hidden;
+				background-position: 0 0;
+				background-size: cover;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				min-height: 100%
+			}
+			
+			.zindex {
+				position: relative;
+				z-index: 10
+			}
+			
+			.load-page {
+				width: 100%;
+				height: 100%;
+				background-color: #e4e4e4;
+				position: fixed;
+				z-index: 1000
+			}
+			
+			.span {
+				float: left;
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				vertical-align: middle;
+				border-radius: 1px
+			}
+			
+			.square {
+				width: 20px;
+				height: 40px;
+				margin: 36px auto;
+				position: relative;
+				transform: skewY(26deg);
+				border: 1px solid #5abc03;
+				-webkit-animation: fill_color 4s linear infinite;
+				animation: fill_color 4s linear infinite
+			}
+			
+			.square:after {
+				width: 4px;
+				height: 4px;
+				position: absolute;
+				content: "";
+				background-color: #5abc03;
+				transform: skewY(-26deg);
+				top: -8px;
+				left: 0;
+				-webkit-animation: square_check 1s ease-in-out infinite;
+				animation: square_check 1s ease-in-out infinite
+			}
+			
+			@-webkit-keyframes square_check {
+				25% {
+					left: 22px;
+					top: -8px
+				}
+				50% {
+					left: 22px;
+					top: 42px
+				}
+				75% {
+					left: -9px;
+					top: 42px
+				}
+				to {
+					left: -9px;
+					top: -7px
+				}
+			}
+			
+			@keyframes square_check {
+				25% {
+					left: 22px;
+					top: -8px
+				}
+				50% {
+					left: 22px;
+					top: 42px
+				}
+				75% {
+					left: -9px;
+					top: 42px
+				}
+				to {
+					left: -9px;
+					top: -7px
+				}
+			}
+			
+			@-webkit-keyframes fill_color {
+				0% {
+					box-shadow: inset 0 0 0 0 rgba(90, 188, 0, .2)
+				}
+				90% {
+					box-shadow: inset 0 -40px 0 0 #5abc00
+				}
+				to {
+					box-shadow: inset 0 -40px 0 0 #5abc00
+				}
+			}
+			
+			@keyframes fill_color {
+				0% {
+					box-shadow: inset 0 0 0 0 rgba(90, 188, 0, .2)
+				}
+				90% {
+					box-shadow: inset 0 -40px 0 0 #5abc00
+				}
+				to {
+					box-shadow: inset 0 -40px 0 0 #5abc00
+				}
+			}
+			
+			.back-mask {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-position: 50%;
+				background-repeat: no-repeat;
+				background-size: cover
+			}
+			
+			.home-page-content {
+				position: relative;
+				text-align: left
+			}
+			
+			.home-text-fir {
+				width: calc(100% - 64px);
+				height: 60%
+			}
+			
+			.home-text-fir h1,
+			.home-text-fir h2 {
+				text-align: center;
+				line-height: 1.5
+			}
+			
+			.scroll-page {
+				position: relative;
+				position: static;
+				opacity: .5
+			}
+			
+			.scroll-page div {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				background-size: 100%
+			}
+			
+			.scroll-page.city-back {
+				position: fixed;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				opacity: 1
+			}
+			
+			.scroll-page.city-back .home-scroll {
+				top: auto;
+				bottom: 0;
+				width: 180%;
+				height: 50%
+			}
+			
+			.home-scroll {
+				text-align: center
+			}
+			
+			.scroll-page.city-back .home-scroll {
+				background-size: contain;
+				background-position: bottom
+			}
+			
+			.city-back .home-scroll.scroll-top {
+				background-size: contain;
+				height: inherit
+			}
+			
+			.home-neo-intro {
+				height: 60%;
+				line-height: 2;
+				padding: 40px 0;
+				text-align: center
+			}
+			
+			.home-neo-intro .col-sm-6.p2 {
+				padding-top: 0;
+				letter-spacing: 1px
+			}
+			
+			.home-neo-intro .col-sm-8 {
+				background-image: linear-gradient(-177deg, hsla(0, 0%, 96%, .8), #bcbcbc);
+				float: none;
+				margin: auto;
+				color: #6c6c6c
+			}
+			
+			.tech-item {
+				padding-top: 20px;
+				padding-bottom: 20px
+			}
+			
+			@media only screen and (max-width:991px) {
+				.tech-item {
+					padding-top: 8px;
+					padding-bottom: 8px
+				}
+			}
+			
+			.home-down {
+				position: relative;
+				z-index: 15;
+				min-height: 600px;
+				background: #e4e4e4;
+				background-repeat: no-repeat;
+				background-position: 100% 0;
+				background-size: contain;
+				box-shadow: 0 0 30px #666;
+				box-shadow: 0 2px 4px 2px rgba(0, 0, 0, .5)
+			}
+			
+			.home-download {
+				background-image: linear-gradient(0deg, #fff, #e4e4e4)
+			}
+			
+			.home-download .container {
+				background: #f2f2f2
+			}
+			
+			.home-download .p1 {
+				padding-bottom: 0
+			}
+			
+			.home-down-tab .iconfont {
+				display: inline-block;
+				width: 20%;
+				font-size: 60px;
+				color: #aaa;
+				cursor: pointer;
+				text-decoration: none
+			}
+			
+			.home-down-tab .iconfont:hover {
+				color: #58bf00;
+				text-decoration: none
+			}
+			
+			.home-deve {
+				position: relative;
+				background: #e4e4e4;
+				background: linear-gradient(98deg, #a5a5a5 1%, #6d6d6d 100%, #6c6c6c 0);
+				overflow: hidden
+			}
+			
+			.home-scroll img {
+				width: 100%
+			}
+			
+			.home-detail {
+				padding: 70px 0;
+				line-height: 1.8
+			}
+			
+			.home-detail:after,
+			.home-detail:before {
+				content: " ";
+				display: table
+			}
+			
+			.home-detail:after {
+				clear: both
+			}
+			
+			.home-detail .detail-text {
+				display: inline-block;
+				width: 52%;
+				padding: 0 60px;
+				color: #fff;
+				font-weight: 100
+			}
+			
+			.home-detail img {
+				display: inline-block
+			}
+			
+			.left-pic {
+				float: left
+			}
+			
+			.right-pic {
+				float: right
+			}
+			
+			.home-developer {
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: -50px;
+				color: #fff;
+				font-weight: 100
+			}
+			
+			.developer-text {
+				padding-left: 20%
+			}
+			
+			@media only screen and (max-width:1400px) {
+				.scroll-page.city-back .home-scroll {
+					width: 200%
+				}
+			}
+			
+			@media only screen and (max-width:1200px) {
+				.scroll-page.city-back .home-scroll {
+					width: 250%
+				}
+			}
+			
+			@media only screen and (max-width:768px) {
+				body {
+					padding-top: 0
+				}
+				.scroll-page.city-back {
+					width: 150%
+				}
+				.home-neo-intro {
+					position: static\0;
+					height: 75%;
+					height: fit-content;
+					padding: 20px 10px;
+					line-height: 1.5
+				}
+				.home-neo-intro .col-sm-8 {
+					margin: auto 20px
+				}
+				.home-detail {
+					padding: 30px
+				}
+				.home-detail .detail-text {
+					width: 100%;
+					max-width: 350px;
+					padding: 10px 0
+				}
+				.home-detail .left-pic,
+				.home-detail .right-pic {
+					width: 100%;
+					max-width: 350px;
+					float: none
+				}
+				.home-down {
+					background-position: 160px bottom, 0 0
+				}
+				.home-down-tab .iconfont {
+					font-size: 40px
+				}
+			}
+			
+			@media only screen and (max-width:350px) {
+				.home-text-fir {
+					width: 85%;
+					height: 60%
+				}
+				.scroll-page.city-back .home-scroll {
+					width: 280%
+				}
+				.home-neo-intro {
+					height: 100%
+				}
+				.home-neo-intro .col-sm-8 {
+					padding: 5px
+				}
+				.home-down-tab .iconfont {
+					width: 30%
+				}
+			}
+			.bounty-faq{
+				position: relative;
+				top: -45px;
+				font-size: 20px;
+				display: block;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="<{TEMPLE}>css/main.css">
+	</head>
+
+	<body style="padding:0">
+		<div id="browser" class="" style="z-index: 1; background-repeat: no-repeat; background-size: 100%;">
+		    <{include file="library/bheader.html" }>  
+			<div id="toptarget"></div>
+			<div id="bounty" class="home-page-content back-color container-padding-first-dev container-val-background " style="z-index: 10;">
+				<div class="bounty-banner-wrapper">
+					<div id="bounty-banner" class=" home-detail zindex container-pos">
+						<div class="dev-content-container">
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<h1 class="bou-head">Bounty Program</h1></div>
+								<div class="pc-display">
+									<div class="col-sm-12 text-center">
+										<p class="bountydesc-text-banner">Join us in various types of missions to gain rewards,</p>
+									</div>
+									<div class="col-sm-12 text-center">
+										<p class="bountydesc-text-banner1">or let us know if you have
+											<a href="<{base_url('index.php/index/feedback')}>" class="bounty_contact_url"><span>suggestions.</span></a>
+										</p>
+										<a href="https://medium.com/ontologynetwork/bounty-program-faq-b988e0ab1e59" class="bounty-faq bounty_contact_url">FAQ</a>
+									</div>
+								</div>
+								<div class="mobile-display">
+									<div class="col-sm-12 text-center">
+										<p class="bountydesc-text-banner1">Join us in various types of missions to gain rewards, or let us know if you have
+											<a href="<{base_url('index.php/index/feedback')}>"  class="bounty_contact_url"><span>suggestions.</span></a>
+										</p>
+										<a href="https://medium.com/ontologynetwork/bounty-program-faq-b988e0ab1e59" class="bounty-faq bounty_contact_url">FAQ</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="Bounty-active-wrapper">
+					<div class=" home-detail zindex container-pos">
+						<div class="dev-content-container">
+							<div class="row">
+								<div class="col-sm-12 bounty-new-warpper-warpper">
+									<div class="col-sm-12 bounty-tool-warpper-new">
+										<div class="col-sm-12  bounty-new-content">
+											<div class="col-sm-2 text-center ">
+												<h2><img src="<{TEMPLE}>img/icon_test_framwork_l@2x.png" class="bounty-new-img"></h2></div>
+											<div class="col-sm-8 bounty-new-text-wrapper text-center">
+												<p class="bounty-new-text">Got ideas for our bounty program?</p>
+											</div>
+											<div class="col-sm-2 padding0 text-center">
+												<a href="<{base_url('index.php/index/idea_form')}>"  class="text-center">
+													<div class="dev-btn-size-sf bou-btn-d" style="margin: 12px auto;">Let us know</div>
+												</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-12 bounty-tool-warpper-new" style="margin-top:40px;">
+										<div class="col-sm-12  bounty-slow-mist">
+											<div class="col-sm-2 text-center ">
+												<h2><img src="<{TEMPLE}>img/slowmis-logo.png" class="bounty-new-img"></h2></div>
+											<div class="col-sm-8 bounty-new-text-wrapper text-center">
+												<p class="bounty-new-text">SlowMist's Ontology Bug Bounty Program</p>
+											</div>
+											<div class="col-sm-2 padding0 text-center">
+												<a href="https://slowmist.io/en/ontology/?utm_source=medium&utm_medium=cpc&utm_campaign=ontology"  target="blank" class="text-center">
+													<div class="dev-btn-size-sf bou-btn-d" style="margin: 12px auto;">Read more</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 text-left bounty-head-wrapper"><span class=" col-sm-12 bounty-head">Active</span></br>
+									<span class=" col-sm-12 bounty-desc">when the bounty program says “Claim it”, it is open for applications, even if it is already in progress</span></div>
+								<div class="col-sm-12 text-center">
+						       <{if isset($btat)&&!empty($btat)}>
+                                  <{foreach from=$btat item='info'}>
+									<div class="col-sm-3 bounty-claim-item-wrapper">
+										<div class="bounty-claim-item"><img src="<{HTTPROOT}><{$info.litpic}>" class="bounty-claim-img">
+											<div class="col-sm-12 bounty-claim-text-wrapper">
+												<p class="bounty-claim-text"><{$info.title}></p>
+											</div>
+											<div class="col-sm-12 bounty-claim-bouns-wrapper">
+												<p class="bounty-claim-bouns"><{$info.shorttitle}></p>
+											</div>
+										</div>
+										<div class="bounty-claim-item-hide">
+											<div class="hiden-desc"><{$info.description}></div>
+										</div>
+										<div class="bounty-claim-btn-wrapper">
+											<div>
+												<{if isset($info['source']) && $info['source'] eq 'Active' }>
+													<a href="<{base_url('index.php/index/bounty_form')}>?id=<{$info.id}>">
+													<div class="bounty-claim-btn">Claim it</div></a>
+													<{else}>
+													<div class="bounty-claim-btn-disable">Closed</div>
+												<{/if}>
+											</div>
+										</div>
+									</div>
+							        <{/foreach}>
+                                  <{/if}>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="Bounty-progress-wrapper">
+					<div class=" home-detail zindex container-pos">
+						<div class="dev-content-container">
+							<div class="row">
+								<div class="col-sm-12 text-left bounty-head-wrapper"><span class=" col-sm-12 bounty-head-progerss">In Progress</span></div>
+								<div class="col-sm-12 col-xs-12 text-center bounty-progress-item-warpper-wrapper">
+								 <{if isset($btip)&&!empty($btip)}>
+                                  <{foreach from=$btip item='info'}>
+								
+									<div class="col-sm-6 col-xs-12 bounty-progress-item-warpper">
+										<div class="bounty-progress-item">
+											<div class="col-sm-12 col-xs-12 bounty-progress-text-wrapper">
+												<p class="bounty-progress-text"><{$info.title}></p>
+											</div>
+											<div class="col-sm-12 col-xs-12 bounty-progress-bouns-wrapper">
+												<p class="col-sm-5 col-xs-12 bounty-progress-bouns"><{$info.shorttitle}></p>
+												<p class="col-sm-7 col-xs-12 bounty-progress-by-wrapper">by <span class="bounty-progress-by"><{$info.writer}></span></p>
+											</div>
+											<div class="col-sm-12 col-xs-12  bou-cutline"></div>
+											<div class="col-sm-12 col-xs-12 bounty-progress-btn-wrapper">
+												<div>
+													<{if isset($info.redirecturl)&&!empty($info.redirecturl)}>
+														<a href="<{$info.redirecturl}>" target="_blank"><p class="bounty-btn-text">See Progress</p></a>
+														<{else}>
+														<p class="bounty-btn-text-disable">See Progress</p>
+													<{/if}>
+												</div>
+											</div>
+										</div>
+									</div>
+									 <{/foreach}>
+                                  <{/if}>
+									<div class="col-sm-12 col-xs-12 bounty-cut-wrapper">
+										<div class="col-sm-12  col-xs-12  bou-cutline-progress"></div>
+									</div>
+								</div>
+								<!-- 新增done -->
+								 <{if isset($btd)&&!empty($btd)}>
+								 <section class="straight-line" style="margin-bottom:16px;"></section>
+								<div class="col-sm-12 text-left bounty-head-wrapper"><span class=" col-sm-12 bounty-head-progerss">Done</span></div>
+								<div class="col-sm-12 col-xs-12 text-center bounty-progress-item-warpper-wrapper">
+								
+                                  <{foreach from=$btd item='info'}>
+								
+									<div class="col-sm-6 col-xs-12 bounty-progress-item-warpper">
+										<div class="bounty-progress-item">
+											<div class="col-sm-12 col-xs-12 bounty-progress-text-wrapper">
+												<p class="bounty-progress-text"><{$info.title}></p>
+											</div>
+											<div class="col-sm-12 col-xs-12 bounty-progress-bouns-wrapper">
+												<p class="col-sm-5 col-xs-12 bounty-progress-bouns-done"><{$info.shorttitle}></p>
+												<p class="col-sm-7 col-xs-12 bounty-progress-by-wrapper">by <span class="bounty-progress-by"><{$info.writer}></span></p>
+											</div>
+											<div class="col-sm-12 col-xs-12  bou-cutline"></div>
+											<div class="col-sm-12 col-xs-12 bounty-progress-btn-wrapper">
+												<div>
+													<{if isset($info.redirecturl)&&!empty($info.redirecturl)}>
+														<a href="<{$info.redirecturl}>" target="_blank"><p class="bounty-btn-text">See Result</p></a>
+														<{else}>
+														<p class="bounty-btn-text-disable">See Result</p>
+													<{/if}>
+												</div>
+											</div>
+										</div>
+									</div>
+									 <{/foreach}>
+                                 
+									<div class="col-sm-12 col-xs-12 bounty-cut-wrapper">
+										<div class="col-sm-12  col-xs-12  bou-cutline-progress"></div>
+									</div>
+								</div>
+								 <{/if}>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!---->
+				<div class="container home-detail zindex "></div>
+			</div>
+           <{include file="library/bfooter.html" }>  
+		</div>
+	</body>
+
+</html>

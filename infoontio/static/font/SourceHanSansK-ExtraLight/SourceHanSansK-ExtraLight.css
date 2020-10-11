@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "SourceHanSansK-ExtraLight";
+    src: url("SourceHanSansK-ExtraLight.eot"); /* IE9 */
+    src: url("SourceHanSansK-ExtraLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("SourceHanSansK-ExtraLight.woff") format("woff"), /* chrome、firefox */
+    url("SourceHanSansK-ExtraLight.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("SourceHanSansK-ExtraLight.svg#SourceHanSansK-ExtraLight") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

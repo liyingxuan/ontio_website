@@ -1,0 +1,36 @@
+{ 
+  "head":"Ontology Zero Joins MIIT DAppLedger",      
+  "author":"ont",
+  "language":false,
+  "newstime":"2017-12-26",
+  "newslist":[
+    {
+      "picurl":"",
+      "content":"As a subproject of Ontology Network, Ontology Zero just got elected as part of the MIIT (Ministry of Industry and Information Technology) Blockchain Open-Source Project, empowering the development of China’s blockchain technology and industry."
+    },
+    {
+      "picurl":"",
+      "content":"In October 2016, together with Chinese key enterprises, the CESI (China Electronics Standardization Institute) founded the CBD-Forum (China Blockchain Technology and Industrial Development Forum). While endeavoring in blockchain technology and application development, CBD-Forum initiated an open-source community, DAppLedger (Distributed Application Ledger). Based on the fundamental platform autonomously developed by community members, DAppLedger is building a multi-platform operation model, seeking the best structure during application integration. DAppLedger will draft a series of open blockchain standards, as to realize the modularization of the blockchain system, which is inter-operative and pluggable. In this way, DAppLedger can drive the development of blockchain core technologies and support blockchain startups and innovations."
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Zero just joined MIIT DAppLedger for further development. Ontology Zero derived from DNA (Distributed Network Architecture) and is the first spontaneous, original and open-source blockchain infrastructure in China. In May 2017, Ontology Zero was recognized by MIIT as the one of the first standard authentication blockchain framework. Ontology Zero takes key blockchain systems around the globe (HyperLedger, Ethereum, Tendermint) as references and integrates multiple innovation technologies, thus to create a new blockchain network structure, which is high-performance and configurable, in order to realize data-exchange and value-exchange among blockchains of all types."
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Zero is an open-source, autonomous, controllable, configurable distributed ledger technical framework for enterprises built on Ontology Network. It openly connects blockchain fundamental technical solutions of all types and standardizes industrial solutions to provide DAAS (DApp As a Service). With years of practice, Ontology Zero can be applied to Supply Chain, trade finance, equity registration and transfer, settlement of transactions, IoT, medical manufacturing, industrial manufacturing, credit investigation etc., and already has fully-developed application scenarios in digital identity, contract vouching, source tracking, etc."
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Zero joined the incubator project initiated by Wanda Internet Technology Group, Onchain and Fosun Financial, with less than 5% overlapping with the project codes of open-source projects overseas. With its top-ranking autonomous controllability, more than 50 community members have devoted 700+ times of code contribution for Ontology Zero. Project founding members have applied for almost 20 patents for domestic and international blockchain fundamental and application inventions."
+    },
+    {
+      "picurl":"",
+      "content":"According to the official of Ontology Zero, in conjunction with joining the open-source community of MIIT DAppLedger, Ontology Zero will integrate domestic and international community power via Hackathons, meetups, internship and training programs, and further drive the development of blockchain fundamental platform technologies with other DAppLedger members, in order to optimize blockchain ecosystems and better serve blockchain technology development and blockchain application popularization."
+    },
+    {
+      "picurl":"",
+      "content":"The Ontology Team"
+    }
+  ]
+}

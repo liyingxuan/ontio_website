@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><{if isset($page.seotitle) and !empty($page.seotitle)}><{$page.seotitle}><{/if}></title>
+    <meta name='keyword' content='<{if isset($page.keywords) and !empty($page.keywords)}><{$page.keywords}><{/if}>'>
+    <meta name='description' content='<{if isset($page.description) and !empty($page.description)}><{$page.description}><{/if}>'>
+    <link rel="shortcut icon" href="<{HTTPROOT}>favicon.ico">
+    <{include file="library/inMeta.html" }>
+    <link rel="stylesheet" href="<{TEMPLE}>css/NanumSquare-master/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="<{TEMPLE}>css/main.css">
+</head>
+<style>
+
+</style>
+</head>
+<body style="background:#001b1e">
+ <{include file="library/bheader.html" }>  
+<section id="app-success">
+    <div class="container">
+        <div class="row">
+           <div class="success-box">
+				<h1 class="idea-title">Application Summited</h1>
+				<p class="idea-thank">Thank you for your love for Ontology.</p>
+				<p class="idea-info">
+					<span class="emphasis" href="">123 ONT</span>
+					has been sent to the testnet address below: <br>
+					<a href="">ASLbwuar3ZTbUbLPnCgjGUw2WHhMfvJJtx</a>
+				</p>
+				<button onclick="toback('<{base_url("index.php/index/developer")}>')" class="btn-ok">OK</button>
+		   </div>
+        </div>
+    </div>
+</section>
+<{include file="library/bfooter.html" }> 
+<script>
+	function toback(href){
+		window.location.href=href
+	}
+</script> 
+</body>
+</html>

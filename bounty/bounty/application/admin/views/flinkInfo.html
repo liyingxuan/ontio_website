@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	</head>
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>友情链接<{if isset($link['link_id']) && !empty($link['link_id'])}>编辑<{else}>添加<{/if}></h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;">
+			                    	  <input type="hidden" id="link_id" name="link_id" value="<{if isset($link['link_id'])}> <{$link['link_id']}> <{/if}>" />
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="link_title">链接标题<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="link_title" name="link_title" autocomplete="off"
+ required="required" value="<{if isset($link['link_title']) && !empty($link['link_title'])}><{$link['link_title']}><{/if}>" class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+									  <div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12" for="link_url">链接地址<span class="required">*</span></label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="link_url" name="link_url" autocomplete="off"
+ required="required" value="<{if isset($link['link_url']) && !empty($link['link_url'])}><{$link['link_url']}><{/if}>" class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span> 
+				                        </div>
+									  </div>
+
+									  <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="link_sort">排序
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="link_sort" name="link_sort" value="<{if isset($link['link_sort']) && !empty($link['link_sort'])}><{$link['link_sort']}><{else}>255<{/if}>" autocomplete="off"
+ class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span>  
+				                        </div>
+				                      </div>
+
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="link_pic">链接图片
+				                        </label> 
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="tb" autocomplete="off"
+ class="form-control" value="<{if isset($link['link_pic']) && !empty($link['link_pic'])}><{HTTPROOT}><{$link['link_pic']}><{/if}>" style="display:inline;max-width:300px;">
+                                            <button type="button" class="btn btn-default btn-sm input-file" >本地上传</button>
+                                            <input type="file" id="link_pic" name="link_pic" style="display:none" class="input-link_pic">
+                                            <p><span class="help-block m-b-none">仅支持JPG|JPEG|PNG|BMP格式图片，且最大10M。</span><span class="err" style="color: red;"></span></p>
+                                        </div> 
+				                      </div>  
+				                      <div class="ln_solid"></div>
+				                      <div class="form-group">
+				                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				                          <button type="submit" id="submitBtn" class="btn btn-success" >提 交</button>
+				                          <button type="button" class="btn btn-info" onclick="fanhui()">返 回</button>
+				                        </div>
+				                      </div>
+				
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /page content --> 
+	<!-- footer content -->
+	<{include file="library/Copyright.html" }>
+	<!-- /footer content -->
+	</div>
+	</div>
+	<{include file="library/Flink.html" }>
+
+	</body>
+	<script src="<{TEMPLE}>js/jquery.validate.min.js"></script>  
+	<script>
+        $(document).on("click",".input-file",function () {
+            $(".input-link_pic").click();
+        })
+        $("#link_pic").change(function(){
+            $('#tb').val($('#link_pic').val());
+        });  
+    </script>
+	<script> 
+	//按钮先执行验证再提交表
+	$(document).ready(function(){
+	    //按钮先执行验证再提交表单
+	    $("#submitBtn").click(function(){ 
+	    	if($("#add_form").valid()){ 
+	    		var link_id=$("#link_id").val();
+	      		var link_title=$("#link_title").val();
+	      		var link_url=$("#link_url").val();
+	      		var link_sort=$("#link_sort").val();
+	      		var is_pic=$('#link_pic').val();
+	      		var formData = new FormData(); //创建一个FormData空对象 
+	      		if(is_pic){
+	      			var fileObj = $('#link_pic')[0].files[0];//获取文件对象
+				    var fileSize = $('#link_pic')[0].files[0].size;//获取文件大小
+				    var fileName = $('#link_pic')[0].files[0].name;//获取文件大小
+				    formData.append('file',fileObj); //加入文件对象到表单中 
+	      		} 
+			    formData.append("link_id", link_id);
+			    formData.append("link_title", link_title);
+			    formData.append("link_url", link_url);
+			    formData.append("link_sort", link_sort); 
+			    formData.append("is_pic", is_pic);
+	          	$.ajax({  
+		            url:'flink_edit',
+		            type:'post',
+		            data:formData,
+		            dataType:'json',
+			        cache: false,
+			        processData: false,
+			        contentType: false,
+		            success:function(data){
+		            	if(data.state=='403'){
+		                    top.location.href='<{base_url("admin.php/index/login")}>';
+		                    return false;
+		                  }
+		                if(data.state){
+		                    layer.msg(data.msg);
+		                    window.setTimeout("window.location.href='<{base_url('admin.php/sites/flink')}>'", 1000);
+		                }else {
+		                    layer.msg(data.msg);
+		                }
+		            }
+	         	})  
+	      	} 
+	    });
+
+	    //验证文件格式是否正确
+	   	jQuery.validator.addMethod("checkPic", function(value, element) {
+		    var filepath=$("#link_pic").val();
+		    // console.log(filepath);
+		    // return false;
+		     //获得上传文件名
+		    var fileArr=filepath.split("\\");
+		    var fileTArr=fileArr[fileArr.length-1].toLowerCase().split(".");
+		    var filetype=fileTArr[fileTArr.length-1];
+		    if(filepath.length>0){ 
+			    //切割出后缀文件名 
+		    	if(filetype !='png' && filetype !='jpg' && filetype !='jpeg'  && filetype !='bmp' ){
+			        return false;
+			    }
+		    }else{
+		    	return true;
+		    }
+		}, "上传文件格式不适合");
+
+	    $("#add_form").validate({
+	            errorPlacement: function(error, element){
+	                var error_td = element.siblings('span.err');
+	                error_td.append(error);
+	            },
+	            rules : {
+	                link_title : {
+	                    required : true, 
+	                    maxlength: 100
+	                },
+	                link_url : {
+	                    required : true, 
+	                    maxlength: 100,
+	                    url:true
+
+	                },  
+	                link_sort : {
+	                	digits:true,
+	                    maxlength: 255,
+	                    max:255
+	                },
+	                link_pic:{
+	                	checkPic : true,
+	                	accept:'PNG|JPG|JPEG|BMP'//图片只能是PNG|JPG|JPEG|BMP格式
+	                } 
+	            },
+	            messages : {
+	                link_title : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>链接标题不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>链接标题长度最多100位字符'
+	                },
+	                link_url : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>链接地址不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>链接地址长度最多100位字符',
+	                    url:'<i class="fa fa-exclamation-circle"></i>请输入合法的链接地址',
+	                }, 
+	                link_sort : { 
+	                	digits: '<i class="fa fa-exclamation-circle"></i>只能写入正整数类型',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>站点描述长度最多255位字符',
+	                    max :'<i class="fa fa-exclamation-circle"></i>输入值不能大于255'
+	                },
+	                link_pic:{
+	                	accept:	'<i class="fa fa-exclamation-circle"></i>只能上传PNG|JPG|JPEG|BMP格式图片'
+	                }
+	            }
+	        }); 
+	});
+	function fanhui(){
+		window.setTimeout("window.location.href='<{base_url('admin.php/sites/flink')}>'", 1000);
+	}
+</script> 
+</html>

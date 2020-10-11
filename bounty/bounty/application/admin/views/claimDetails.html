@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"> 
+		
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>Bounty claim details</h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;"> 
+
+				                    <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="title">project name:</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['title']) && !empty($claimInfo['title'])}><{$claimInfo['title']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="name">name：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['name']) && !empty($claimInfo['name'])}><{$claimInfo['name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="email">email</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['email']) && !empty($claimInfo['email'])}><{$claimInfo['email']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="github_address">github url：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['github_address']) && !empty($claimInfo['github_address'])}><{$claimInfo['github_address']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="submit_time">submit time：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['submit_time']) && !empty($claimInfo['submit_time'])}><{$claimInfo['submit_time']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+										
+									<div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="submit_time">Completion Time:</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['estimated_time']) && !empty($claimInfo['estimated_time'])}><{$claimInfo['estimated_time']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+
+									
+			                        <div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="plan_desc">Plan：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['plan_desc']) && !empty($claimInfo['plan_desc'])}><{$claimInfo['plan_desc']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="team_desc">Team:</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['team_desc']) && !empty($claimInfo['team_desc'])}><{$claimInfo['team_desc']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="submit_time">state：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['is_deal']) && !empty($claimInfo['is_deal']) && $claimInfo['is_deal']==1}>是<{else}><span style="color: red;">否</span><{/if}>  
+			                       		 </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="admin_name">audit username：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['admin_name']) && !empty($claimInfo['admin_name'])}><{$claimInfo['admin_name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="sure_time">audit usertime：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($claimInfo['sure_time']) && !empty($claimInfo['sure_time'])}><{$claimInfo['sure_time']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+	
+									<div class="ln_solid"></div>
+			                        <div class="form-group">
+				                        <div class="col-md-12 col-sm-12 col-xs-12 center">
+				                          <button type="submit" id="submitBtn" onclick="button()" class="btn btn-success" >Back to the previous page</button>
+				                        </div>
+				                    </div>
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+		<!-- /footer content -->
+		</div>
+		</div>
+		<{include file="library/Flink.html" }>
+	</body>  
+	<script type="text/javascript">
+		function button(){
+			window.location.href = "<{base_url('admin.php/sites/claim')}>";
+		}
+	</script>
+</html>

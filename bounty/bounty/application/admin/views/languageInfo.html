@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	</head>
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>多语言<{if isset($language['lgid']) && !empty($language['lgid'])}>编辑<{else}>添加<{/if}></h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;">
+			                    	  <input type="hidden" name="lgid" value="<{if isset($language['lgid'])}> <{$language['lgid']}> <{/if}>" />
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="language">语言名称<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="language" name="language" required="required" value="<{if isset($language['language']) && !empty($language['language'])}><{$language['language']}><{/if}>" autocomplete="off"
+ class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+									  <div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12">站点标题<span class="required">*</span></label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="language_title" name="language_title" autocomplete="off"
+ required="required" value="<{if isset($language['language_title']) && !empty($language['language_title'])}><{$language['language_title']}><{/if}>" class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span> 
+				                        </div>
+									  </div>
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="language_keywords">站点关键字<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="language_keywords" name="language_keywords" autocomplete="off"
+ required="required" value="<{if isset($language['language_keywords']) && !empty($language['language_keywords'])}><{$language['language_keywords']}><{/if}>" class="form-control col-md-7 col-xs-12"> <span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div> 
+						             <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="language_desc">站点描述<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="language_desc" name="language_desc" autocomplete="off"
+ required="required" value="<{if isset($language['language_desc']) && !empty($language['language_desc'])}><{$language['language_desc']}><{/if}>" class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span>  
+				                        </div>
+				                      </div>
+				                      <div class="ln_solid"></div>
+				                      <div class="form-group">
+				                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				                          <button type="submit" id="submitBtn" class="btn btn-success" >提 交</button>
+				                          <button type="button" class="btn btn-info" onclick="fanhui()">返 回</button>
+				                        </div>
+				                      </div>
+				
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /page content -->
+
+	<!-- footer content -->
+	<{include file="library/Copyright.html" }>
+	<!-- /footer content -->
+	</div>
+	</div>
+	<{include file="library/Flink.html" }>
+
+	</body> 
+	<script src="<{TEMPLE}>js/jquery.validate.min.js"></script>
+	<script> 
+	//按钮先执行验证再提交表
+	$(document).ready(function(){
+	    //按钮先执行验证再提交表单
+	    $("#submitBtn").click(function(){ 
+	    	if($("#add_form").valid()){
+	          $.ajax({  
+	            url:'language_edit',
+	            type:'post',
+	            data:$("#add_form").serialize(),
+	            dataType:'json',
+	            success:function(data){
+	            	if(data.state=='403'){
+	                    top.location.href='<{base_url("admin.php/index/login")}>';
+	                    return false;
+	                  }
+	                if(data.state){
+	                    layer.msg(data.msg);
+	                    window.setTimeout("window.location.href='<{base_url('admin.php/sites/language')}>'", 1000);
+	                }else {
+	                    layer.msg(data.msg);
+	                }
+	            }
+	          })
+	      }
+	    });
+
+	    $("#add_form").validate({
+	            errorPlacement: function(error, element){
+	                var error_td = element.siblings('span.err');
+	                error_td.append(error);
+	            },
+	            rules : {
+	                language : {
+	                    required : true, 
+	                    maxlength: 10
+	                },
+	                language_title : {
+	                    required : true, 
+	                    maxlength: 120
+	                }, 
+	                language_keywords : {
+	                    required : true, 
+	                    maxlength: 80
+	                },
+	                language_desc : {
+	                    required : true, 
+	                    maxlength: 255
+	                }
+	            },
+	            messages : {
+	                language : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>语言名称不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>语言名称长度最多10位字符'
+	                },
+	                language_title : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>站点标题不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>站点标题长度最多120位字符'
+	                },
+	                language_keywords : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>站点关键字不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>站点关键字长度最多80位字符'
+	                },
+	                language_desc : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>站点描述不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>站点描述长度最多255位字符'
+	                }
+	            }
+	       }); 
+	}); 
+	function fanhui(){
+    	window.setTimeout("window.location.href='<{base_url('admin.php/sites/language')}>'", 1000);
+    }
+</script> 
+</html>

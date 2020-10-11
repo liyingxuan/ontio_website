@@ -1,0 +1,57 @@
+{ 
+  "head":"KYC FAQ",      
+  "secondhead":"",   
+  "Q":"Q",
+  "A":"A",   
+  "team":"The Ontology Team",  
+  "time":"Updated: 3/2/2018", 
+  "language":true,
+  "QAlist":[
+    {
+      "Question":"Am I eligible to receive ONT?",
+      "Answer":"Only those who successfully subscribed to our newsletter and are inside our Telegram, Slack, WeChat, or QQ chats are eligible to receive ONT. Those who successfully subscribed will have received an email including a link to the KYC page and a verification code to start the KYC process."
+    },
+    {
+      "Question":"Is there any age limit for receiving ONT?",
+      "Answer":"Users must be 18 years old and above to receive ONT."
+    },
+    {
+      "Question":"Which forms of ID are accepted?",
+      "Answer":"We only accept valid passports and national identity cards. Other forms of identification and expired documents will be rejected. Users with rejected documents will not be able to resubmit documents and therefore will not be able to receive their ONT."
+    },
+    {
+      "Question":"Which nationals are eligible to receive ONT?",
+      "Answer":"Nationals of all countries and regions are eligible to receive ONT."
+    },
+    {
+      "Question":"Which NEO wallets can I use?",
+      "Answer":"You can provide any NEO wallet address (other than an exchange address!) to receive your ONT."
+    },
+    {
+      "Question":"When will I receive my ONT?",
+      "Answer":"We will send your ONT before the end of February 2018. We will announce on our social media channels when ONT has been distributed."
+    },
+    {
+      "Question":"I am having trouble receiving my phone verification code.",
+      "Answer":"- Make sure you are typing your phone number in correctly. This includes repeating the country code and adding a “0” or any another extra number immediately after the country code.",
+      "Answer1":"- Do not add a space or \"-\" into your phone number.",
+      "Answer2":"- Manually type your number instead of copy and pasting it.",
+      "Answer3":"- If it is not working please try with other browsers (including those on mobile devices).",
+      "Answer4":"- Each SMS code is valid only for five minutes.",
+      "Answer5":"- If you still cannot receive your phone verification code, please send your phone number to WeChat/Telegram group chat admins and we will look into your case."
+    },
+    {
+      "Question":"I have trouble receiving the KYC email.",
+      "Answer":"- Please check your spam and trash folders first. Subscription was only through Ontology’s official website and closed early January.",
+      "Answer1":"- If you still cannot find your KYC email, please send your email address to WeChat/Telegram group chat admins and we will check the backend to see if you successfully subscribed to our newsletter."
+    },
+    {
+      "Question":"ONT is initially an NEP-5 token, will it generate ONG?",
+      "Answer":"After the release of MainNet in Q2 2018 you will be able to swap your NEP-5 ONT for ONT on the Ontology MainNet. Only when you receive your ONT on the Ontology MainNet will your ONT start to generate ONG. Further details will be announced later."
+    },
+    {
+      "Question":"Will there be any other opportunities for me to receive ONT?",
+      "Answer":"Yes. 12% of ONT is reserved for the community. The next community reward opportunity will be in Q2 2018 after the release of Ontology MainNet, however, it will not be for subscription of any kind. Further details will be announced later. You can read more about ONT distribution here: https://medium.com/ontologynetwork/ontology-finishes-collecting-email-addresses-for-the-first-round-of-its-reward-event-e6a617d2872e. We will inform you of future ONT community reward opportunities via our social media channels."
+    }
+  ]
+}

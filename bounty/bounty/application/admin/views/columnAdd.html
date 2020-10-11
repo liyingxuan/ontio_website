@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ECMS管理系统 |用心服务 思微知著 </title>
+		<{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-treeview/bootstrap-treeview.css" rel="stylesheet">
+	    <style>
+	    	/***** 重置选中按钮 *****/
+		.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+		    color: #fbfbfb;
+		    background-color: #337ab7;
+		    border-color: #adadad;
+		}
+	    </style>
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<form id="form" class="form-horizontal form-label-left" method="post" enctype="multipart/form-data">
+									<input type="hidden" value="<{if isset($lang)}><{$lang}><{/if}>" id="lang" name="lang">
+									<input type="hidden" value="<{if isset($id)}><{$id}><{/if}>" id="id" name="id">
+									<input type="hidden" value="<{if isset($tag)}><{$tag}><{/if}>" id="tag" name="tag">
+									<div class="" role="tabpanel" data-example-id="togglable-tabs">
+										<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+											<li role="presentation" class="active">
+												<a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true" onclick="$('#form-submit').attr('name','form1')">基本设置</a>
+											</li>
+											<li role="presentation" class="">
+												<a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false" onclick="$('#form-submit').attr('name','form2')">高级选项</a>
+											</li>
+											<li role="presentation" class="">
+												<a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false" onclick="$('#form-submit').attr('name','form3')">栏目内容</a>
+											</li>
+										</ul>
+										<div id="myTabContent" class="tab-content">
+											<!-- 最外层form -->
+											
+											<div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+												<!-- start base setting -->
+												<!-- <form id="form1" data-parsley-validate="" class="form-horizontal form-label-left" novalidate=""> -->
+													<div class="form-group">
+														<label class="control-label col-md-3 col-sm-3 col-xs-12">是否隐藏栏目</label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<div id="gender" class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default <{if isset($data.ishidden) && $data.ishidden == '1'}> active <{/if}>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+							                              <input type="radio" <{if isset($data.ishidden) && $data.ishidden == '1'}> checked <{else}>checked<{/if}> value="1" name="data_ishidden" data-parsley-multiple="ishidden"> &nbsp; 是 &nbsp;
+							                            </label>
+																<label class="btn btn-default <{if isset($data.ishidden)}> <{if ($data.ishidden == 0)}>active<{/if}> <{else}>active<{/if}>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+							                              <input type="radio" name="data_ishidden" <{if isset($data.ishidden)}> <{if ($data.ishidden == 0)}>checked<{/if}> <{else}>checked<{/if}>   value="0" data-parsley-multiple="ishidden"> 否
+							                            </label>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label col-md-3 col-sm-3 col-xs-12">内容模型 <span class="required">*</span></label>
+														<div class="col-md-2 col-sm-2 col-xs-6">
+															<select class="form-control" name="data_channeltype" id="data_channeltype">
+																<{if isset($channeltype)&&!empty($channeltype)}>
+					                            						<{foreach from=$channeltype item=v}>
+	                                                                		<option <{if isset($data.channeltype) && $data.channeltype == <{$v.id}>}>selected<{/if}> value="<{$v.id}>"><{$v.typename}></option>
+	                                                                	<{/foreach}>
+								                        		<{else}>
+								                        				<option value="">暂无内容模型</option>
+								                        		<{/if}>
+                                                                
+															</select>
+															<span class="err" style="color: red;"></span> 
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label col-md-3 col-sm-3 col-xs-12">语言类型 <span class="required">*</span></label>
+														<div class="col-md-2 col-sm-2 col-xs-6">
+															<select class="form-control" name="data_language" id="data_language">
+																<{if isset($language)&&!empty($language)}>
+					                            						<{foreach from=$language item=v}>
+	                                                                		<option <{if isset($data.language) && $data.language == <{$v.lgid}>}>selected<{/if}> value="<{$v.lgid}>"><{$v.language}></option>
+	                                                                	<{/foreach}>
+								                        		<{else}>
+								                        				<option value="">暂无语言类型</option>
+								                        		<{/if}>
+															</select>
+															<span class="err" style="color: red;"></span> 
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">栏目名称 <span class="required">*</span>
+							                        </label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input type="text" id="data_typename" name="data_typename" required="required" class="form-control col-md-7 col-xs-12" value="<{if isset($data.typename)}><{$data.typename}><{/if}>">
+															<span class="err" style="color: red;"></span> 
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">栏目图标
+							                        </label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input type="file" id="data_icon" name="data_icon" class="form-control col-md-7 col-xs-12" value="<{if isset($data.icon)}><{$data.icon}><{/if}>">
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">栏目排序</label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input type="text" id="data_sortrank" name="data_sortrank" class="form-control col-md-7 col-xs-12" value="<{if isset($data.sortrank)}><{$data.sortrank}><{/if}>">
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">文件保存目录</label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input type="text" id="data_typedir" name="data_typedir" class="form-control col-md-7 col-xs-12" value="<{if isset($data.typedir)}><{$data.typedir}><{/if}>">
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-md-3 col-sm-3 col-xs-12 control-label">栏目属性
+                        </label>
+
+														<div class="col-md-9 col-sm-9 col-xs-12">
+															<div class="radio">
+																<label class="">
+                              <div class="iradio_flat-green" style="position: relative;">
+                              	<input type="radio" class="flat" <{if isset($data.ispart) && $data.ispart == '0'}> checked <{else}>checked<{/if}> value="0" name="data_ispart" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> 最终列表栏目（允许在本栏目发布文档，并生成文档列表）
+                            </label>
+															</div>
+															<div class="radio">
+																<label class="">
+                              <div class="iradio_flat-green checked" style="position: relative;"><input type="radio" class="flat" <{if isset($data.ispart) && $data.ispart == '1'}> checked <{/if}> value="1" name="data_ispart" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> 频道封面（栏目本身不允许发布文档）
+                            </label>
+															</div>
+															<div class="radio">
+																<label class="">
+                              <div class="iradio_flat-green checked" style="position: relative;"><input type="radio" class="flat" <{if isset($data.ispart) && $data.ispart == '2'}> checked <{/if}> value="2" name="data_ispart" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> 外部连接（在"文件保存目录"处填写网址）
+                            </label>
+															</div>
+														</div>
+													</div>
+				
+												<!-- </form> -->
+												<!-- end base setting -->
+
+											</div>
+											<div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+
+												<!-- start adven -->
+												<!-- <form id="form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate=""> -->
+                                                   <div class="form-group">
+														<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">封面模板 
+							                        </label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input type="text" value="<{if isset($data.tempindex)}><{$data.tempindex}><{/if}>" name="data_tempindex" id="data_tempindex"  class="form-control col-md-7 col-xs-12">
+															<span class="err" style="color: red;"></span> 
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">列表模板 
+							                        </label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input type="text" value="<{if isset($data.templist)}><{$data.templist}><{/if}>" name="data_templist" id="data_templist"  class="form-control col-md-7 col-xs-12">
+															<span class="err" style="color: red;"></span> 
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">文章模板 </label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input value="<{if isset($data.temparticle)}><{$data.temparticle}><{/if}>" name="data_temparticle" id="data_temparticle" class="form-control col-md-7 col-xs-12" type="text">
+															<span class="err" style="color: red;"></span> 
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">SEO标题</label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input value="<{if isset($data.seotitle)}><{$data.seotitle}><{/if}>" name="data_seotitle" id="data_seotitle" class="form-control col-md-7 col-xs-12" type="text" >
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">SEO关键字</label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<input value="<{if isset($data.keywords)}><{$data.keywords}><{/if}>" name="data_keywords" id="data_keywords" class="form-control col-md-7 col-xs-12" type="text">
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">栏目描述 </label>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<textarea name="data_description" id="data_description"  class="form-control"  data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." data-parsley-validation-threshold="10"><{if isset($data.description)}><{$data.description}><{/if}></textarea>
+															<span class="err" style="color: red;"></span> 
+														</div>
+													</div>
+												<!-- </form> -->
+												<!-- end adven -->
+
+											</div>
+											<div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+												<!-- <form id="form3" data-parsley-validate="" class="form-horizontal form-label-left" novalidate=""> -->
+                                                	<div class="form-group">
+                                                        <script id="article-cn" name="data_content"  type="text/plain" ><{if isset($data.content)}><{$data.content}><{/if}></script>
+                                                        <!-- 配置文件 -->
+                                                        <script type="text/javascript" src="<{HTTPROOT}>/plugins/Ueditor/ueditor.config.js"></script>
+                                                        <!-- 编辑器源码文件 -->
+                                                        <script type="text/javascript" src="<{HTTPROOT}>/plugins/Ueditor/ueditor.all.js"></script>
+                                                        <!-- 实例化编辑器 -->
+                                                        <script type="text/javascript">
+                                                        var ue = UE.getEditor('article-cn',{initialFrameHeight:400});
+                                                        </script>
+                                                        
+                                                        <input type="hidden" id="hide" name="hide">
+                                                        <span class="err" style="color: red;"></span> 
+                                                	</div>
+                                                <!-- </form> -->
+											</div>
+											<!-- 最外层form -->
+											</form>
+										</div>
+										<div class="ln_solid"></div>
+										<div class="form-group">
+											<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+												<button class="btn btn-primary" type="button" onclick="javascript:history.back(-1);">返 回</button>
+												<a id="form-submit" class="btn btn-success">提 交</a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+			<!-- /footer content -->
+			</div>
+			</div>
+			<{include file="library/Flink.html" }>
+			<script type="text/javascript" src="<{TEMPLE}>js/jquery.form.js"></script>
+    		<script src="<{TEMPLE}>js/jquery.validate.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				// //自定义规则:编辑器内容
+			 //    jQuery.validator.addMethod("content", 
+				// 	function(value, element) {    
+				//     	var content = ue.getContent();
+				//     	console.log(content);
+				//     	if(content.length!=0){
+				//     		return true;
+				//     	}else{
+				//     		return false;
+				//     	}
+				// 	}
+				// ,'<i class="fa icon-exclamation-sign"></i>请填写栏目内容')
+
+				//（添加栏目时）选中相应语言
+				<{if isset($lang)}>$('#data_language option[value="<{$lang}>"]').attr('selected',true)<{/if}>
+				//按钮先执行验证再提交表单
+			    $("#form-submit").click(function(){ 
+		            if($("#form").valid()){
+		            	if($("#data_typename").val().length==0){
+		            		layer.msg("请先填写基本设置中的栏目名");
+		            		return false;
+		            	}
+		            	if(!$("#data_channeltype").val()){
+		            		layer.msg("请在基本设置中选择内容模型");
+		            		return false;
+		            	}
+		            	if(!$("#data_language").val()){
+		            		layer.msg("请在基本设置中选择语言");
+		            		return false;
+		            	}
+		                  $("#form").ajaxSubmit({
+		                      url:'column_add',
+		                      success:function(res) {
+		                          if( jQuery.type(res) === "string"){
+		                             res=JSON.parse(res)
+		                          }
+		                          if(res.state=='403'){
+		                            top.location.href='<{base_url("admin.php/index/login")}>';
+		                            return false;
+		                          }
+		                          if(res.state){
+		                              layer.msg(res.msg);
+		                              window.setTimeout("window.location.href='<{base_url('admin.php/articles/columns')}>?lang="+res.data+"'", 1000);
+		                          }else {
+		                              layer.msg(res.msg);
+		                          }
+		                      }
+		                  })
+		            }
+			    });
+
+			    $("#form").validate({
+			            errorPlacement: function(error, element){
+			                var error_td = element.siblings('span.err');
+			                error_td.append(error);
+			            }
+			            ,rules: {
+			            	data_typename: {
+				                required: true
+				            },
+				            data_channeltype : {
+		                        required : true,
+		                    },
+		                    data_language : {
+		                        required : true,
+		                    },
+				            // data_tempindex: {
+				            //     required: true
+				            // },
+				            // data_templist : {
+		              //           required : true,
+		              //       }
+		              //       ,data_temparticle : {
+		              //           required : true,
+		              //       }
+		              //       ,data_description : {
+		              //           required : true,
+		              //       }
+		              //       ,hide: {
+				            //     content: true
+				            // }
+				             
+				        }
+				        ,messages: {
+				        	data_typename : {
+		                        required : '<i class="fa fa-exclamation-circle"></i>栏目名称不能为空',
+		                    },
+		                    data_channeltype:{
+		                        required : '<i class="fa fa-exclamation-circle"></i>请选择内容模型',
+		                    } ,
+		                    data_language:{
+		                        required : '<i class="fa fa-exclamation-circle"></i>请选择语言',
+		                    } ,
+				            // data_tempindex : {
+		              //           required : '<i class="fa fa-exclamation-circle"></i>封面模板不能为空',
+		              //       }
+		              //       ,data_templist:{
+		              //           required : '<i class="fa fa-exclamation-circle"></i>列表模板不能为空',
+		              //       } 
+		              //       ,data_temparticle:{
+		              //           required : '<i class="fa fa-exclamation-circle"></i>文章模板不能为空',
+		              //       } 
+		              //       ,data_description:{
+		              //           required : '<i class="fa fa-exclamation-circle"></i>栏目描述不能为空',
+		              //       } 
+		              //       ,hide : {
+		              //           content : '<i class="fa fa-exclamation-circle"></i>栏目内容不能为空',
+		              //       }
+				        }
+			    }); 
+				
+            });
+		</script>
+	</body>
+
+</html>

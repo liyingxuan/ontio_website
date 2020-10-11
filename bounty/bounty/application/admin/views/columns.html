@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ECMS管理系统 |用心服务 思微知著 </title>
+		<{include file="library/Hlink.html" }>
+		<!-- <link href="<{HTTPROOT}>plugins/bootstrap-treeview/bootstrap-treeview.css" rel="stylesheet"> -->
+		<link href="<{TEMPLE}>/css/nestable.css" rel="stylesheet">
+		<style>
+			.tree-title{
+				display: block;
+				margin: 5px 0;
+				padding: 10px;
+				color: #333;
+				text-decoration: none;
+				border: 1px solid #e7eaec;
+				background: #f5f5f5;
+			}
+			#nestable2 .btn{
+				position: relative;
+				top: -4px;
+			}
+		</style>
+	</head>
+
+<body class="nav-md">
+<div class="container body">
+<div class="main_container">
+<!-- page content -->
+<div class="right_col" role="main">
+<div class="">
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="" role="tabpanel" data-example-id="togglable-tabs">
+					<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+						<{if isset($language)&&!empty($language)}>
+	    						<{foreach from=$language item=v}>
+	                        		<li role="presentation">
+										<a onclick="loadClumns(<{$v.lgid}>)" role="tab" data-toggle="tab" id="language-<{$v.lgid}>" aria-expanded="true"><{$v.language}></a>
+									</li>
+	                        	<{/foreach}>
+	            		<{else}>
+	            				暂无语言类型,请前往<a href="<{base_url()}>admin.php/sites/language" style="font-weight: bold;color: #337ab7; ">多语言管理</a>添加
+	            		<{/if}>
+					</ul>
+					<div id="#tab_content1" class="tab-content">
+						<div class="wrapper wrapper-content  animated fadeInRight">
+							<div class="row">
+								<div class="col-sm-8">
+									<div id="nestable-menu">
+										<div class="row">
+                                           <div class="btn-group">
+                       					        <button type="button" data-action="expand-all" class="btn btn-success btn-sm"> <i class="fa fa-th-list" aria-hidden="true"></i> 展开所有</button>
+										        <button type="button" data-action="collapse-all" class="btn btn-info btn-sm"> <i class="fa fa-minus" aria-hidden="true"></i> 收起所有</button>
+						                     </div>
+						                      <div class="btn-group">
+						                      	   <a id="addtop" href = "#" class="btn btn-sm btn-outline btn-primary" addurl="<{base_url()}>admin.php/articles/column_add?id=0&tag=add">
+									                    <i class="fa fa-plus" aria-hidden="true" title="增加新的栏目"></i> 增加顶级栏目
+									                </a>
+						                      	 </div>
+						                  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="ibox ">
+										<div class="ibox-title">
+											<h5>栏目管理</h5>
+											<small>请谨慎管理，添加相应栏目时请选择对应的内容模型和语言，删除栏目时请确保其没有文章或者子栏目</small>
+										</div>
+										<div class="ibox-content" id="column">
+											<!-- 数据行 -->
+											<div class="dd uk-nestable" id="nestable2">
+													
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+</div>
+</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+			<!-- /footer content -->
+			</div>
+			</div>
+			<{include file="library/Flink.html" }>
+
+	</body>
+<script src="<{TEMPLE}>js/jquery.nestable.js"></script>
+<script>
+    function treeJs(){
+        var updateOutput = function (e) {
+            var list = e.length ? e : $(e.target),
+                output = list.data('output');
+            if (window.JSON) {
+                output.val(window.JSON.stringify(list.nestable('serialize'))); //, null, 2));
+            } else {
+                output.val('浏览器不支持');
+            }
+        };
+        $('#nestable2').nestable({ /*绑定树列*/
+            maxDepth:0,
+            group:'widgets',
+		}).on('change', updateOutput);
+		console.log('expand-all')
+        updateOutput($('#nestable2').data('output', $('#nestable2-output')));
+        $('#nestable-menu').on('click', function (e) {
+            var target = $(e.target),
+                action = target.data('action');
+            if (action === 'expand-all') {
+				$('.dd').nestable('expandAll');
+				console.log('expand-all')
+            }
+            if (action === 'collapse-all') {
+				$('.dd').nestable('collapseAll');
+				console.log('collapse-all')
+            }
+        });
+    }
+    $(document).ready(function () {
+    	<{if isset($lang)&&!empty($lang)}>
+			$('#language-<{$lang}>').click();//点击相应TAB
+    	<{else}>
+    		$('#myTab').children('li:eq(0)').children('a').click();//点击第一个TAB
+    	<{/if}>
+		treeJs();
+    });
+    //删除
+    function del(id,urls) {
+    	if(!id){
+    		layer.msg('参数错误');
+    		return false;
+    	}
+        layer.confirm('请谨慎执行，该操作会删除此栏目及其子栏目，删除前请确保栏目下没有相应文章', {
+            btn: ['确认','取消'] //按钮
+        }, function(){
+            $.ajax({
+                url:'column_del',
+                type:'post',
+                dataType:'json',
+                data:{id:id},
+                success:function (data) {
+                	if(data.state=='403'){
+	                    top.location.href='<{base_url("admin.php/index/login")}>';
+	                    return false;
+	                }
+                    if(data.state){
+                        layer.msg(data.msg);
+                        location.reload();
+                    }else{
+                        layer.msg(data.msg);
+                    }
+                },
+                error:function () {
+                    layer.msg('服务器连接失败！');
+                }
+            })
+        });
+    }
+    //请求栏目内容
+    function loadClumns(t){
+	    var curl = $('#addtop').attr('addurl')+'&language='+t;
+	    $('#addtop').attr('href',curl);
+        $.ajax({
+            url:'columns',
+            type:'post',
+            dataType:'json',
+            data:{id:t},
+            success:function (data) {
+            	if(data.state=='403'){
+                    top.location.href='<{base_url("admin.php/index/login")}>';
+                    return false;
+                }
+                if(data.state){
+                	var str = "";
+                	if(data.data){
+                		$.each(data.data,function(k,v){
+                			str += `<ol class="dd-list" data-uk-nestable="{maxDepth:1}">
+									<li class="dd-item" data-id="1">`;
+										if(v['child']){
+											str += `<button data-action="collapse" type="button">关闭</button>
+											<button data-action="expand" type="button" style="display: none;">展开</button>`;
+										}
+		                                str += `<div class="uk-nestable tree-title">
+		                                    <span class="label label-info"></span>`+v['typename']+`
+		                                    <span class="pull-right">
+		                                    	<a href="javascript:window.open('<{HTTPROOT}>index.php/index/column?id=`+v['id']+`');" class="btn btn-default btn-sm">预览</a>
+		                                        <a href="<{base_url()}>admin.php/articles/column_add?id=`+v['id']+`&tag=add&language=`+v['language']+`" class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true" title="增加新的栏目"></i> 增加子类</a>`;
+		                                        if (v['ispart']==0){
+		                                        	str += `<a href="<{base_url()}>admin.php/articles/`+v['nid']+`?id=`+v['id']+`&reid=`+v['reid']+`" class="btn btn-info btn-sm"><i class="fa fa-list" aria-hidden="true" title="内容"></i> 内容</a>`;
+		                                        }
+		                                        str += `<a href="<{base_url()}>admin.php/articles/column_add?id=`+v['id']+`&tag=editor&language=`+v['language']+`" class="btn btn-dark btn-sm"><i class="fa fa-wrench" aria-hidden="true" title="编辑栏目"></i> 编辑</a>`;
+		                                        if(!v['child']){
+		                                        	str += `<button onclick="del(`+v['id']+`)"   class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true" title="删除栏目"></i> 删除</button>`;
+		                                        }
+		                                    str += `</span>
+		                                </div>`;
+		                                $.each(v['child'],function(ke,val){
+			                                str += `<ol class="dd-list">
+			                                    <li class="dd-item" data-id="4">`;
+			                                    	if(val['child']){
+														str += `<button data-action="collapse" type="button">关闭</button>
+														<button data-action="expand" type="button" style="display: none;">展开</button>`;
+													}
+			                                        str += `<div class="uk-nestable tree-title">
+			                                            <span class="label label-info"></span> `+val['typename']+`
+			                                            <span class="pull-right">
+			                                                <a href="javascript:window.open('<{HTTPROOT}>index.php/index/column?id=`+val['id']+`');" class="btn btn-default btn-sm">预览</a>
+			                                                <a href="<{base_url()}>admin.php/articles/column_add?id=`+val['id']+`&tag=add&language=`+val['language']+`" class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true" title="增加新的栏目"></i> 增加子类</a>`;
+			                                                if (val['ispart']==0){
+			                                                	str += `<a href="<{base_url()}>admin.php/articles/`+val['nid']+`?id=`+val['id']+`&reid=`+val['reid']+`" class="btn btn-info btn-sm"><i class="fa fa-list" aria-hidden="true" title="内容"></i> 内容</a>`;
+			                                                }
+			                                                str += `<a href="<{base_url()}>admin.php/articles/column_add?id=`+val['id']+`&tag=editor&language=`+val['language']+`" class="btn btn-dark btn-sm"><i class="fa fa-wrench" aria-hidden="true" title="编辑栏目"></i> 编辑</a>`;
+			                                                if(!val['child']){
+					                                        	str += `<button onclick="del(`+val['id']+`)"   class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true" title="删除栏目"></i> 删除</button>`;
+					                                        }
+			                                            str += `</span>
+			                                        </div>`;
+			                                        $.each(val['child'],function(key,value){
+				                                        str += `<ol class="dd-list">
+				                                            <li class="dd-item" data-id="4">
+				                                                <div class="uk-nestable tree-title">
+				                                                    <span class="label label-info"></span> `+value['typename']+`
+				                                                    <span class="pull-right">
+				                                                         <a href="javascript:window.open('<{HTTPROOT}>index.php/index/column?id=`+value['id']+`');" class="btn btn-default btn-sm">预览</a>
+				                                                         <a href="<{base_url()}>admin.php/articles/column_add?id=`+value['id']+`&tag=editor&language=`+value['language']+`" class="btn btn-dark btn-sm"><i class="fa fa-wrench" aria-hidden="true" title="编辑栏目"></i> 编辑</a>
+				                                                         <button onclick="del(`+value['id']+`)" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true" title="删除栏目"></i> 删除</button>
+				                                                    </span>
+				                                                </div>
+				                                            </li>
+				                                        </ol>`;
+			                                        })
+			                                    str += `</li>
+			                                </ol>`;
+		                                })
+		                            str += `</li>
+		                        </ol>`;
+                		})
+                	}else{
+                		str += "<hr><p>暂无相应的栏目信息，请添加</p>";
+                	} 
+		            $('#nestable2').html(str);	 
+		            // treeJs();   
+                }else{
+                    layer.msg(data.msg);
+                }
+            },
+            error:function () {
+                layer.msg('服务器连接失败！');
+            }
+        })
+	}
+
+</script>
+</html>

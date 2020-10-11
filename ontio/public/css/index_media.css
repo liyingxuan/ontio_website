@@ -1,0 +1,568 @@
+
+@media screen and (max-width: 1200px){
+    html{font-size:35px !important;}
+    #nav .content{
+        width: auto;
+    }
+    #banner{height: 19.2rem;}
+    #banner .view ul.btn{margin-top: 1.3rem;}
+    #main .container_new .news_events .news .news_right ul li .info .text{
+        margin-bottom: 1.3rem;
+    }
+    #main .container_new .news_events .news .news_left .info .text{
+        height: 1.54rem;
+    }
+    /*team*/
+    .team .inner ul{
+        display: flex;
+        width: 100%;
+        padding-bottom: 0;
+    }
+    .team .inner ul li{
+        flex: 1;
+    }
+    .team .inner ul li>img{
+        width: 100%;
+    }
+    /*news*/
+    #main .container .news_events .events .img{
+        height: 11.995rem;
+    }
+
+    #main .container .news_events .news .news_right ul>li .info .text{
+        margin-bottom: 1.06rem;
+    }
+}
+@media screen and (max-width: 980px){
+    html {font-size:30px !important;}
+
+    /*part*/
+    #main .content .info_part ul.menu{
+        margin-top: 37px;
+        margin-bottom: 37px;
+    }
+    #main .content .part2,#main .content .part1{
+        margin-top: 0;
+    }
+    #main .content .info_part ul.menu li i.icon_l{
+        display: block;
+        margin: 0 auto;
+    }
+    #main .content .info_part ul.menu li .text{
+        display: block;
+        width: 100%;
+    }
+    #main .content .info_part ul.menu li .text p.text1{
+        text-align: center;
+    }
+    #main .content .part1 ul.menu li .text p.text2, #main .part1 ul.menu li .text p.text3{
+        text-align: center;
+    }
+    /*news*/
+    #main .container .news_events .events .img{
+        height: 12.1rem;
+    }
+    #main .container .news_events .news .news_right ul>li .info .text{
+        margin-bottom: 0.92rem;
+    }
+    /*team*/
+    .team .inner ul{
+        display: flex;
+        padding-bottom: 0;
+    }
+    #main .content .info_part ul.menu li .text{
+        text-align: center;
+    }
+    .team .inner{
+        width: 100%;
+    }
+    .team .inner ul>li{
+        flex: 1;
+    }
+    .team .inner ul>li>img{
+        width: 100%;
+    }
+    /*conteiner_new*/
+    #main .container_new .news_events .news .news_right ul li .info .text{
+        margin-bottom: 1rem;
+    }
+}
+@media screen and (max-width: 768px){
+    html {font-size:25px !important;}
+
+    /*导航*/
+    #nav .content ul.menu li form{
+        display: none;
+    }
+    #nav .content ul.menu{
+        right: auto;
+        left: 10px;
+    }
+    #nav .content ul.menu li a{
+        padding: 0 10px;
+    }
+    /*banner*/
+    #banner{
+        background-size: cover;
+        background-position-x: -20rem !important;
+    }
+    #banner .view .info{
+        width: auto;
+        padding-top: 90px;
+    }
+    #banner .view ul.btn{
+        display: flex;
+        margin-top: 32px;
+    }
+    #banner .view ul.btn li{
+        height: 40px;
+    }
+    #banner .view ul.btn li>a{
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    /*#banner .view ul.btn li>a>i.icon_arrow{
+        width: 25px;height: 25px;
+        vertical-align: -8px;
+    }*/
+    #banner .view,#main .content,#main .downloads .con,#main .container{
+        width: 600px;
+    }
+    #banner .view ul.btn li a.banner_one{
+        margin-top: 9px;
+    }
+    #banner .view ul.btn li>a{
+        padding: 0;
+    }
+    /*内容主体*/
+    /*什么是主体*/
+    #main .content{
+        margin: 80px auto 0;
+    }
+    #main .content .first_info{
+        padding: 0;
+    }
+    #main .content .first_info .title{
+        font-size: 25px;
+    }
+    #main .content .info_part .title{
+        font-size: 18px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    #main .content .info_part ul.menu{
+        display: flex;
+        margin: 0;padding: 0;
+    }
+    #main .content .info_part ul.menu li{
+        margin: 24px 10px 0 0;
+        text-align: left;
+        background-color: #f7f7f7;
+    }
+    /*part*/
+    #main .content .info_part{
+        margin-top: 1.0rem;
+    }
+    #main .content .info_part ul.menu li .text{
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    #main .content .info_part ul.menu li .text p.text1{
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    #main .content .part1 ul.menu li .text p.text2, #main .part1 ul.menu li .text p.text3{
+        font-size: 12px;display: none;
+    }
+    #main .content .info_part ul.menu li i.icon_l{
+        display: block;
+        margin-top: 10px;
+    }
+    #main .content .info_part:nth-of-type(1){
+        margin-top: 40px;
+    }
+    /*par1*/
+    #main .content .part1 ul.menu li:nth-of-type(1) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+     }
+    #main .content .part1 ul.menu li:nth-of-type(2) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    #main .content .part1 ul.menu li:nth-of-type(3) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    /*part2*/
+    #main .content .part2 ul.menu li:nth-of-type(1) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    #main .content .part2 ul.menu li:nth-of-type(2) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    #main .content .part2 ul.menu li:nth-of-type(3) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    /*part3*/
+    #main .content .part3 ul.menu li:nth-of-type(1) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    #main .content .part3 ul.menu li:nth-of-type(2) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    #main .content .part3 ul.menu li:nth-of-type(3) i.icon_l{
+        width: 32px;
+        height: 32px;
+        background-size: 100% 100%;
+    }
+    #main .content p.ontology_scenes{
+        font-size: 30px;
+        margin-top: 50px;
+    }
+    /*Ontology Scenes*/
+
+    #main .content .ontology_ul{
+        margin-top: 38px;
+    }
+    #main .content .ontology_ul ul{
+        display: flex;
+    }
+    #main .content .ontology_ul ul li{
+        margin-top: 38px;
+    }
+    #main .downloads .con{
+        display: block;
+        padding-bottom: 40px;
+    }
+    #main .downloads .con .info .title{
+        font-size: 30px;
+    }
+    #main .content .ontology_ul ul li .text{
+        display: none;
+    }
+    #main .downloads .con .info{
+        padding: 20px 0 0 0;
+        margin: 0 auto;
+    }
+    #main .downloads .con .img{
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+    }
+    #main .downloads .con .info a.btn{
+        display: block;
+        margin: 0 auto;
+    }
+    #main .downloads .con .info a.btn p.btn_title{
+        font-size: 14px;text-indent: 45px;
+    }
+    #main .downloads .con .info a.btn .icon_app_logo{
+        top:10px;
+        left:55px;
+    }
+    #main .downloads .con .info a.btn p.btn_info{
+        font-size: 12px;text-indent: 45px;
+    }
+    /*events*/
+    #main .container_new .news_events .news{
+        display: block;
+    }
+    #main .container .news_events {
+        display: block;
+    }
+    #main .container .news_events .news .news_left{
+        float: none;
+        width: auto;
+    }
+    #main .container .news_events .news .info .text{
+        margin-bottom: 34px;
+    }
+    #main .container .news_events .news .news_right{
+        display: none;
+        float: none;
+        width: auto;
+        margin-right: 0;
+    }
+    #main .container .news_events .events .img{
+        height: 10.675rem;width: 100%;
+        margin-bottom: 0;
+    }
+    #main .container .news_events .events ul.events_list li{
+            margin-bottom: 20px;
+    }
+    #main .container .news_events .events ul.events_list li .time{
+        width: 50px;height: 50px;
+    }
+    #main .container .news_events .events ul.events_list li .time>p{
+        font-size: 22px;
+    }
+    #main .container .news_events .events ul.events_list li .time>span{
+        font-size: 12px;
+        top: -2px;
+    }
+    #main .container .news_events .events ul.events_list li .cntime{
+        width: 50px;height: 50px;
+    }    
+    #main .container .news_events .events ul.events_list li .cntime>p{
+        font-size: 22px;
+        top: 1px;
+    }
+    #main .container .news_events .events ul.events_list li .cntime>span{
+        font-size: 12px;
+        top: 4px;
+    }
+    #main .container .news_events .events ul.events_list li .info .title{
+        width: 550px;
+        padding-right: 20px;
+    }
+    #main .container .news_events .events ul.events_list li .info .subtitle{
+        width: 550px;
+        padding-right: 20px;
+    }
+    #main .container .news_events .events{
+        padding-left: 0;
+        width: 100%;
+    }
+    /*container*/
+    #main .container_new .news_events .news .news_left .info .text{
+        height: 1.3rem;
+    }
+    #main .container_new .news_events .news .news_left .img{
+        height: 10.675rem;
+    }
+    /*合作*/
+    .frend_url .inner ul.one{
+    }
+    .frend_url .inner ul.one li{
+        display: block;
+        margin: 0 auto;
+    }
+    .frend_url .inner ul.one li:nth-of-type(1){
+        margin: 0 auto 64px;
+    }
+    .frend_url .inner ul.one li:nth-of-type(2){
+        margin: 0 auto 64px;
+    }
+    .frend_url .inner ul.one li:nth-of-type(3){
+        margin: 0 auto 64px;
+    }
+    .frend_url .inner ul.one li:nth-of-type(4){
+        margin: 0 auto 64px;
+    }
+    .frend_url .inner ul.one li:nth-of-type(5){
+        margin: 0 auto 64px;
+    }
+    #main .frend_url .inner{
+        width: auto;
+    }
+    #main .frend_url .inner h3{
+        line-height: 135px;
+        padding-top: 0;
+    }
+    #main .frend_url .inner ul.one li img{
+        width: 75%;
+    }
+
+    /*team*/
+    .team .inner{
+        width: 100vw;
+    }
+    .team .inner h3{
+        margin-top: 0;
+        line-height: 135px;
+    }
+    .team .inner ul{
+        margin: 0 auto;
+        padding-bottom: 0;
+    }
+    .team .inner ul li{
+        width: 77px;
+        margin: 0 10px;
+    }
+    .team .inner ul li img{
+        width: 100%;
+    }
+    .team .inner ul li p.one{
+        font-size: 14px;
+    }
+    .team .inner ul li p.two{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    /*Ont View*/
+    #main .container_new .news_events .news .news_right ul>li{
+        height: auto;
+    }
+    #main .container_new .news_events .news .news_right ul>li .img{
+        float: none;
+    }
+    #main .container_new .news_events .news .info{
+        float: none;
+        width: auto;
+    }
+    #main .container_new .news_events .news .news_right ul>li .img{
+        height: 235px;
+    }
+    #main .road_map{
+        display: none;
+        width: 300px;
+    }
+    /*new letter*/
+    .letter .inner{
+        display: none;
+        width: auto;
+    }
+    .letter .inner input.one{
+        width: 280px;
+    }
+    .letter .inner p{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:480px){
+    html {font-size:21.6px !important;}
+
+    #banner .view,#main .content,#main .downloads .con,#main .container{
+        width: 335px;
+    }
+    /*banner*/
+    #banner{
+        height: 530px;
+        background: #000 url("../images/index/banner_Ontology master schedule1.png")no-repeat ;
+        background-position-x: -786px !important;
+    }
+    #banner .view{
+        margin: 0 20px;
+    }
+    #banner .view .info{
+        padding-top: 120px;
+    }
+    #banner .view ul.btn{
+        margin-top: 30px;
+        display: block;text-align: left;
+    }
+    #banner .view ul.btn>li{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    #banner .view ul.btn li>a>i.icon_arrow{
+        display: none;
+    }
+    #banner .view .info .banner_text2{
+        width: 12.5rem;
+    }
+    #banner .view .info .banner_text3{
+        width: 16rem;
+    }
+    #banner .view a.open{
+        margin: 1.4rem 0 .1rem 0;
+        width: 10rem;
+    }
+    #banner .view a.join{
+        width: 8rem;
+    }
+    /*九宫格*/
+    #main .content .info_part ul.menu li{
+        text-align: center;
+    }
+    #main .content .info_part ul.menu li .text p.text1{
+        text-align: center;height: 40px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    /*part3*/
+    #main .content .ontology_ul ul li .title{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    #main .content .ontology_ul ul li i.icon{
+        width: 100%;
+    }
+    #main .content .ontology_ul ul li .title{
+        width: auto;
+        margin: auto;
+        font-size: 14px;
+    }
+    /*本体的场景*/
+    #main .content .ontology_ul{
+        margin-top: 0;
+    }
+    #main .content .ontology_ul ul li{
+        margin-top: 32px;
+        margin-right: 22px;
+    }
+    /*download*/
+    #main .downloads .con{
+        padding-top: 0;
+    }
+    #main .downloads .con .info{
+        height: auto;
+    }
+    #main .downloads .con .info .title{
+        display: none;
+    }
+    #main .downloads .con .info .text{
+        display: none;
+    }
+    #main .downloads .con .info a.more{
+        display: none;
+    }
+    /*events*/
+
+    #main .container .news_events .events ul.events_list li .info .title{
+        width: 275px;
+        margin-top: 10px;
+        padding-right: 20px;
+    }
+    #main .container .news_events .events ul.events_list li .info .subtitle{
+        width: 245px;
+        padding-right: 20px;
+    }
+    #main .container_new .news_events .news .news_left .img{
+        height: 222px;
+    }
+    #main .container_new .news_events .news .news_left .info .text{
+        height: 1.6rem;
+    }
+    /*team*/
+    .team .inner ul{
+        display: block;
+        width: 350px;
+        margin: 0 auto;
+        padding-bottom: 0;
+        text-align: center;
+    }
+    .team .inner ul>li{
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    #main .container .news_events .news .news_left .img{
+        height: 222px;
+    }
+    #main .container .news_events .events .img{
+        height: 222px;
+    }
+}

@@ -1,0 +1,37 @@
+{ 
+  "head":{
+      "contactUs":"找到我们",
+      "home":"首页",
+      "OntScenarios":"本体场景",
+      "OntTech":"本体技术",
+      "language":"Language",
+      "zh":"中",
+      "En":"En",
+      "documents":"文档",
+      "OntIntroduction":"白皮书概览",
+      "OntECOWP":"生态白皮书（即将发布）",
+      "OntTechWP":"技术白皮书（即将发布）",
+      "OntTechYP":"技术黄皮书（敬请期待）",
+      "OntGoveYP":"治理白皮书（敬请期待）",
+      "joinus":"加入本体",
+      "News":"新闻"
+  },
+  "teamPage": { 
+      "id":"teamPage",
+      "firstTitle1": "加入本体团队",  
+      "description":"本体团队是由技术、市场、产品、生态拓展等专业人才构成的综合性团队，欢迎各领域专业伙伴加入我们！联系邮箱：hr@ont.io"
+  },       
+  "communityPage":{
+    "id":"communityPage",
+    "firstTitle1":"加入社区",
+    "description":"本体的全球化社区，通过社区贡献者的形式为本体进行技术、社群建设、生态拓展、产品设计等各方面的支持，欢迎志同道合的伙伴们加入"
+  },
+  "partnerPage":{
+    "id":"partnerPage",
+    "firstTitle1":"成为本体合作伙伴",
+    "description":"本体合作伙伴在本体中提供各类分布式专业服务，如果您想将您的业务或创新以分布式的体系提供服务，欢迎成为本体合作伙伴"
+  },
+  "footerPage":{
+    "OntologyNetwork":"本体"
+  }
+}

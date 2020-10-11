@@ -1,0 +1,197 @@
+/*可公用*/
+body{
+    line-height: 1;
+    overflow-x: hidden;
+}
+.bold-text{
+    font-weight: bold;
+}
+.dark-text{
+    color: #324349;
+}
+.light-text{
+    color: #8E9496;
+}
+.team-line{
+    height: 1px;
+    background: rgb(210, 208, 208);
+    margin-left: 10px;
+    margin-right: 1px;
+}
+.head2{
+    font-size: 32px;
+}
+
+/*团队内容*/
+.team-container{
+    text-align: center;
+}
+.team-container>*{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*图片切换*/
+.swiper-container{
+    overflow: hidden;
+    margin: 10px;
+    padding: 0;
+}
+.swiper-wrapper{
+    display: flex;
+    position: relative;
+}
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.swiper-slide img{
+    width: 100%;
+}
+
+/*团队成员展示*/
+.team-member{
+    text-align: left;
+    padding: 0;
+    font-size: 0;
+}
+.team-member li{
+    display: inline-block;
+    margin:10px;
+    width: 140px;
+    font-size: 20px;
+    vertical-align: top;
+}
+.team-member li p{
+    color: #324349;
+}
+.team-member li a,
+.team-member li span,
+.team-member li img{
+    display: inline-block;
+    width: 100%;
+}
+.team-member li p{
+    padding:0 10px;
+}
+/*团队图片样式*/
+.img-cover{
+    display: block;
+    background:rgba(87,180,203,1);
+    font-size:0;
+    position: relative;
+    margin-bottom: 8px;
+}
+.img-content{
+    background: transparent;
+    transition: background 0.5s;
+    color:#324349!important;
+    padding-bottom: 24px;
+}
+.img-content .img-cover:before{
+    content: "\f078 ";
+    font-family: FontAwesome;
+    position: absolute;
+    z-index: 2;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    width: 20px;
+    height: 30px;
+    font-size: 22px;
+    color: #FFFFFF;
+    visibility: hidden;
+    transform: rotateZ(0deg);
+    transition: transform 0.5s;
+}
+.img-content:hover{
+    background: #EDF8FF;
+    transition: background 0.2s;
+}
+.img-content:hover img{
+    opacity: 0.2;
+}
+.img-content:hover .img-cover:before {
+    visibility: visible;
+}
+
+/*选择标签的样式*/
+.selected a{
+    background: #EDF8FF;
+}
+.selected .img-content:hover img {
+    opacity: 0;
+}
+.selected img{
+    opacity: 0;
+    transition:opacity 0.5s;
+}
+.selected .img-cover:before{
+    visibility: visible;
+    transform: rotateZ(180deg);
+    transition: transform 0.5s;
+}
+
+/*详情的样式*/
+#teamDetail{
+    font-size: 30px;
+}
+/*#teamDetail{*/
+    /*padding-left: 10px;*/
+    /*padding-right: 10px;*/
+    /*line-height: 1.2;*/
+/*}*/
+.team-detail{
+    display: table;
+}
+.team-detail div{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+}
+.team-detail .detail-img{
+    width: 320px;
+}
+.detail-img img{
+    width: inherit;
+}
+.team-detail .detail-intro{
+
+}
+.detail-intro span{
+    padding-right: 6px;
+}
+
+/*兼容性适配*/
+@media only screen and (max-width:680px){
+    .team-detail{
+        display: block;
+        line-height: 1.7;
+    }
+    .team-detail div{
+        display: block;
+        margin: auto;
+    }
+    .team-detail .detail-img{
+        max-width: 320px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width:420px) {
+    .team-member {
+        text-align: center;
+    }
+    .team-member li {
+        margin: 10px;
+    }
+}
+@media only screen and (max-width:330px) {
+    .team-member li {
+        width: 125px;
+    }
+}

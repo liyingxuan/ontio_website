@@ -1,0 +1,26 @@
+1.用户轮训获取待授权信息接口
+method：get
+url：/api/v1/user/authorization/notice/{did}
+返回：
+{
+  "Action": "getUnAuthNotice",
+  "Error": 0,
+  "Desc": "SUCCESS",
+  "Result": [
+    {
+      "accessExpire": "50min",
+      "serviceId": "201709002",
+      "userDid": "did:xc:AW5YYFDNfZQHRgxebrmVfKshGDRtQtsPui",
+      "authState": 0,
+      "confirmTime": null,
+      "demondDid": "did:xc:AW5YYFDNfZQHRgxebrmVfKshGDRtQtsPui",
+      "supplyDid": "did:xc:AbbbZ71cC5nrYz3H4PbF1nsvy1FDzTT49B",
+      "recordDesc": "desc",
+      "createTime": "20170917125937"
+    }
+  ]
+}
+
+入参：
+	did:用户did ，当传入all时，即获取所有待授权信息
+

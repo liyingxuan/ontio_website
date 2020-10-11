@@ -1,0 +1,148 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>webfont</title>
+    <style type="text/css">
+    *{margin: 0;padding: 0;list-style: none;}
+/*
+KISSY CSS Reset
+理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+特色：1. 适应中文；2. 基于最新主流浏览器。
+维护：玉伯<lifesinger@gmail.com>, 正淳<ragecarrier@gmail.com>
+ */
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+  margin: 0;
+  padding: 0;
+}
+
+/** 设置默认字体 **/
+body,
+button, input, select, textarea /* for ie */ {
+  font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 清除浮动 */
+.ks-clear:after, .clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.ks-clear, .clear {
+  *zoom: 1;
+}
+
+.main {padding: 30px 100px;}
+.main h1{font-size:36px; color:#333; text-align:left;margin-bottom:30px; border-bottom: 1px solid #eee;}
+
+.helps{margin-top:40px;}
+.helps pre{
+  padding:20px;
+  margin:10px 0;
+  border:solid 1px #e7e1cd;
+  background-color: #fffdef;
+  overflow: auto;
+}
+
+.icon_lists li{
+  float:left;
+  width: 100px;
+  height:150px;
+  text-align: center;
+}
+.icon_lists .icon{
+  font-size: 42px;
+  line-height: 100px;
+  margin: 10px 0;
+  color:#333;
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
+
+}
+.icon_lists .icon:hover{
+  font-size: 100px;
+}
+
+@font-face {font-family: "webfont";
+  src: url('webfont.eot'); /* IE9*/
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('webfont.woff') format('woff'), /* chrome、firefox */
+  url('webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+
+.web-font {
+  font-family:"webfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>webfont 字体预览</h1>
+        <p class="web-font">新代分布式链网重要公告构建本体架构了融合，将多样性在体化协议下进行协同，整合多维认证及各类不同区块链与信息系统，纳入多源身份认证和多源信息交换协议，并提供不同应用场景开放基础模块，实现点对点，构建跨链、跨系统、跨行业、跨应用和跨终端基础设施痛点本体愿景与价值本体搭建未来人多样性识别与认证物多样性识别与认证数据协同与交换引爆纽约！关于本体，你想知道都在这里海外媒体热议本体：他们正在做世界从未做过事！第时间获得本体重要公告和新闻与本体进行合作，起构建新代链网发送加入，共建新代链网没有任何形式公募、私募、代投，请谨防遭遇诈骗受到损失。刚刚结束了第轮邮件订阅社区回馈活动名单统计，细节将通过邮件订阅公布。已经结束了第轮邮件订阅社区回馈活动名单统计，所有订阅成功用户都已收到了来自确认。引爆纽约！关于，你想知道都在这里海外媒体热议：他们正在做世界从未做过事！出席日本聚会 诠释和链网季宙栋加盟担任首席战略官“中美区块链发布第阶段技术白皮书： “超融合链网”等创新技术夺人眼球成为首加入“全球去中心化身份联盟”中国区块链项目入选国家工信部区块链开源项目计划讲”开篇 李俊布道新代“链网”！去中心化、基于公有链平台李俊季宙栋胡凝丛宏雷翁俊杰肖旻赖智超王兵谈元周喜吕威夏坤贤刘尖奇刘攀胡冠军周强苏凌霄安立董丹蒋鼎峰尤歆飞余思晴唐家宁段宏宇周炎李颖轩刘痕傅翔郭笑杰张伟丁文彬刘婧谢甜团队介绍团队精英北京团队上海团队经验请填写你邮箱和中验证码请阅读以下内容并勾选文字下方“已阅读”选顶已阅读，本人已知晓上述内容第二步 基本 获取验证码请填写你基本第三步 身份 请填写您证件注意：请确保护照正面显示，你脸和身份证全部在框内，护照上所有都清晰可见。 我们只支持和格式，不符合这些要求照片将被拒绝。身份证件第四步 社交媒体 请填写您社交媒体（请填写尽量全面）您将要提交以下（请确认你填写准确无误）恭喜你！ 你已经完成了登记，我们将尽快审核你资料。发放后，我们将会通过官方网站和社交媒体进行公布。感谢你对我们支持！一用户信息实体本体邮件网络信任体系的分布式个生态上传返回主页列表大双付冰漪马上申请温萌司帅王成</p>
+
+
+        <div class="helps">
+            第一步：使用font-face声明字体
+            <pre>
+@font-face {font-family: 'webfont';
+    src: url('webfont.eot'); /* IE9*/
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('webfont.woff') format('woff'), /* chrome、firefox */
+    url('webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+</pre>
+第二步：定义使用webfont的样式
+            <pre>
+.web-font{
+    font-family:"webfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+</pre>
+第三步：为文字加上对应的样式
+<pre>
+&lt;i class="web-font"&gt;新代分布式链网重要公告构建本体架构了融合，将多样性在体化协议下进行协同，整合多维认证及各类不同区块链与信息系统，纳入多源身份认证和多源信息交换协议，并提供不同应用场景开放基础模块，实现点对点，构建跨链、跨系统、跨行业、跨应用和跨终端基础设施痛点本体愿景与价值本体搭建未来人多样性识别与认证物多样性识别与认证数据协同与交换引爆纽约！关于本体，你想知道都在这里海外媒体热议本体：他们正在做世界从未做过事！第时间获得本体重要公告和新闻与本体进行合作，起构建新代链网发送加入，共建新代链网没有任何形式公募、私募、代投，请谨防遭遇诈骗受到损失。刚刚结束了第轮邮件订阅社区回馈活动名单统计，细节将通过邮件订阅公布。已经结束了第轮邮件订阅社区回馈活动名单统计，所有订阅成功用户都已收到了来自确认。引爆纽约！关于，你想知道都在这里海外媒体热议：他们正在做世界从未做过事！出席日本聚会 诠释和链网季宙栋加盟担任首席战略官“中美区块链发布第阶段技术白皮书： “超融合链网”等创新技术夺人眼球成为首加入“全球去中心化身份联盟”中国区块链项目入选国家工信部区块链开源项目计划讲”开篇 李俊布道新代“链网”！去中心化、基于公有链平台李俊季宙栋胡凝丛宏雷翁俊杰肖旻赖智超王兵谈元周喜吕威夏坤贤刘尖奇刘攀胡冠军周强苏凌霄安立董丹蒋鼎峰尤歆飞余思晴唐家宁段宏宇周炎李颖轩刘痕傅翔郭笑杰张伟丁文彬刘婧谢甜团队介绍团队精英北京团队上海团队经验请填写你邮箱和中验证码请阅读以下内容并勾选文字下方“已阅读”选顶已阅读，本人已知晓上述内容第二步 基本 获取验证码请填写你基本第三步 身份 请填写您证件注意：请确保护照正面显示，你脸和身份证全部在框内，护照上所有都清晰可见。 我们只支持和格式，不符合这些要求照片将被拒绝。身份证件第四步 社交媒体 请填写您社交媒体（请填写尽量全面）您将要提交以下（请确认你填写准确无误）恭喜你！ 你已经完成了登记，我们将尽快审核你资料。发放后，我们将会通过官方网站和社交媒体进行公布。感谢你对我们支持！一用户信息实体本体邮件网络信任体系的分布式个生态上传返回主页列表大双付冰漪马上申请温萌司帅王成&lt;/i&gt;
+</pre>
+        </div>
+
+    </div>
+</body>
+</html>

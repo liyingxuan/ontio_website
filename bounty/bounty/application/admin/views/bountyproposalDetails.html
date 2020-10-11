@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"> 
+		
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>New Bounty Ideas details</h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;"> 
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="ap_name">name：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['name']) && !empty($bountyInfo['name'])}><{$bountyInfo['name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="ap_width">email：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['email']) && !empty($bountyInfo['email'])}><{$bountyInfo['email']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="programming_languages">programming languages</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['programming_languages']) && !empty($bountyInfo['programming_languages'])}><{$bountyInfo['programming_languages']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="budget_requested">Budget Requested：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['budget_requested']) && !empty($bountyInfo['budget_requested'])}><{$bountyInfo['budget_requested']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="estimated_time">Estimated Time to Complete ：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['estimated_time']) && !empty($bountyInfo['estimated_time'])}><{$bountyInfo['estimated_time']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="brief_desc">Brief Description：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['brief_desc']) && !empty($bountyInfo['brief_desc'])}><{$bountyInfo['brief_desc']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="idea_desc">Detailed Description：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['idea_desc']) && !empty($bountyInfo['idea_desc'])}><{$bountyInfo['idea_desc']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="submit_time">submit time：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['submit_time']) && !empty($bountyInfo['submit_time'])}><{$bountyInfo['submit_time']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+										
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="is_deal">state：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['is_deal']) && !empty($bountyInfo['is_deal']) && $bountyInfo['is_deal']==1}>是<{else}><span style="color: red;">否</span><{/if}>
+			                       		 </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="admin_name">deal name：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['admin_name']) && !empty($bountyInfo['admin_name'])}><{$bountyInfo['admin_name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="sure_time">deal time：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($bountyInfo['sure_time']) && !empty($bountyInfo['sure_time'])}><{$bountyInfo['sure_time']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+									
+									<div class="ln_solid"></div>
+			                        <div class="form-group">
+				                        <div class="col-md-12 col-sm-12 col-xs-12 center">
+				                          <button type="submit" id="submitBtn" onclick="button()" class="btn btn-success" >Back to the previous page</button>
+				                        </div>
+				                    </div> 
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+		<!-- /footer content -->
+		</div>
+		</div>
+		<{include file="library/Flink.html" }>
+	</body>  
+	<script type="text/javascript">
+		function button(){
+			window.location.href = "<{base_url('admin.php/sites/bounty')}>";
+		}
+	</script>
+</html>

@@ -1,0 +1,19 @@
+{       
+  "Cooperation":{
+    "id":"communityPage",
+    "firstTitle1":"Organizational Cooperation",
+    "secondTitle1":"Get in contact if your organization is interested in building a distributed trust network with us.",
+    "name":"Organization name",
+    "contact":"Email address",
+    "detail":"Please introduce yourself and how you could cooperate with Ontology.",
+    "send":"Send",
+    "warnMsg":"Please complete all fields",
+    "field":"Industry",
+    "phone":"Telephone",
+    "thanksword":"Thank you. We will be in contact if you are suitable for cooperation.",
+    "back":"Return"
+  },
+  "footerPage":{
+    "OntologyNetwork":"本体网络"
+  }
+}

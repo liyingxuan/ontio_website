@@ -1,0 +1,312 @@
+﻿{ 
+    "Triones": { 
+        "id":"Triones",
+        "firstTitle1": "",  
+        "secondTitle1":"",
+        "list":[
+
+            {
+                "title":"Ontology Triones Seed Node Second Round Application Terms",
+                "secondtitle":"",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"Ontology is committed to building an open-source, open-minded, and collaborative distributed trust ecosystem. This relies on the technology, applications, and governance of the entire Ontology chain network. Ontology will use the \"Triones Consensus System\" for the chain network. The system provides distributed, high-performance expansion support with an incentive mechanism to achieve a comprehensive and balanced governance model. The candidates of Triones consensus node group will include communities, professional organizations, and geeks from all over the world. They will constitute Ontology ecosystem co-builders, together helping develop Ontology's trust ecosystem."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"Ontology plans to start the second round of Triones seed node enlistment on October 15th, 2018, to begin building an open, broad global chain network. Triones’ incentive program is attractive; in addition to the basic ONG consumption (from network costs, storage fees, etc.) of the entire chain network system, Ontology gives an additional fixed 1% ONG incentive to all participants per year from the community allocation for the first three years."
+            },
+            {
+                "title":"",
+                "secondtitle":"Ontology Triones Second Round Node Enlistment Guide",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"1.  Up to 16 nodes will be enlisted in the second round."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"2.  Applications must be madde in accordance with the terms."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"3.  Node applications will open at 00:00 on October 15th, 2018 and ends at 23:59 (UTC) on November 8th, 2018. After applications close stake increase will remain open until 23:59 (UTC) on November 15th, 2018."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"4.  Applications will be reviewed during the period application are open."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"5.  If an application passes review, candidate information, real time stake amount, and candidate dynamic ranking results will be published on the Ontology official website."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"6.  Real-time stake amount can only be increased, not reduced. Applicants who reduce stakes will be disqualified."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"7.  If any enlisted nodes quit after enlistment, another node will be enlisted in their place."
+            },
+            {
+                "title":"",
+                "secondtitle":"Ontology Triones seed node qualification requirements",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"1.  Seed node candidates must have a stake of at least 200,000 ONT."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"2.  Seed node candidates must meet the software and hardware network environment requirements (see Ontology Triones Software and Hardware Requirements)."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"3.  Seed node candidates must complete the application questionnaire."
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"4.  Seed node candidates must pass all ONT ID verifications."
+            },
+            {
+                "title":"",
+                "secondtitle":"Ontology Triones assessment parameters",
+                "item":""
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"1) Candidate industry experience and reputation"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"2) Candidate technical resources and R&D capabilities"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"3) Candidate team composition"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"4) Candidate community support"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"5) Candidate other resource support"
+            },
+            {
+                "title":"",
+                "secondtitle":"",
+                "item":"6) Long-term support for operations.(include token stake, fiat)"
+            },
+
+
+          {
+              "title":"Ontology Triones Software, Hardware, and Network Requirements",
+              "secondtitle":"",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"Summary ",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Ontology is a new high-performance public multi-chain project and a distributed trust collaboration platform. It can be deployed and run in an X86 environment and mainstream virtualization environments and supports most mainstream hardware networks."
+          },
+          {
+              "title":"",
+              "secondtitle":"Linux operating system version requirements",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"",
+              "table":{
+                  "head":[
+                    {"headitem":"Linux operating system platform"},
+                    {"headitem":"Version"}
+                  ],
+                  "content":[
+                        [
+                            {"contentitem":"Red Hat Enterprise Linux"},
+                            {"contentitem":"7.3 and above"}
+                        ],
+                        [ 
+                            {"contentitem":"CentOS"},
+                            {"contentitem":"7.1 and above"}
+                        ],
+                        [ 
+                            {"contentitem":"Oracle Enterprise Linux"},
+                            {"contentitem":"7.3 and above"}
+                        ],
+                        [ 
+                            {"contentitem":"Ubuntu LTS"},
+                            {"contentitem":"16.04 and above"}
+                        ]
+                  ]
+              }
+          },
+          {
+              "title":"",
+              "secondtitle":"Server requirements",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Ontology supports the deployment of 64-bit general purpose hardware server platforms running on Intel x86-64 architecture. The following requirements and recommendations apply to the node server hardware configuration:"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"",
+              "table":{
+                  "head":[
+                    {"headitem":"Component"},
+                    {"headitem":"CPU"},
+                    {"headitem":"Memory"},
+                    {"headitem":"Local storage"},
+                    {"headitem":"Network"},
+                    {"headitem":"Server number"}
+                  ],
+                  "content":[
+                        [
+                            {"contentitem":"Ontology"},
+                            {"contentitem":"8Core+"},
+                            {"contentitem":"32 GB+"},
+                            {"contentitem":"SSD 1TB"},
+                            {"contentitem":"10Geth"},
+                            {"contentitem":"No more than four nodes"}
+                        ]
+                  ]
+              }
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Note:"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Cloud service referral providers: AWS with DdoS protection, Azure (international) with DdoS protection, Google Cloud with load-balance."
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"If you only need to test depolyment, it is recommended that you use the Docker Compose deployment solution for standalone testing."
+          },
+          {
+              "title":"",
+              "secondtitle":"Network requirements",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"As an open-source high-performance distributed ledger platform, Ontology needs to ensure certain latency to guarantee performance:"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"1）The ping value to the seed node list does not exceed 300 ms *"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"2) The node extranet bandwidth >= 50 mb"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Normal operation requires the network environment to provide the following network port configuration requirements. Administrator can enable relevant ports on the network side and host side according to the deployment of Ontology modules in the actual production environment:"
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"",
+              "table":{
+                  "head":[
+                    {"headitem":"Module"},
+                    {"headitem":"Default port"},
+                    {"headitem":"Note"}
+                  ],
+                  "content":[
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20336/20337"},
+                            {"contentitem":"Local/remote RPC port"}
+                        ],
+                        [
+                            {"contentitem":"Ontology CLI"},
+                            {"contentitem":"20000"},
+                            {"contentitem":"CLI signing service port"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20338"},
+                            {"contentitem":"Node communication interface port"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20339"},
+                            {"contentitem":"Node consensus channel interface (optional)"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20334"},
+                            {"contentitem":"RESTful service port"}
+                        ],
+                        [
+                            {"contentitem":"Ontology Node"},
+                            {"contentitem":"20335"},
+                            {"contentitem":"WebSocket service communication port"}
+                        ]
+                  ]
+              }
+          },
+          {
+              "title":"",
+              "secondtitle":"Client web browser requirements",
+              "item":""
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"Ontology provides the explorer.ont.io visual monitoring tool. Users are advised to use latest version of Internet Explorer, Google Chrome, or Mozilla Firefox to access the browser portal."
+          },
+          {
+              "title":"",
+              "secondtitle":"",
+              "item":"* The Ontology Foundation reserves the right of final decision on interpretation."
+          }
+        ],
+    "send":"Apply Now",
+    "node":"Node"
+    }
+  }

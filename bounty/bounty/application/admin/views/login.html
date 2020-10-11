@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ONT Bounty后台管理</title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <link rel="stylesheet" href="<{HTTPROOT}>plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<{HTTPROOT}>plugins/fontAwesome321/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<{TEMPLE}>css/form-elements.css">
+        <link rel="stylesheet" href="<{TEMPLE}>css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>ONTology</strong> Bounty后台管理 </h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>登录</h3>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-key"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="" method="post" class="login-form" onsubmit="return false;">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="username">账 号</label>
+			                        	<input type="text" name="username" placeholder="账号..." class="form-username form-control" id="username">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="password">密 码</label>
+			                        	<input type="password" name="password" placeholder="密码..." class="form-password form-control" id="password">
+			                        </div>
+			                        <button type="submit" class="btn" id="submit">登  录</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Javascript -->
+        <script src="<{TEMPLE}>js/jquery-1.11.1.min.js"></script>
+        <script src="<{HTTPROOT}>plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<{TEMPLE}>js/jquery.backstretch.min.js"></script>
+        <script type="text/javascript" src="<{HTTPROOT}>plugins/jQuery_md5/jQuery.md5.js"></script>
+       <script type="text/javascript" src="<{HTTPROOT}>plugins/jQuery_md5/jQuery.md5.add.js"></script>
+       <script type="text/javascript" src="<{HTTPROOT}>plugins/layer/layer.js"></script>
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+           <script> 
+        jQuery(document).ready(function() {
+		    /*
+		        Fullscreen background
+		    */
+		    $.backstretch("<{TEMPLE}>/images/bg.jpg");
+		    /*
+		        Form validation
+		    */
+		    $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
+		    	$(this).removeClass('input-error');
+		    });
+		    $('#submit').click(function () {
+	          user = $('#username').val();//获取输入账号的值
+	          pwd = $('#password').val();//获取输入密码的值
+	          if(user =='' || pwd =='')
+	          {
+	            layer.msg("请输入用户名或密码后重试");
+	            return false;
+	          }
+	          // 回车提交表单
+	          $('#submit').keydown(function(event) {
+		            if(event.keyCode == 13) {
+		              $('.submit').click();
+		            }
+		          });
+		          pwd = pwd_addMD5(pwd);
+		          $.ajax({
+				          type: "post",
+				          url: "login",
+				          data: {
+				            user: user,
+				            pwd: pwd
+				          },
+				          dataType: "json",
+				          success: function(data)
+				          { 
+				          	if(data.state=='403'){
+								top.location.href='<{base_url("admin.php/index/login")}>';
+								return false;
+							}
+				            if(data.state)
+				            {
+				              layer.msg('登录成功');
+				              window.setTimeout("window.location.href='<{base_url()}>admin.php/index/index'",1000);
+				            } else{
+				              layer.msg(data.msg);
+				              return false;
+				            }
+				          }
+		        });
+	      });
+		});
+</script>
+
+    </body>
+
+</html>

@@ -1,0 +1,88 @@
+{ 
+  "head":"Ontology Attends NEO DevCon in San Francisco",      
+  "author":"ont",
+  "language":false,
+  "newstime":"2018-02-02",
+  "newslist":[
+    {
+      "picurl":"/static/file/news/newspic/002001.jpeg",
+      "content":"",
+      "personPic":false
+    },
+    {
+      "picurl":"",
+      "content":"NEO smart economy held its first developer conference on January 30–31 in San Francisco, California. The event saw over 700 developers, investors, and community members from across the US and the world come together to share ideas and technology from the NEO ecosystem and beyond.",
+      "h3":""
+    },
+    {
+      "picurl":"",
+      "content":"The event consisted of multiple sessions and workshops over a two-day period. Speakers included Da Hongfei, Founder of NEO, CEO of Onchain, and Advisor of Ontology, and Li Jun, Founder of Ontology. The event sold out, with NEO ecosystem fans from across the globe excited to attend the milestone event.",
+      "h3":""
+    },
+    {
+      "picurl":"",
+      "content":"On January 30 the event opened with representatives from NEO ecosystem projects presenting. Li Jun gave a speech on the main stage about the technology behind Ontology’s underlying infrastructure. In his speech Li illustrated how Ontology acts as the underlying infrastructure for a trust ecosystem in which he hopes a community of partners and developers will start to bloom on the public platform in 2018. In the evening developers from the conference went over to GitHub’s headquarters in downtown San Francisco for a workshop in Python smart contract development.",
+      "h3":""
+    },
+    {
+      "picurl":"/static/file/news/newspic/002002.jpeg",
+      "content":"",
+      "personPic":false
+    },
+    {
+      "picurl":"/static/file/news/newspic/002003.jpeg",
+      "content":"",
+      "personPic":false
+    },
+    {
+      "picurl":"",
+      "content":"On January 31 the main stage was scheduled tight with demos of project features. Li was also interviewed live by CryptoBud on NEO News Today’s live stream of DevCon. In his interview Li introduced Ontology’s chain network structure and its support for real business use cases with easy technical onboarding — businesses with little or no experience in distributed systems can easily plug into the framework connectors. Li also noted Ontology adheres to the W3C‘s DID protocol — the first public blockchain in the world to do so.",
+      "h3":""
+    },
+    {
+      "picurl":"/static/file/news/newspic/002004.png",
+      "content":"",
+      "personPic":false
+    },
+    {
+      "picurl":"",
+      "content":"Regarding identity, Li explained Ontology uses a decentralized method to link/integrate different trust sources — including centralized system such as those from governments, a model he termed a “marketplace” for ID services. When asked if such a system could eventually eliminate the use for passports as we already know them today, Li said the Ontology team is already working towards this with the integration of Chinese government ID systems. For those who did not catch the live steam of Li Jun’s interview you can watch the replay here: https://youtu.be/mU7KhO6sdjg?t=2h39m10s.",
+      "h3":""
+    },
+    {
+      "picurl":"",
+      "content":"Ontology also had a booth at the event. We were humbled by the interest shown in the project and excited as to how the many people we met will contribute to the development of our ecosystem. In addition to giving out Ontology-branded t-shirts, sweaters, caps, and stickers, during his speech Li Jun gave an announcement for a bigger giveaway for all DevCon attendees — 500 ONT! Those who attended gave in their passes before the end of the conference along with their email addresses and will later receive instructions on how to receive their ONT. We will post some more photos of the event on our Twitter (https://twitter.com/OntologyNetwork) soon.",
+      "h3":""
+    },
+    {
+      "picurl":"/static/file/news/newspic/002005.jpeg",
+      "content":"",
+      "personPic":false
+    },
+    {
+      "picurl":"/static/file/news/newspic/002006.jpeg",
+      "content":"",
+      "personPic":false
+    },
+    {
+      "picurl":"",
+      "content":"2018 is an exciting year for Ontology. In Q1 and Q2 alone we will see the first ONT community rewards being distributed, the release of the Ecosystem and Governance white papers, the release of both TestNet and MainNet, and more! We hope to attend more events and start hosting our own. If you think we should attend your event, please get in touch!",
+      "h3":""
+    },
+    {
+      "picurl":"",
+      "content":"We also hope during this time to build up the Ontology community and start holding our first Ontology meetups. We welcome you to stay active on our social media channels to keep up to date with us, as well as get to know the Ontology community and team more.",
+      "h3":""
+    },
+    {
+      "picurl":"",
+      "content":"We hope you’re as excited for 2018 as we are! See you soon San Francisco,",
+      "h3":""
+    },
+    {
+      "picurl":"",
+      "content":"The Ontology Team",
+      "h3":""
+    }
+  ]
+}

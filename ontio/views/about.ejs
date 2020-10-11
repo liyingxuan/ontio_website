@@ -1,0 +1,35 @@
+<% include header.ejs %>
+
+<main id="main">
+  <p class="about_title" ng-bind="language.d29"></p>
+  <div class="line_time">
+    <img ng-src="images/about/{{key}}_1.jpg" alt="lineTime">
+  </div>
+  <div class="network_Introduction">
+    <p class="title" ng-bind="language.d91">Ontology Introduction</p>
+    <p class="text" ng-bind="language.d30"></p>
+  </div>
+  <div class="middle_text">
+    <i class="icon_bar"></i>
+    <p class="text" ng-bind="language.d90"></p>
+  </div>
+  <div class="footer_text">
+    <ul>
+      <li>
+        <p class="text" ng-bind="language.d31"></p>
+        <i class="icon_bar"></i></li>
+      <li>
+        <p class="text" ng-bind="language.d32"></p>
+        <i class="icon_bar"></i></li>
+      <li>
+        <p class="text" ng-bind="language.d33"></p>
+        <i class="icon_bar"></i></li>
+    </ul>
+  </div>
+  <div class="road_map">
+    <p class="title">Road Map</p>
+    <img ng-src="./images/about/{{key}}_footer_img.jpg" class="road_map_img" alt="Road Map">
+  </div>
+</main>
+
+<% include footer.ejs %>

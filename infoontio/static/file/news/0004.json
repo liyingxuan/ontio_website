@@ -1,0 +1,48 @@
+{ 
+  "head":"Ontology Network Joins Meetups in Tokyo, San Francisco",      
+  "author":"ont",
+  "language":false,
+  "newstime":"2017-12-12",
+  "newslist":[
+    {
+      "picurl":"/static/file/news/newspic/000401.jpg",
+      "content":""
+    },
+    {
+      "picurl":"/static/file/news/newspic/000402.jpg",
+      "content":""
+    },
+    {
+      "picurl":"",
+      "content":"On Monday, December 11th, 2017, Li Jun, Chief Architect of Onchain and Founder of Ontology Network, joined NEO's meetup in Tokyo, introducing Ontology to the NEO ecosystem community in Japan."
+    },
+    {
+      "picurl":"",
+      "content":"Li discussed how blockchain technology has brought with it robust trust, however, without a bridge to real world legal systems there will not only be slow adoption, but it will also fall short of compliance standards and create conflicts with governments, as has been seen in the crypto space this year."
+    },
+    {
+      "picurl":"",
+      "content":"For NEO, whose platform envisions a “smart economy”, Ontology Network acts as a connector/mapper for different external services and systems. These different services can cooperate through Ontology Network, bridging NEO and other projects with the real economy and traditional information systems."
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Network also made an appearance at \"The Future of Blockchain\" meetup in San Francisco on Thursday, November 30th, along with NEO, Elastos, Stellar, and the blockchain community in the Bay Area."
+    },
+    {
+      "picurl":"",
+      "content":"Li shared how Ontology Network addresses each of the gaps in today's trust systems, including fragmented sources of trust, the missing role of the individual, data management monopolization, data storage fragmentation, data security issues, and more."
+    },
+    {
+      "picurl":"",
+      "content":"Considering these issues, Ontology's distributed systems allow its users to know where their data is being stored and have full authorization over its use. Users can also turn their ordinary data into data assets, authorizing its trade through Ontology Network's decentralized data exchange and NEO’s smart contract system."
+    },
+    {
+      "picurl":"",
+      "content":"As 2017 draws to an end, we look forward to participating in more community events in the year ahead. However, before that, Ontology Network will be releasing its Technology White Paper and Ecosystem White Paper! You can keep up to date by following our social media channels, the full list of which can be found on our website: https://ont.io/."
+    },
+    {
+      "picurl":"",
+      "content":"The Ontology Team"
+    }
+  ]
+}

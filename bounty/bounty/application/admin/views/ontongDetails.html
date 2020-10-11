@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"> 
+		
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>received Testnet ONT&ONG Application submit details</h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;"> 
+
+			                        <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="name">name：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['name']) && !empty($ontongInfo['name'])}><{$ontongInfo['name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="phone">tel：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['phone']) && !empty($ontongInfo['phone'])}><{$ontongInfo['phone']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+		
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="email">email</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['email']) && !empty($ontongInfo['email'])}><{$ontongInfo['email']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="aont">ont：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['aont']) && !empty($ontongInfo['aont'])}><{$ontongInfo['aont']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="aong">ong：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['aong']) && !empty($ontongInfo['aong'])}><{$ontongInfo['aong']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="estimated_time">address：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['testnet_address']) && !empty($ontongInfo['testnet_address'])}><{$ontongInfo['testnet_address']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="website">project url：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['website']) && !empty($ontongInfo['website'])}><{$ontongInfo['website']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="project">desc for plan：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['project']) && !empty($ontongInfo['project'])}><{$ontongInfo['project']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="team">desc for team：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['team']) && !empty($ontongInfo['team'])}><{$ontongInfo['team']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="submit_time">submit time：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['submit_time']) && !empty($ontongInfo['submit_time'])}><{$ontongInfo['submit_time']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+										
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="is_deal">state：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['is_deal']) && !empty($ontongInfo['is_deal']) && $ontongInfo['is_deal']==1}>是<{else}><span style="color: red;">否</span><{/if}>
+			                       		 </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="admin_name">deal username：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['admin_name']) && !empty($ontongInfo['admin_name'])}><{$ontongInfo['admin_name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="sure_time">deal time：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($ontongInfo['sure_time']) && !empty($ontongInfo['sure_time'])}><{$ontongInfo['sure_time']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+									
+									<div class="ln_solid"></div>
+			                        <div class="form-group">
+				                        <div class="col-md-12 col-sm-12 col-xs-12 center">
+				                          <button type="submit" id="submitBtn" onclick="button()" class="btn btn-success" >Back to the previous page</button>
+				                        </div>
+				                    </div> 
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+		<!-- /footer content -->
+		</div>
+		</div>
+		<{include file="library/Flink.html" }>
+	</body>  
+	<script type="text/javascript">
+		function button(){
+			window.location.href = "<{base_url('admin.php/sites/ontong')}>";
+		}
+	</script>
+</html>

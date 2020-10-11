@@ -1,0 +1,19 @@
+{ 
+  "Cooperation": { 
+      "id":"Cooperation",
+      "firstTitle1": "机构合作",  
+      "secondTitle1":"加入本体生态，共建新一代分布式信任链网",
+      "name":"机构名称",
+      "contact":"邮箱地址",
+      "detail":"请提供您的机构简介以及与本体的合作计划",
+      "send":"发送",
+      "warnMsg":"请完成必填项目",
+      "thanksword":"感谢您的信息！我们将在仔细考量后给您答复。",
+      "field":"行业",
+      "phone":"电话",
+      "back":"回到主页"
+  },       
+  "footerPage":{
+    "OntologyNetwork":"本体"
+  }
+}

@@ -1,0 +1,59 @@
+
+@media screen and (max-width: 1200px){
+
+}
+@media screen and (max-width: 980px){
+
+}
+@media screen and (max-width: 768px){
+    #main{
+        padding-top: 45px;width: auto;
+    }
+    #main .about_title{
+        font-size: 20px;
+    }
+    #main .middle_text{
+        height: auto;
+        width: auto;padding: 0 40px;
+    }
+    #main .network_Introduction .text{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    #main .network_Introduction .title{
+        font-size: 20px;
+    }
+
+    #main .middle_text p.text{
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    #main .middle_text i.icon_bar{
+        left: 32px;
+    }
+    #main .footer_text ul{
+        display: block;
+    }
+    #main .footer_text ul li{
+        width: auto;
+        margin-right: 0;
+        height: auto;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    #main .footer_text ul li p.text{
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0;
+    }
+
+}
+@media screen and (max-width:480px){
+    #main .line_time{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+}

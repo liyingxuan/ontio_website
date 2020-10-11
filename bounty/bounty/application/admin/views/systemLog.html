@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		  <title>ECMS管理系统 |用心服务 思微知著 </title>
+		  <{include file="library/Hlink.html" }>
+		 <link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+
+									<!-- Example Events -->
+									<div class="ibox float-e-margins">
+										<div class="ibox-content">
+											<div class="row row-lg">
+												<div class="col-sm-12">
+													<!-- Example Events -->
+													<div class="example-wrap">
+														<div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+															<button type="button" id="del6month" class="btn btn-outline btn-danger delete-group">
+				                                                 <i class="glyphicon glyphicon-trash" aria-hidden="true"></i> 删除六个月前数据
+				                                            </button> 
+															<button type="button" id="del" class="btn btn-outline btn-warning delete-group">
+				                                                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i> 批量删除
+				                                            </button> 
+														</div>
+														<table id="exampleTableEvents" data-height="400px">
+														</table>
+													</div>
+													<!-- End Example Events -->
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+			<!-- /footer content -->
+			</div>
+			</div>
+			<{include file="library/Flink.html" }>
+
+	</body>
+	<!-- Bootstrap table -->
+	<script src="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+	<script src="<{HTTPROOT}>plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<!-- Peity -->
+	<script>
+		(function() {
+			var $table = $('#exampleTableEvents'),
+				$button = $('.delete-group'); /*批量删除按钮*/
+			$(function() {
+				$button.click(function() {
+					var ids = $.map($table.bootstrapTable('getSelections'), function(row) {
+						return row.log_id;
+					});
+					$table.bootstrapTable('remove', {
+						field: 'id',
+						values: ids
+					});
+				});
+			});
+			function operateFormatter(value, row, index) {
+				return [
+					'<button id="btn_detail" type="button" class="btn btn-default">删除</button>',
+					'<button id="btn_edit" type="button" class="btn btn-default">编辑</button>',
+
+				].join('');
+			}
+			window.operateEvents = {
+				'click #btn_detail': function(e, value, row, index) {
+					alert(123);
+				}
+			};
+			$("#del").click(function() {
+				deleteLogList();
+			})
+			$("#del6month").click(function() {
+				delete6month();
+			})
+			//批量删除  
+			function deleteLogList() {
+				//获取所有被选中的记录  
+				var rows = $("#exampleTableEvents").bootstrapTable('getSelections');
+				if(rows.length == 0) {
+					layer.msg("请先选择要删除的记录!");
+					return;
+				}
+				var ids = '';
+				for(var i = 0; i < rows.length; i++) {
+					ids += rows[i]['log_id'] + ",";
+				}
+
+				ids = ids.substring(0, ids.length - 1);
+				deleteItem(ids);
+			}
+
+			$('#exampleTableEvents').bootstrapTable({
+				url: "system_log",
+				queryParams: function(params) {
+					return {
+						curpage: params.offset, //页码
+						rp: params.limit, //页面大小
+						search: params.search, //搜索
+						order: params.order, //排序
+						ordername: params.sort, //排序
+					};
+				},
+				method: "post",
+				search: true,
+				contentType: "application/x-www-form-urlencoded; charset=UTF-8", //发送到服务器的数据编码类型。
+				searchOnEnterKey: true,
+				/*回车搜索*/
+				// searchAlign:"left",
+				sidePagination: "server",
+				sortOrder: 'desc',
+				sortName: 'log_id',
+				pageNumber: 1,
+				pageSize: 10, //每页的记录行数
+				pageList: [10, 25, 50, 100], //可供选择的每页的行数
+				pagination: true, //是否显示分页
+				showRefresh: true,
+				showToggle: false,
+				clickToSelect: true,
+				showColumns: true,
+				striped: true, //是否显示行间隔色  
+				iconSize: 'outline',
+				toolbar: '#exampleTableEventsToolbar', //工具按钮用哪个容器
+				icons: {
+					refresh: 'glyphicon-repeat',
+					toggle: 'glyphicon-list-alt',
+					columns: 'glyphicon-list'
+				},
+				columns: [{
+						checkbox: true,
+					},
+					{
+						field: 'log_id',
+						title: '日志ID'
+					},
+					{
+						field: 'admin_name',
+						title: '操作人'
+					},
+					{
+						field: 'log_content',
+						title: '行为'
+					},
+					{
+						field: 'log_time',
+						title: '时间',
+
+					},
+					{
+						field: 'ip',
+						title: 'IP'
+					},
+					{
+						field: 'action',
+						title: '操作',
+						Events: operateEvents,
+						formatter: function(value, row, index) {
+							return '<button class="btn btn-danger btn-sm btn-del" onclick="deleteItem(' + row.log_id + ')">删除</button>';
+						}
+					}
+				],
+
+				onLoadSuccess: function(res) { //加载成功时执行  
+					// layer.msg("s");  
+				}
+
+			});
+
+			var $result = $('#examplebtTableEventsResult');
+			$('#exampleTableEvents').on('all.bs.table', function(e, name, args) {
+				// console.log('Event:', name, ', data:', args);
+			})
+			//   .on('click-row.bs.table', function(e, row, $element) {
+			//     $result.text('Event: click-row.bs.table');
+			//   })
+			//   .on('dbl-click-row.bs.table', function(e, row, $element) {
+			//     $result.text('Event: dbl-click-row.bs.table');
+			//   })
+			//   .on('sort.bs.table', function(e, name, order) {
+			//     $result.text('Event: sort.bs.table');
+			//   })
+			//   .on('check.bs.table', function(e, row) {
+			//     $result.text('Event: check.bs.table');
+			//   })
+			//   .on('uncheck.bs.table', function(e, row) {
+			//     $result.text('Event: uncheck.bs.table');
+			//   })
+			//   .on('check-all.bs.table', function(e) {
+			//     $result.text('Event: check-all.bs.table');
+			//   })
+			//   .on('uncheck-all.bs.table', function(e) {
+			//     $result.text('Event: uncheck-all.bs.table');
+			//   })
+			//   .on('load-success.bs.table', function(e, data) {
+			//     $result.text('Event: load-success.bs.table');
+			//   })
+			//   .on('load-error.bs.table', function(e, status) {
+			//     $result.text('Event: load-error.bs.table');
+			//   })
+			//   .on('column-switch.bs.table', function(e, field, checked) {
+			//     $result.text('Event: column-switch.bs.table');
+			//   })
+			//   .on('page-change.bs.table', function(e, size, number) {
+			//     $result.text('Event: page-change.bs.table');
+			//   })
+			//   .on('search.bs.table', function(e, text) {
+			//     $result.text('Event: search.bs.table');
+			//   });
+		})();
+
+		function deleteItem(id) { //删除日志
+			if(typeof id == 'number') {
+				var id = id.toString();
+			};
+			layer.confirm('删除后将不能恢复，确认删除吗？', {
+				btn: ['确认', '取消'] //按钮
+			}, function() {
+
+				$.getJSON('system_log_del', {
+					del_id: id
+				}, function(result) {
+					if(result.state) {
+						layer.msg(result.msg);
+						$('#exampleTableEvents').bootstrapTable('refresh', {
+							url: "system_log",
+							silent: true
+						});
+					} else {
+						layer.msg(result.msg);
+					}
+				});
+			});
+		}
+		
+	      function delete6month() { //删除日志
+			layer.confirm('删除后将不能恢复，确认删除吗？', {
+				btn: ['确认', '取消'] //按钮
+			}, function() {
+				$.getJSON('system_log_del_6monthAgo', {
+				}, function(result) {
+					if(result.state) {
+						layer.msg(result.msg);
+						$('#exampleTableEvents').bootstrapTable('refresh', {
+							url: "system_log",
+							silent: true
+						});
+					} else {
+						layer.msg(result.msg);
+					}
+				});
+			});
+		}
+		$(window).resize(function() { /*页面缩放时调整表头位置*/
+			$('#exampleTableEvents').bootstrapTable('resetView');
+		});
+	</script>
+
+</html>

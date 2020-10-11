@@ -1,0 +1,242 @@
+﻿{ 
+    "head":{
+        "contactUs":"Contact Us",
+        "home":"Home",
+        "OntScenarios":"Scenarios",
+        "OntTech":"Technology",
+        "language":"语言",
+        "zh":"中",
+        "En":"En",
+        "documents":"Documents",
+        "OntIntroduction":"Introductory White Paper",
+        "OntECOWP":"Ecosystem White Paper (coming soon)",
+        "OntTechWP":"Technology White Paper (coming soon)",
+        "OntTechYP":"Technology Yellow Paper (TBA)",
+        "OntGoveYP":"Governance White Paper (TBA)",
+        "joinus":"Join Ont",
+        "News":"News"
+  
+    },
+  "appPage": { 
+      "firstTitle1": "A versatile platform.",  
+      "descriptionlist":[
+          {
+              "description":"Ontology is ",
+              "blod":false
+          },
+          {
+              "description":"designed and built ",
+              "blod":true
+          },
+          {
+              "description":"for ",
+              "blod":false
+          },
+          {
+              "description":"collaboration and expansion ",
+              "blod":true
+          },
+          {
+              "description":"with partners across the globe.",
+              "blod":false
+          }
+      ]
+  },
+  "applist":[
+
+    {
+        "id":"page1",
+        "firstTitle1": "Multi-Source Identity System for People", 
+        "url":"/static/img/appPage/app1en.png",
+        "mainDescription1":"Users can collect and manage their own identity data from various sources including public institutions, banks, businesses, family, colleagues, and friends.",
+        "list": [
+          {
+              "title":"Multi-Source Identity Authentication",
+              "description": "Identities can be authenticated by multiple sources to give a more secure and trustworthy certification.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Comprehensive Personal Profile",
+              "description": "Individuals can build up an identity portfolio with data from sources relevant to them.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Data Tracking",
+              "description": "All authentications are performed with signatures that cannot be forged or repudiated.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page2",
+        "firstTitle1": "Multi-Source Identity System for Objects", 
+        "url":"/static/img/appPage/app2en.png",
+        "mainDescription1":"Digital identities of physical objects can be registered into the distributed network under the supervision of the product owners and/or producers. Each object has its own API and can interact with other digital identity holders.",
+        "list": [
+          {
+              "title":"Object Tracking",
+              "description": "Objects can be tracked throughout their life cycle with multi-factor authentication by registering digital DIDs onto the network.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Object Recording",
+              "description": "Object data such as ownership, circulation, user behavior, and other relevant information can be fully recorded and authenticated.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page3",
+        "firstTitle1": "Distributed Data Exchange", 
+        "url":"/static/img/appPage/app3en.png",
+        "mainDescription1":"User online behavior data is often recorded by service providers for analysis and trade. Ontology provides a data exchange system in which all such data can be discovered and traded whilst meeting individual privacy requirements.",
+        "list": [
+          {
+              "title":"Data Discovery",
+              "description": "Data portfolios on entities come ready compiled, allowing for easy data collection and use.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Data Exchange",
+              "description": "Data exchange and use must first receive consent of the data owner.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page4",
+        "firstTitle1": "Distributed Collaborative Systems", 
+        "url":"/static/img/appPage/app4en.png",
+        "mainDescription1":"Ontology's smart collaboration system breaks down distrust between parties.",
+        "list": [
+          {
+              "title":"Authorization Entrustment",
+              "description": "Authorities of each participant are confirmed by all relevant parties and recorded.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Activity Recording",
+              "description": "All activity is recorded to ensure transparency between collaborating parties.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Mutual Evaluation",
+              "description": "A multi-party evaluation system allows for peer-to-peer review and trust building..",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page5",
+        "firstTitle1": "Distributed Equity Management", 
+        "url":"/static/img/appPage/app5en.png",
+        "mainDescription1":"Today's economic system contains a range of equity management models, though due to factors such as low transparency and information asymmetry these projects lack credible trust mechanisms. Equity management is also facing obstacles regarding project assessment, risk warnings, information disclosure, equity circulation, and authority entrustment. In light of this Ontology has built a trustworthy distributed equity management system.",
+        "list": [
+          {
+              "title":"Investment Management",
+              "description": "Data can be safely circulated, assessment be carried out by multiple parties, and projects be evaluated by their investors.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Equity Configuration",
+              "description": "Equity configurations are transparent to all parties and recorded onto the blockchain.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Rights Entrustment",
+              "description": "Ontology allows for multi-party rights entrustment and recording, including the function to dispute actions.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page6",
+        "firstTitle1": "Distributed Community Management", 
+        "url":"/static/img/appPage/app6en.png",
+        "mainDescription1":"Current online communities are run by centralized service providers. Ontology provides the framework for communities to run in a purely decentralized system.",
+        "list": [
+          {
+              "title":"Member Control",
+              "description": "Community managers can build their communities healthily by managing the inflow of members into the community.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Community Ranking",
+              "description": " Users can present their DIDs or other evidence of experience to community managers to receive recognition.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Other Features",
+              "description": "A public credibility system, content publication control, and an incentivization design certify individuals' authority and credibility.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page7",
+        "firstTitle1": "Distributed Content Exchange", 
+        "url":"/static/img/appPage/app7en.png",
+        "mainDescription1":"Ontology has introduced a comprehensive distributed content exchange system between producer and consumer.",
+        "list": [
+          {
+              "title":"Optimized Content Search",
+              "description": "Users can choose to only view content produced by users with a certain reputation level or entrust third-parties for content recommendations.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Content Security Guarantee",
+              "description": "Users can carry out IP legal right authentication, payments, and transfers worldwide through the blockchain.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page8",
+        "firstTitle1": "Distributed Reputation System", 
+        "url":"/static/img/appPage/app8en.png",
+        "mainDescription1":"Ontology's reputation system makes a traditionally informal trust method a reliable one.",
+        "list": [
+          {
+              "title":"Reputation Management",
+              "description": "Local and global trust ranking can be calculated according to modifiable criteria.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"Data Management",
+              "description": "Data can be stored data in a range of decentralized and centralized systems for sharing.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"More",
+              "description": "Trust models can be further developed by collaborating with the content and data exchange systems.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    },
+    {
+        "id":"page9",
+        "firstTitle1": "Distributed Financial Services", 
+        "url":"/static/img/appPage/app9en.png",
+        "mainDescription1":"Small businesses and individuals often lack sufficient credit records while managing tight budgets. This makes them riskier for financial institutions, leading to high interest rates.",
+        "list": [
+          {
+              "title":"For the Customer",
+              "description": "With multi-source data coordination and authorization businesses and individuals become active managers of their data, allowing them to receive fairer interest rates when applying for financial services.",
+              "icon":"icon-yinsi "
+          },
+          {
+              "title":"For the Service Provider",
+              "description": "Financial institutions can collaborate with Ontology, establishing multi-party security coordination and analysis mechanisms to provide fairer services to their customers.",
+              "icon":"icon-yinsi "
+          }
+        ]
+    }
+  ],
+  "morePage":{
+    "title":"Other Applicable Scenarios",
+    "description":"Supply chain finance, business-to-business international remittance, KYC, automated operations, sharing economy, shipping and logistics management, digital rights management, ad placement notarization and certification, medical records sharing, digitalization of assets, education certificates..."
+  },
+  "footerPage":{
+    "OntologyNetwork":"Ontology"
+  }
+}

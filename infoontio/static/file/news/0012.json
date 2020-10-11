@@ -1,0 +1,48 @@
+{ 
+  "head":"Ontology Network Joins the Decentralized Identity Foundation as the First Chinese Blockchain Project",      
+  "author":"ont",
+  "language":false,
+  "newstime":"2017-12-27",
+  "newslist":[
+    {
+      "picurl":"/static/file/news/newspic/001201.jpg",
+      "content":""
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Network has joined DIF (Decentralized Identity Foundation) as the ever first Chinese blockchain project in the foundation. DIF was initiated by Microsoft and Tierion. Its primary members include IBM, IOTA, Netki, etc. It is a group of large companies and standups, including Microsoft and Accenture, which aims to build a standardized decentralized ecosystem for online identities.With the diversification of identity verification services and the ever-growing IoT, a universal system for identification is in desperate need. Meanwhile, big corporations monopolizing on their users’ data has encroached on data privacy and brought into serious question the ethics of handling user data."
+    },
+    {
+      "picurl":"",
+      "content":"Such a system as the one envisioned by the Decentralized Identity Foundation hopes to bring data privacy and data control back into the hands of the user, an idea central to Ontology Network’s ethos."
+    },
+    {
+      "picurl":"",
+      "content":"The Foundation envisions decentralized identities within its ecology to be anchored by blockchain IDs linked to zero-trust datastores that are universally discoverable. ONT ID, Ontology Network’s decentralized identification protocol, can likewise connect data from an entity’s identity service/s in a way which is decentralized, self-manageable, privacy protected, and easy to use."
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Network will be able to work with the Decentralized Identity Foundation to connect identity verification services and work towards the Foundation’s goal of establishing a standardized ecosystem."
+    },
+    {
+      "picurl":"",
+      "content":"According to Jun Li, the Founder of Ontology, Ontology is a unified distributed trust protocol network integrated with great diversity, and functions as the infrastructure and connector of the trust ecosystem. ONT ID is the decentralized digital identity protocol inside Ontology, applied for associating identities of individuals, property, things and events. All the identity information of entities will only be stored at specific data source providers, not within Ontology Network, in order to ensure compliance and privacy in business of all types. Meanwhile, subjects can autonomously manage and authorize ONT ID, which coincides with the concept of DIF. Joined forces with other DIF members, Ontology will drive the establishment, optimization and application of a decentralized identity system."
+    },
+    {
+      "picurl":"",
+      "content":"ONT ID is just a part of Ontology’s framework, on top of which, Ontology includes a complete blockchain structure, consisting of Trust Model (a trust-generating mechanism), Verifiable Claim (for proving certain attributes of entities), etc. On the other hand, Ontology provides a powerful and flexible distributed ledger technical system for its partners, including the Ontorand Consensus Engine (OCE), Smart Contract, Shared Data Contract Model, Merkel Tree Storage Model, HyraDAO, etc."
+    },
+    {
+      "picurl":"",
+      "content":"Coindesk reported this week that IBM is also in talks with the Decentralized Identity Foundation (https://www.coindesk.com/blockchain-consortium-draws-enterprise-giants-to-revolutionize-digital-identity/). As interest in decentralized identity systems continue to grow, Ontology Network has found itself in a healthy environment to kickstart its project. We hope those from within the industry and beyond will continue to value decentralized trust systems and support the work of the Foundation, Ontology Network, and those who share our values."
+    },
+    {
+      "picurl":"",
+      "content":"You can read more about Ontology Network’s trust ecosystem in the Introductory White Paper and the Technology White Paper. Both can be found under “Documents” at https://ont.io/."
+    },
+    {
+      "picurl":"",
+      "content":"The Ontology Team"
+    }
+  ]
+}

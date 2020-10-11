@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"> 
+		
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>广告位<{if isset($advert['ap_id']) && !empty($advert['ap_id'])}>编辑<{else}>添加<{/if}></h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;">
+			                    	  <input type="hidden" name="ap_id" value="<{if isset($advert['ap_id'])}><{$advert['ap_id']}><{/if}>" />
+
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ap_name">广告位名称<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="ap_name" name="ap_name" value="<{if isset($advert['ap_name']) && !empty($advert['ap_name'])}><{$advert['ap_name']}><{/if}>" autocomplete="off" class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div> 
+										<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ap_width">广告位宽度<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="ap_width" name="ap_width"  value="<{if isset($advert['ap_width']) && !empty($advert['ap_width'])}><{$advert['ap_width']}><{/if}>" autocomplete="off" class="form-control col-md-7 col-xs-12"><span class="info">以px为单位计算</span><span class="err" style="color: red;"></span>  
+				                        </div>
+				                      </div>
+
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ap_height">广告位高度<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="ap_height" name="ap_height"  value="<{if isset($advert['ap_height']) && !empty($advert['ap_height'])}><{$advert['ap_height']}><{/if}>" autocomplete="off" class="form-control col-md-7 col-xs-12"><span class="info">以px为单位计算</span><span class="err" style="color: red;"></span>  
+				                        </div>
+				                      </div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12">广告位类别</label>
+										<div class="form-group">
+											<div class="radio i-checks" style="display:inline-block">
+                                                <label>
+                                                    <input type="radio" <{if isset($advert.ap_class) && $advert.ap_class == '1'}>checked=""<{else}>checked=""<{/if}> value="1" name="ap_class"> <i></i>文字
+                                                </label>
+                                            </div>
+                                            <div class="radio i-checks" style="display:inline-block">
+                                                <label>
+                                                    <input type="radio" <{if isset($advert['ap_class']) && $advert['ap_class'] == '0'}> checked=""<{/if}> value="0" name="ap_class"> <i></i>图文
+                                                </label>
+                                            </div>
+                                            
+                                            <!-- <div class="radio i-checks" style="display:inline-block">
+                                                <label>
+                                                    <input type="radio" <{if isset($advert.ap_class) && $advert.ap_class == '2'}>checked=""<{/if}>  value="2" name="ap_class"> <i></i>幻灯
+                                                </label>
+                                            </div> -->
+                                            <div class="radio i-checks" style="display:inline-block">
+                                                <label>
+                                                    <input type="radio" <{if isset($advert.ap_class) && $advert.ap_class == '3'}>checked=""<{/if}>  value="3" name="ap_class"> <i></i>Flash
+                                                </label>
+                                            </div>
+                                        </div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12">启用</label>
+										<div class="form-group">
+                                            <div class="radio i-checks" style="display:inline-block">
+                                                <label>
+                                                    <input type="radio" <{if isset($advert['is_use']) && $advert['is_use'] == '0'}> checked=""<{else}>checked=""<{/if}> value="0" name="is_use"> <i></i>禁用
+                                                </label>
+                                            </div>
+                                            <div class="radio i-checks" style="display:inline-block">
+                                            	<label>
+                                                    <input type="radio" <{if isset($advert['is_use']) && $advert['is_use'] == '1'}> checked=""<{/if}> value="1" name="is_use"> <i></i>启用
+                                                </label> 
+                                            </div> 
+                                        </div>
+									</div>
+									
+									<div class="form-group">
+										<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">广告位简介 </label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<textarea name="ap_intro" id="ap_intro"  class="form-control" rows="5"  data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." data-parsley-validation-threshold="10"><{if isset($advert.ap_intro) && !empty($advert['ap_intro'])}><{$advert.ap_intro}><{else}><{/if}></textarea>
+											<span class="err" style="color: red;"></span> 
+										</div>
+									</div>
+
+				                      <div class="ln_solid"></div>
+				                      <div class="form-group">
+				                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				                          <button type="submit" id="submitBtn" class="btn btn-success">提 交</button>
+				                          <button type="button" class="btn btn-info" onclick="fanhui()">返 回</button>
+				                        </div>
+				                      </div>
+				
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /page content -->
+
+	<!-- footer content -->
+	<{include file="library/Copyright.html" }>
+	<!-- /footer content -->
+	</div>
+	</div>
+	<{include file="library/Flink.html" }> 
+	</body>
+	<script src="<{TEMPLE}>js/jquery.validate.min.js"></script> 
+	<script> 
+	//按钮先执行验证再提交表
+	$(document).ready(function(){
+	    //按钮先执行验证再提交表单
+	    $("#submitBtn").click(function(){ 
+	    	if($("#add_form").valid()){
+	          $.ajax({  
+	            url:'advert_edit',
+	            type:'post',
+	            data:$("#add_form").serialize(),
+	            dataType:'json',
+	            success:function(data){
+	            	if(data.state=='403'){
+	                    top.location.href='<{base_url("admin.php/index/login")}>';
+	                    return false;
+	                  }
+	                if(data.state){
+	                    layer.msg(data.msg);
+	                    window.setTimeout("window.location.href='<{base_url('admin.php/sites/advert')}>'", 1000);
+	                }else {
+	                    layer.msg(data.msg);
+	                }
+	            }
+	          })
+	      }
+	    }); 
+	    /*自定义宽度、高度验证*/
+	   	jQuery.validator.addMethod("is_width",function(value,element){   
+	           return this.optional(element) || /(^[1-9]\d*(\.\d{1,2})?$)|(^0(\.\d{1,2})?$)/.test(value);  
+	        },$.validator.format("请输入整数或两位内小数")  
+	    );
+	    $("#add_form").validate({
+	            errorPlacement: function(error, element){
+	                var error_td = element.siblings('span.err');
+	                error_td.append(error);
+	            },
+	            rules : {
+	                ap_name : {
+	                    required : true, 
+	                    maxlength: 100
+	                },
+	                ap_width : {
+	                    required : true, 
+	                    is_width:true,
+	                    maxlength: 10, 
+	                }, 
+	                ap_height : {
+	                    required : true, 
+	                    is_width:true,
+	                    maxlength: 10
+	                },
+	                ap_intro:{
+	                	maxlength: 255
+	                }
+	            },
+	            messages : {
+	                ap_name : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>广告位名称不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>广告位长度最多100位字符'
+	                },
+	                ap_width : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>广告位宽度不能为空',
+	                    is_width: '<i class="fa fa-exclamation-circle"></i>只能写入整数或两位内小数',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>广告位宽度长度最多10位字符'
+	                },
+	                ap_height : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>广告位高度不能为空',
+	                    is_width: '<i class="fa fa-exclamation-circle"></i>只能写入整数或两位内小数',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>广告位高度长度最多10位字符'
+	                },
+	                ap_intro : {
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>广告位高度长度最多255位字符'
+	                }
+	            }
+	        }); 
+	});
+	function fanhui(){
+    	window.setTimeout("window.location.href='<{base_url('admin.php/sites/advert')}>'", 1000);
+    }
+</script> 
+</html>

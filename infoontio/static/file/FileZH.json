@@ -1,0 +1,347 @@
+{ 
+    "head":{
+        "contactUs":"找到我们",
+        "home":"首页",
+        "OntScenarios":"本体场景",
+        "OntTech":"本体技术",
+        "language":"Language",
+        "zh":"中",
+        "En":"En",
+        "documents":"文档",
+        "OntIntroduction":"白皮书概览",
+        "OntECOWP":"生态白皮书",
+        "OntTechWP":"技术白皮书（即将发布）",
+        "OntTechYP":"技术黄皮书（敬请期待）",
+        "OntGoveYP":"治理白皮书（敬请期待）",
+        "joinus":"加入本体",
+        "News":"新闻"
+    },
+  "firstPage": { 
+      "titleZH": "一个去中心化、基于分布式信任的公有链平台",
+      "slogan1": "A Public Platform for Building a Decentralized Trust Ecosystem"  
+  },
+  "warningPage":{
+    "warningTitle":"重要公告",
+    "warningMsg":"目前，本体正专注于技术研发，相关经济模型还在拟定中，不存在私募或ICO，亦没有相关计划、方案、时间表。请大家不要轻信外部非官方渠道发布的信息。"
+  },
+  "valuePage": { 
+      "firstTitle1": "构建信任生态",  
+      "descriptionlist":[
+          {
+              "description":"本体信任网络架构了一个",
+              "blod":false
+          },
+          {
+              "description":"分布式融合的信任体系",
+              "blod":true
+          },
+          {
+              "description":"，将信任的多样性在一体化的协议体系下进行协同，整合分布式多维实体认证体系及各类不同区块链体系与信息系统，纳入",
+              "blod":false
+          },
+          {
+              "description":"多源身份认证",
+              "blod":true
+          },
+          {
+              "description":"和",
+              "blod":false
+          },
+          {
+              "description":"多源信息交换",
+              "blod":true
+          },
+          {
+              "description":"协议，并提供不同分布式应用场景的",
+              "blod":false
+          },
+          {
+              "description":"开放基础模块",
+              "blod":true
+          },
+          {
+              "description":"，实现分布式点对点的信任体系，构建",
+              "blod":false
+          },
+          {
+              "description":"跨链、跨系统、跨行业、跨应用",
+              "blod":true
+          },
+          {
+              "description":"和",
+              "blod":false
+          },
+          {
+              "description":"跨终端",
+              "blod":true
+          },
+          {
+              "description":"的分布式信任基础设施",
+              "blod":false
+          }
+      ]
+  },
+  "painPointPage":{
+      "firstTitle1": "信任的痛点", 
+      "secondTitle1": "信任",
+      "secondTitle2": "缺失带来的协作困难",
+      "painPointList": [
+        {
+            "title":"隐私保护缺失",
+            "titlelist":[
+                {
+                    "title":"隐私保护",
+                    "blod":false
+                },
+                {
+                    "title":"缺失",
+                    "blod":true
+                }
+            ],
+            "description": "用户无法掌控数据，身份信息易被滥用",
+            "icon":"icon-yinsi "
+        },
+        {
+            "title":"低效的身份证明",
+            "titlelist":[
+                {
+                    "title":"低效",
+                    "blod":true
+                },
+                {
+                    "title":"的身份证明",
+                    "blod":false
+                }
+            ],
+            "description": "信任源分散，身份证明低效，无法跨地区使用",
+            "icon":"icon-shenfenzhengming "
+        },
+        {
+            "title":"数据权益难以管理",
+            "titlelist":[
+                {
+                    "title":"数据权益",
+                    "blod":false
+                },
+                {
+                    "title":"难以管理",
+                    "blod":true
+                }
+            ],
+            "description": "个体无数据使用知情权，无法进行数据授权",
+            "icon":"icon-rights "
+        },
+        {
+            "title": "丢失的数据财富",
+            "titlelist":[
+                {
+                    "title":"丢失",
+                    "blod":true
+                },
+                {
+                    "title":"的数据财富",
+                    "blod":false
+                }
+            ],
+            "description": "数据无法被有效利用，数据财富丢失严重",
+            "icon":"icon-icon-test "
+        },
+        {
+            "title": "缺乏多维画像",
+            "titlelist":[
+                {
+                    "title":"缺乏",
+                    "blod":true
+                },
+                {
+                    "title":"多维画像",
+                    "blod":false
+                }
+            ],
+            "description": "单一认证体系难以对个人形成全面评价",
+            "icon":"icon-ren "
+        },
+        {
+            "title": "数据交换成本高",
+            "titlelist":[
+                {
+                    "title":"数据交换",
+                    "blod":false
+                },
+                {
+                    "title":"成本高",
+                    "blod":true
+                }
+            ],
+            "description": "数据交换风险巨大，信任成本高昂",
+            "icon":"icon-chengben "
+        },
+        {
+            "title": "社会协作难",
+            "titlelist":[
+                {
+                    "title":"社会协作",
+                    "blod":false
+                },
+                {
+                    "title":"难",
+                    "blod":true
+                }
+            ],
+            "description": "缺乏中心主导，协作各方难以达成信任",
+            "icon":"icon-xiezuo "
+        },
+        {
+            "title": "声誉评价难综合",
+            "titlelist":[
+                {
+                    "title":"声誉评价",
+                    "blod":false
+                },
+                {
+                    "title":"难综合",
+                    "blod":true
+                }
+            ],
+            "description": "对于声誉管理，缺乏有效信息流通和协同机制",
+            "icon":"icon-icon-test1 "
+        },
+        {
+            "title": "更多痛点",
+            "titlelist":[
+                {
+                    "title":"更多",
+                    "blod":false
+                },
+                {
+                    "title":"痛点",
+                    "blod":true
+                }
+            ],
+            "description": "权益管理不透明、虚假消息难判断、公益捐赠难追溯……",
+            "icon":"icon-more "
+        }
+      ]
+  },
+  "visionPage":{
+    "firstTitle1": "本体愿景与价值", 
+    "description1_1": "识万物、信万物",
+    "description1_2": "人人信我、我信人人",
+    "description2_1": "多样性融合的一体化分布式信任协议网络。",
+    "description2_2": "信任生态的基础设施与连接器。",
+    "description3": "本体信任网络在分布式实体与数据信任基础上，提出进一步拓展的生态与应用，将信任的应用扩展到很多的维度，从实体认证到数据交换，从分布式流程到分布式社区，从分布式交易到分布式声誉，结合底层的区块链分布式账本体系，联合各类服务伙伴在不同地域、不同领域提供多样化的信任服务，形成新一代的全球信任网络基础设施的一部分"
+  },
+  "ECOPage":{
+    "firstTitle1": "本体生态", 
+    "ECOList": [
+      {
+          "description": "体系化、流程化、一体化的信任生态"
+      },
+      {
+          "description": "信任源的有效协同"
+      },
+      {
+        "description": "分布式应用服务的技术基础"
+      },
+      {
+          "description": "数据源的互联互通"
+      },
+      {
+          "description": "信任生态体系的基础设施和连接器"
+      },
+      {
+          "description": "场景与应用的拓展与协同"
+      }
+    ]
+  },
+  "applicationPage":{
+    "firstTitle1": "信任搭建的未来", 
+    "secondTitle1": "本体应用场景",
+    "applicationList": [
+      {
+          "title": "人的多样性识别与认证",
+          "description": "多源身份认证支持不同认证方从不同的角度与方面，对同一个人进行认证，形成个人画像",
+          "icon":"icon-ren ",
+          "id":"page1"
+      },
+      {
+        "title": "物的多样性识别与认证",
+        "description": "支持物的可信数字身份建立，及其对外提供自身独特的服务接口，并可与其他拥有数字身份者对等交互",
+        "icon":"icon-wupin ",
+        "id":"page2"
+      },
+      {
+          "title": "分布式数据协同与交换",
+          "description": "数据交换框架以规范化的协议设计支持数据的发现、授权与交易，帮助用户对数据进行细粒度的控制",
+          "icon":"icon-exchange-arrow-h ",
+          "id":"page3"
+      },
+      {
+          "title": "分布式流程协作",
+          "description": "支持流程协作中责任的明晰、全流程的记录、结果的多方确认和背书等，形成协作者之间的信任",
+          "icon":"icon-Flow_02 ",
+          "id":"page4"
+      },
+      {
+          "title": "分布式权益管理",
+          "description": "支持可在新型的权益管理模式中进行数据的可靠流转、权益的有效确权、权利的可信委托",
+          "icon":"icon-guanli ",
+          "id":"page5"
+      },
+      {
+          "title": "分布式社群管理",
+          "description": "支持以分布式体系管理社群，从入口把控、群体划分，到社群交流，为社群分布式运作提供支持",
+          "icon":"icon-shequndajian ",
+          "id":"page6"
+      },
+      {
+          "title": "分布式内容生产与交易",
+          "description": "支持多个角度的分布式信任体系，支持内容生产者与内容消费者之间的可信互动",
+          "icon":"icon-jiaoyi ",
+          "id":"page7"
+      },
+      {
+          "title": "分布式声誉管理",
+          "description": "声誉管理设计了信任分、信任数据管理与可扩展信任模型，支持对特定主体进行声誉评价",
+          "icon":"icon-pingjia ",
+          "id":"page8"
+      },
+      {
+          "title": "分布式普惠金融服务",
+          "description": "多源数据协调和数据主体授权机制的设计，降低风控风险和成本，实现普惠利率",
+          "icon":"icon-jinrong ",
+          "id":"page9"
+      },
+      {
+          "title": "更多本体场景",
+          "description": "金融行业、支付、媒体、软件开发、政府管理、保险、消费、物联网、资产标的、医疗卫生……",
+          "icon":"icon-more ",
+          "id":"pageMore"
+      }
+    ]
+  },
+  "mailsubscribePage":{
+    "firstTitle1":"重要公告",
+    "secondTitle1": "",
+    "secondTitle2": "",
+    "secondTitle3": "",
+    "statement":"本体第一轮社区奖励活动的KYC结果已经发送给所有邮件订阅用户，我们将在Twitter上公布ONT发送的公告。请注意，所有邮件仅从newsletter@email.ont.io发送。",
+    "thanks5":"本体不存在任何形式的公募、私募或代投，请勿上当受骗。",
+    "mailaddress":"邮箱",
+    "name":"姓名",
+    "telephone":"电话",
+    "company":"公司",
+    "errorMsg1":"您已订阅",
+    "errorMsg2":"请完成必填项目",
+    "errorMsg3":"请输入正确的邮箱地址",
+    "subscribe":"订阅",
+    "must":"必填",
+    "option":"选填",
+    "subscribeSuccess":"订阅成功",
+    "prompt1":"",
+    "prompt2":"欢迎通过社交媒体频道关注本体的动态。"
+  },
+  "footerPage":{
+    "OntologyNetwork":"本体"
+  }
+}

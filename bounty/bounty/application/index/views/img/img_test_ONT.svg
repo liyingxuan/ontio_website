@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140px" height="219px" viewBox="0 0 140 219" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>img/test_ONT</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Developer-Center" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Ontology-Developer-Center" transform="translate(-368.000000, -994.000000)" stroke="#C2E7F3" stroke-width="3">
+            <g id="img/test_ONT" transform="translate(370.000000, 998.000000)">
+                <g id="Group-2" transform="translate(2.000000, 154.000000)" stroke-linecap="square">
+                    <path d="M1.5,0.5 L1.5,39.5" id="Line"></path>
+                    <path d="M37.5,11.5 L37.5,58.5956474" id="Line-2"></path>
+                    <path d="M82.5,11.5 L82.5,38.5" id="Line-3"></path>
+                    <path d="M129.5,0.5 L129.5,51.509803" id="Line-4"></path>
+                </g>
+                <g id="Page-1">
+                    <polyline id="Stroke-1" points="136 136 0 0 0 68"></polyline>
+                    <path d="M0,68.0407831 C0,85.4357225 6.6322105,102.826113 19.9011803,116.099762 C46.43912,142.633413 89.4620603,142.633413 116,116.099762 L19.9011803,20" id="Stroke-3"></path>
+                    <polyline id="Stroke-5" points="0 0 136 136 136 68"></polyline>
+                    <path d="M136,68 C136,50.6141584 129.367529,33.1693382 116.098039,19.9002382 C89.5590588,-6.63341274 46.5344314,-6.63341274 20,19.9002382 L116.098039,116" id="Stroke-7"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

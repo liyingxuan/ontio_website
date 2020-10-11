@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><{if isset($page.seotitle) and !empty($page.seotitle)}><{$page.seotitle}><{/if}></title>
+    <meta name='keyword' content='<{if isset($page.keywords) and !empty($page.keywords)}><{$page.keywords}><{/if}>'>
+    <meta name='description' content='<{if isset($page.description) and !empty($page.description)}><{$page.description}><{/if}>'>
+    <{include file="library/inMeta.html" }>
+    <link rel="stylesheet" href="<{TEMPLE}>css/NanumSquare-master/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="<{TEMPLE}>css/main.css">
+</head>
+<style>
+
+</style>
+</head>
+<body style="background:#001b1e">
+ <{include file="library/bheader.html" }>  
+<section id="testont">
+    <div class="container">
+        <div class="row">
+            <form id="app-form" action="" method="post"  onsubmit="return false;">
+                <h1 class="app-title">Testnet ONT & ONG Application</h1>
+                <p class="app-info">For applications under 100 ONT or ONG,<br> you will receive testnet tokens instantly.</p>
+                <div class="row app-amount">
+                    <div class="col-sm-3">
+                        <label class="app-label ont-amount">Amount of ONT<input type="text" name="ontamount"><span class="required"></span></label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="app-label ong-amount">Amount of ONG<input type="text" name="ongamount"><span class="required"></span></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="app-label address-amount">Testnet Address<input type="text" name="testnetddress"><span class="required"></span></label>
+                    </div>
+                </div>
+                <section class="straight-line"></section>
+                <p class="app-info-above">
+                    For applications <a href="" >above 100 ONT or ONG</a>, please also fill in the information below. You will receive the testnet tokens once it is approved.
+                </p>
+                <div class="row person-info">
+                    <div class="col-sm-6">
+                        <label class="app-label app-name">Name<input type="text" name="username"><span class="required"></span></label> 
+                        
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="app-label app-phone">Phone (Optional)<input type="text" name="usertel"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="app-label app-email" >Email<input type="text" name="useremail"><span class="required"></span></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="app-label app-website">Website (Optional)<input type="text" name="userweb"></label>
+                    </div>
+                    <div class="col-sm-12">
+                        <label class="app-label app-team">Team<input type="text" placeholder="Please describe your team or your project" name="userteam"><span class="required"></span></label>
+                    </div>
+                    <div class="col-sm-12">
+                        <label class="app-label app-project">Project
+                            <textarea name="userpro" id="" placeholder="Please state the purpose of test ONT\ONG, project detail, or project website, etc" ></textarea>
+                            <span class="required"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="app-submit">
+                    <button class="app-btn btn-bblue"  type="button" onclick="self.location=document.referrer;">Back</button>
+                    <input id="submitBtn" class="app-btn btn-blue"  type="submit" value="Apply">
+                </div>
+            </form>
+            <section class="straight-line"></section>
+        </div>
+    </div>
+</section>
+<{include file="library/bfooter.html" }>  
+<script src="<{TEMPLE}>js/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function(){
+	    //按钮先执行验证再提交表单
+	    $("#submitBtn").click(function(){ 
+	    	if($("#app-form").valid()){
+	           $.ajax({  
+	             url:'ont_form',
+	             type:'post',
+	             data:$("#app-form").serialize(),
+	             dataType:'json',
+	             success:function(res){
+	                 if(res.state){
+	                     window.setTimeout("window.location.href='<{base_url('index.php/index/ont_success')}>'", 1000);
+	                 }else {
+	                     alert(res.msg);
+	                 }
+	             }
+	           })
+	      }
+	    });
+
+	    $("#app-form").validate({
+	            errorPlacement: function(error, element){
+	                var error_td = element.siblings('span.required');
+	                error_td.append(error);
+	            },
+	            rules : {
+	                username: {
+	                    required : true, 
+	                },
+	                useremail:{
+						required : true, 
+						email:true
+	                }, 
+	                userteam:{
+	                    required : true, 
+	                }, 
+	                userpro:{
+	                    required : true, 
+	                }, 
+	                ontamount:{
+	                    required : true, 
+	                }, 
+	                ongamount:{
+	                    required : true, 
+	                }, 
+	                addamount:{
+	                    required : true, 
+	                }, 
+	                testnetddress:{
+	                    required : true, 
+	                },
+	            },
+	            messages : {
+	                username: {
+	                    required : 'Required field',
+	                },
+	                useremail: {
+						required : 'Required field',
+						email:'Please enter the correct email address'
+	                },
+	                userteam: {
+	                    required : 'Required field',
+	                },
+	                userpro: {
+	                    required : 'Required field',
+	                },
+                    ontamount:{
+	                    required : 'Required field',
+	                }, 
+	                ongamount:{
+	                    required : 'Required field',
+	                }, 
+	                addamount:{
+                        required : 'Required field',
+	                }, 
+	                testnetddress:{
+                        required : 'Required field',
+	                }, 
+	            }
+	        }); 
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><{if isset($page.seotitle) and !empty($page.seotitle)}><{$page.seotitle}><{/if}></title>
+    <meta name='keyword' content='<{if isset($page.keywords) and !empty($page.keywords)}><{$page.keywords}><{/if}>'>
+    <meta name='description' content='<{if isset($page.description) and !empty($page.description)}><{$page.description}><{/if}>'>
+    <{include file="library/inMeta.html" }>
+    <link rel="stylesheet" href="<{TEMPLE}>css/NanumSquare-master/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="<{TEMPLE}>css/main.css">
+</head>
+<style>
+	#testont .bounty-info{
+		max-width:623px;
+		font-size:14px;
+		font-family:SourceSansPro-Regular,sans-serif;
+		color:rgba(170,179,180,1);
+		line-height:24px;
+		margin: 0 auto;
+		margin-top:16px;
+	}
+</style>
+</head>
+<body style="background:#001b1e">
+ <{include file="library/bheader.html" }>  
+<section id="testont">
+    <div class="container">
+        <div class="row">
+            <form id="app-form" action="" method="post" onsubmit="return false;">
+                <h1 class="app-title">New Bounty Ideas</h1>
+                <p class="bounty-info" style="margin-top:32px;">
+						Please tell us about yourself/your team, your bounty idea, and how much you feel it should be compensated for its implementation. If your idea is chosen to go forward with, we will be in contact via the email address you provided.
+				</p>
+                <div class="row person-info" style="margin-top:12px;">
+                    <div class="col-sm-6">
+                        <label class="app-label app-name">Name<input type="text" name="username"><span class="required"></span></label> 
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="app-label app-email" >Email<input type="text" name="useremail"><span class="required"></span></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="app-label app-des">Brief Description<input type="text" name="userdes"><span class="required"></span></label>
+                    </div>
+					
+                    <div class="col-sm-12">
+						<label class="app-label app-detail">Detailed Description
+							<textarea name="userdetail" id="" style="height:160px;" placeholder="Please describe your idea" placeholder="20 words maximum"></textarea>
+                            <span class="required"></span>
+                        </label>
+                    </div>
+					<div class="col-sm-6">
+						<label class="app-label app-lang">Programming Languages (optional)<input type="text" name="userlang"></label>
+					</div>
+					<div class="col-sm-6">
+						<label class="app-label app-request">Budget Requested (optional)<input type="text" name="userrequest" placeholder="From Ontology Foundation (ONT or ONG)"></label>
+					</div>
+					<div class="col-sm-6">
+						<label class="app-label app-complete">Estimated Time to Complete (optional)<input type="text" name="usercomplete" placeholder="Days"></label>
+					</div>
+               
+                </div>
+                <div class="app-submit">
+                    <button class="app-btn btn-bblue"  type="button" onclick="self.location=document.referrer;">Back</button>
+                    <input id="submitBtn" class="app-btn btn-blue" type="submit" value="Apply">
+                </div>
+            </form>
+            <section class="straight-line"></section>
+        </div>
+    </div>
+</section>
+<{include file="library/bfooter.html" }>  
+<script src="<{TEMPLE}>js/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function(){
+	    //按钮先执行验证再提交表单
+	    $("#submitBtn").click(function(){ 
+	    	if($("#app-form").valid()){
+	           $.ajax({  
+	             url:'idea_form',
+	             type:'post',
+	             data:$("#app-form").serialize(),
+	             dataType:'json',
+	             success:function(res){
+	                 if(res.state){
+	                     window.setTimeout("window.location.href='<{base_url('index.php/index/idea_success')}>'", 1000);
+	                 }else {
+	                    alert(res.msg);
+	                 }
+	             }
+	           })
+	      }
+	    });
+
+		$("#app-form").validate({
+				errorPlacement: function(error, element){
+					var error_td = element.siblings('span.required');
+					error_td.append(error);
+				},
+				rules : {
+					username: {
+						required : true, 
+					},
+					useremail:{
+						required : true, 
+						email:true
+					}, 
+					userdetail:{
+						required : true, 
+						maxlength: 400,
+					}, 
+					userdes:{
+						required : true, 
+					}, 
+				   
+				},
+				messages : {
+					username: {
+						required : 'Required field',
+					},
+					useremail: {
+						required : 'Required field',
+						email:'Please enter the correct email address'
+					},
+					userdetail: {
+						required : 'Required field',
+						maxlength: '400 words maximum'
+					},
+					userdes: {
+						required : 'Required field',
+					},
+				
+				}
+			}); 
+	});
+</script>
+</body>
+</html>

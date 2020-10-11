@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>ECMS管理系统 |用心服务 思微知著 </title>
+      <{include file="library/Hlink.html" }>
+      <link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="<{TEMPLE}>js/layui/css/layui.css">
+      <script src="<{TEMPLE}>js/layui/layui.js"></script>
+    
+    <style>
+      .img-box{
+        width: 150px;
+        height: 150px;
+        float: left;
+        margin: 5px;
+        border: 4px solid #dddddd;
+        margin-bottom: 40px;
+      }
+      .img-box.active{
+        border: 4px solid #27a9e4;
+      }
+      .img-box img{
+        width: 100%;
+        height: 100%;
+      }
+      .img-box p{
+        margin-top: 8px;
+        text-align: center;
+        height: 38px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title"> 
+                      <h2>
+                        <{if isset($tag) && !empty($tag)}>
+                            <{if $tag eq "Active"}>
+                               Active
+                            <{elseif $tag eq 'InProgress'}>
+                               In progress 
+                            <{elseif $tag eq 'Done'}>
+                               Done
+                            <{elseif $tag eq 'Closed'}>
+                               Closed
+                            <{/if}>
+                          <{else}>
+                            <{if $article.source eq "Active"}>
+                               Active
+                            <{elseif $article.source eq 'InProgress'}>
+                               In progress 
+                            <{elseif $article.source eq 'Done'}>
+                               Done
+                            <{elseif $article.source eq 'Closed'}>
+                               Closed
+                            <{/if}>
+                        <{/if}>
+                      </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="form" data-parsley-validate="" class="form-horizontal form-label-left" novalidate=""  method="post" enctype="multipart/form-data">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">project name<span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="hidden" value="<{if isset($id)}><{$id}><{/if}>" id="article_id" name="article_id">
+                          <input type="text" value="<{if isset($article.title)}><{$article.title}><{/if}>" name="article_title" id="article_title" required="required" class="form-control col-md-7 col-xs-12">
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">project amount</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.shorttitle)}><{$article.shorttitle}><{/if}>" name="article_shorttitle" id="article_shorttitle"  class="form-control col-md-7 col-xs-12">
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                      </div>
+                      
+                      <!-- <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="last-name">自定义属性 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'h')!==FALSE}> checked="" <{/if}> value="h" name="article_flag[]">头条[h]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'c')!==FALSE}> checked="" <{/if}>  value="c" name="article_flag[]">推荐[c]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'f')!==FALSE}> checked="" <{/if}> value="f" name="article_flag[]">幻灯[f]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'s')!==FALSE}> checked="" <{/if}> value="s" name="article_flag[]">滚动[s]
+                            </label>                        
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'b')!==FALSE}> checked="" <{/if}> value="b" name="article_flag[]">加粗[b]
+                            </label>                                                
+                            <label>
+                                <input type="checkbox" <{if isset($article.flag) && strpos(<{$article.flag}>,'j')!==FALSE}> checked="" <{/if}> value="j" name="article_flag[]">跳转[j]
+                            </label>                        
+                        </div>
+                      </div> -->
+                      <div class="form-group">
+                        <!-- <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">TAG
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.label)}><{$article.label}><{/if}>" name="article_label" id="article_label"  class="form-control col-md-7 col-xs-12"><small>(','号分开)</small>
+                        </div> -->
+                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">sort  
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.weight)}><{$article.weight}><{/if}>" name="article_weight" id="article_weight"  class="form-control col-md-3 col-xs-12">(The smaller the before)
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">column <span class="required">*</span></label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                          <select class="select2_single form-control" tabindex="-1" name="article_typeid" id="article_typeid" required="required">
+                            <{if isset($column)&&!empty($column)}>
+                                  <{foreach from=$column item='v'}>
+                                    <option <{if isset($article.typeid) && $article.typeid == <{$v.id}>}>selected<{/if}> value="<{$v.id}>"><{$v.typename}></option>
+                                  <{/foreach}>
+                            <{else}>
+                                <option value="">暂无栏目，请前往添加</option>
+                            <{/if}>
+                          </select>
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">icon 
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <!-- <label for="article_litpic">
+                              <input type="button"  class="btn btn-default" value="upload"><span id="text"></span>
+                            </label>   -->
+                            <span class="fa fa-cloud-upload form-control-feedback right file-click" aria-hidden="true"></span>
+                          <input type="text" class="form-control file-click" id="article_val" name="article_val" placeholder="uploading"  value="upload" style="">
+                          <input type="hidden" id="article_hidden" name="article_hidden"  value="">
+                          <input type="file" class="form-control" id="article_litpic" name="article_litpic" placeholder="uploading" data-attr="" value="upload" style="display:none">
+                           <span class="err" style="color: red;"></span>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <button type="button" id="add" class="btn btn-outline btn-primary">
+                              <i class="fa fa-th" aria-hidden="true" style="margin-right: 5px;position: relative;top: 1px;"></i>station selection
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">status<span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <!-- <select class="select2_single form-control" tabindex="-1" name="article_source" id="article_source">
+                            <option value="">请选择</option>
+                            <option <{if isset($article.source) && $article.source == "Closed"}>selected<{/if}>  value="Closed">Closed</option>
+                            <option <{if isset($article.source) && $article.source == "Active"}>selected<{/if}>  value="Active">Active</option>
+                            <option <{if isset($article.source) && $article.source == "InProgress"}>selected<{/if}>  value="InProgress">InProgress</option>
+                            <option <{if isset($article.source) && $article.source == "Done"}>selected<{/if}>  value="Done">Done</option>
+                          </select> -->
+                          <{if isset($tag) && !empty($tag)}>
+                              <select class="select2_single form-control" tabindex="-1" name="article_source" id="article_source">
+                              <!-- <option value="">请选择</option> -->
+                              <option <{if isset($tag) && $tag == "Closed"}>selected<{/if}>  value="Closed">Closed</option>
+                              <option <{if isset($tag) && $tag == "Active"}>selected<{/if}>  value="Active">Active</option>
+                              <option <{if isset($tag) && $tag == "InProgress"}>selected<{/if}>  value="InProgress">InProgress</option>
+                              <option <{if isset($tag) && $tag == "Done"}>selected<{/if}>  value="Done">Done</option>
+                            </select>
+                          <{else}>
+                            <select class="select2_single form-control" tabindex="-1" name="article_source" id="article_source">
+                              <!-- <option value="">请选择</option> -->
+                              <option <{if isset($article.source) && $article.source == "Closed"}>selected<{/if}>  value="Closed">Closed</option>
+                              <option <{if isset($article.source) && $article.source == "Active"}>selected<{/if}>  value="Active">Active</option>
+                              <option <{if isset($article.source) && $article.source == "InProgress"}>selected<{/if}>  value="InProgress">InProgress</option>
+                              <option <{if isset($article.source) && $article.source == "Done"}>selected<{/if}>  value="Done">Done</option>
+                            </select>
+                          <{/if}>
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">author 
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" name="article_writer" id="article_writer" value="<{if isset($article.writer)}><{$article.writer}><{/if}>" class="form-control col-md-7 col-xs-12" >
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">keywords
+                        </label>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                          <input value="<{if isset($article.keywords)}><{$article.keywords}><{/if}>" name="article_keywords" id="article_keywords" class="date-picker form-control col-md-7 col-xs-12"  type="text" >
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                          <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">project url
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" name="redirecturl" id="redirecturl" value="<{if isset($article.redirecturl)}><{$article.redirecturl}><{/if}>" class="form-control col-md-7 col-xs-12" >
+                        </div>
+                      </div> 
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">project leader 
+                        </label>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                          <input type="text" name="leader" id="leader" value="<{if isset($article.leader)}><{$article.leader}><{/if}>" class="form-control col-md-7 col-xs-12" >
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">abstract 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea name="article_description" id="article_description"   class="form-control"  data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message=".." data-parsley-validation-threshold="10"><{if isset($article.description)}><{$article.description}><{/if}></textarea>
+                          <span class="err" style="color: red;"></span>
+                        </div>
+                      </div>
+                     
+                      <div class="x_title">
+                    <!-- <h2>激励介绍 </h2> -->
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                       <!-- <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="last-name">附加选项  
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+                           <label> <input type="checkbox" value="">下载远程图片和资源</label>
+                             <label> <input type="checkbox" value="">删除非站内链接 </label>
+                             <label>  <input type="checkbox" value="">提取第一个图片为缩略图 </label>
+                        </div>
+                       </div> -->
+                        <div class="form-group">
+                        	
+                                <script id="add_body" name="add_body"  type="text/plain" ><{if isset($article.body)}><{$article.body}><{/if}></script>
+                                <!-- 配置文件 -->
+                                <script type="text/javascript" src="<{HTTPROOT}>/plugins/Ueditor/ueditor.config.js"></script>
+                                <!-- 编辑器源码文件 -->
+                                <script type="text/javascript" src="<{HTTPROOT}>/plugins/Ueditor/ueditor.all.js"></script>
+                                <!-- 实例化编辑器 -->
+                                <script type="text/javascript">
+                                var ue = UE.getEditor('add_body',{initialFrameHeight:400});
+                                </script>
+                        </div>
+                    </div>
+                    
+                     <div class="x_title">
+                    <h2>Advanced parameters</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                       <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">View Count
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" value="<{if isset($article.click)}><{$article.click}><{/if}>" name="article_click" id="article_click" class="form-control col-md-7 col-xs-12">
+                        </div>
+                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Public Date
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="text" name="article_pubdate" class="demo-input form-control" placeholder="请选择日期" id="article_pubdate" value="<{if isset($article.pubdate)}><{date('Y-m-d H:i:s',$article.pubdate)}><{/if}>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12"> Read Permission<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="padding-top: 8px;">
+                          <input type="radio" <{if isset($article.arcrank)}> <{if ($article.arcrank == 1)}>checked<{/if}> <{else}>checked<{/if}> value="1" name="article_arcrank">open
+                          <input type="radio" <{if isset($article.arcrank) && ($article.arcrank == 0)}> checked <{/if}>  value="0" name="article_arcrank">to audit
+                        </div>
+                      </div>
+                   </div>
+                   
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-4">
+                  <button type="button" class="btn btn-primary" onclick="history.go(-1)">back</button>
+                  <button type="submit" id="form-submit" class="btn btn-success">submit</button>
+                </div> 
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <{include file="library/Copyright.html" }>
+      <!-- /footer content -->
+      </div>
+      </div>
+      <{include file="library/Flink.html" }>
+    <script type="text/javascript" src="<{TEMPLE}>js/jquery.form.js"></script>
+    <script src="<{TEMPLE}>js/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          var tag='<{if isset($tag) && !empty($tag)}><{$tag}><{else}><{$article['source']}><{/if}>';
+          console.log(tag);
+          layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#article_pubdate' //指定元素
+                ,type: 'datetime'
+            });
+          });
+          $("#form-submit").click(function(){ 
+            if($("#form").valid()){
+                  $("#form").ajaxSubmit({
+                      url:'bounty_add',
+                      success:function(res) {
+                          if( jQuery.type(res) === "string"){
+                             res=JSON.parse(res)
+                          }
+                          if(res.state=='403'){
+                            top.location.href='<{base_url("admin.php/index/login")}>';
+                            return false;
+                          }
+                          if(res.state){
+                              layer.msg(res.msg);
+                              window.setTimeout("window.location.href='<{base_url('admin.php/articles/bounty')}>?tag="+tag+"'", 1000);
+                          }else {
+                              layer.msg(res.msg);
+                          }
+                      }
+                  }) 
+            }
+          });
+
+          $("#form").validate({
+                  errorPlacement: function(error, element){
+                      var error_td = element.siblings('span.err');
+                      error_td.append(error);
+                  }
+                  ,onsubmit: false 
+                  ,rules: {
+                    article_title: {
+                        required: true
+                    }
+                    ,article_typeid : {
+                         required : true,
+                    }
+                    ,article_source:{
+                        required : true,
+                    } 
+                    ,link_pic:{
+                         article_litpic:'PNG|JPG|JPEG|BMP'//图片只能是PNG|JPG|JPEG|BMP格式
+                    } 
+                    // ,article_keywords : {
+                    //      required : true,
+                    // }
+                    // ,article_description : {
+                    //      required : true,
+                    // }
+                    // ,article_shorttitle : {
+                    //      required : true,
+                    // }
+                     
+                }
+                ,messages: {
+                    article_title : {
+                        required : '<i class="fa fa-exclamation-circle"></i>请填写项目名称',
+                    }
+                    ,article_typeid:{
+                        required : '<i class="fa fa-exclamation-circle"></i>请选择栏目',
+                    }
+                    ,link_pic:{
+                        accept: '<i class="fa fa-exclamation-circle"></i>只能上传PNG|JPG|JPEG|BMP格式图片'
+                    }
+                    ,article_source:{
+                        required : '<i class="fa fa-exclamation-circle"></i>请选择状态',
+                    }
+                    // ,article_keywords:{
+                    //     required : '<i class="fa fa-exclamation-circle"></i>请填写关键字',
+                    // }
+                    // ,article_description:{
+                    //     required : '<i class="fa fa-exclamation-circle"></i>请填写内容摘要',
+                    // }
+                    // ,article_shorttitle:{
+                    //     required : '<i class="fa fa-exclamation-circle"></i>请填写职位',
+                    // }
+                }
+          }); 
+        
+      });
+      //选择目标站点 	========================================Mr zhang========================================start
+      $(document).on("click","#add",function(){ 
+      	type="bounty";
+      	$.ajax({
+	        type: "post",
+	        url: "<{base_url()}>admin.php/sites/media?type="+type,
+	        data: {type: type},
+	        dataType: "json",
+	        success: function(data)
+	        { 
+	        	if(data.state=='403'){
+					top.location.href='<{base_url("admin.php/index/login")}>';
+					return false;
+				}
+				if(data.state){ 
+					var list=data.data.datas;
+					console.log(list); 
+					var content = '<div class="flink">'; 
+					$.each(list,function(k, v) {
+						var url="<{HTTPROOT}>"+v['mdfl_url'];
+						content+='<div class="img-box">'+
+			                '<img src="'+url+'" alt="'+v['mdfl_desc']+'">'+
+			                '<p  title="'+v['mdfl_desc']+'" name="'+v['mdfl_url']+'">'+v['mdfl_desc']+'</p>'+
+		            	'</div>';
+					});
+					content +='</div>';
+					var op=layer.open({
+			          type: 1,
+			          title: '请选择媒体文件',
+			          shade: 0.5,
+			          shadeClose:true,
+			          area: ['820px','500px'],
+			          btn:['确认','取消'],
+			          content:content,
+			          success: function(layero, index){
+			          	$(".img-box").eq(0).addClass('active'); 
+			          },
+			          yes:function(layero, index){
+			          	var url=$(".flink").children('.active').find('img').attr("src");
+			          	var url_desc=$(".flink").children('.active').find('img').attr("alt"); 
+			          	var urlData=$(".flink").children('.active').find('p').attr("name");
+			          	$("#article_val").val(url_desc);
+			          	$("#article_hidden").val(urlData);
+			          	//$("#article_litpic").val(urlData);
+			          	console.log(url);
+			          	console.log(url_desc);
+			          	console.log(urlData);
+			          	setTimeout(function () {
+			                layer.close(op);
+			            }, 500);
+			          	//var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+    					//parent.layer.close(index); //再执行关闭
+			          }
+			        })
+				}else{
+					layer.msg("数据获取失败");
+					return false;
+				}
+	        }
+	    });  
+	    //选择目标站点 	========================================Mr zhang========================================end
+        $(document).on("click",".img-box",function(){
+          $(".img-box").removeClass("active")
+          $(this).addClass("active");
+        })
+        })
+      	//选择文件file框是否有选择图片 	========================================Mr zhang========================================start
+      	$(document).on('change','#article_litpic',function(){
+      		var is_pic=$('#article_litpic').val();
+      		$("#article_val").val(is_pic);
+	    	$("#article_hidden").val('file');
+      	}); 
+      	//========================================Mr zhang========================================end
+        $(document).on("click",".file-click",function(){
+          $("#article_litpic").click();
+        })
+    </script>
+  </body>
+</html>

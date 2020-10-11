@@ -1,0 +1,100 @@
+{ 
+  "head":"Ontology Network Releases its Technology White Paper",      
+  "author":"ont",
+  "language":false,
+  "newstime":"2017-12-21",
+  "newslist":[
+    {
+      "picurl":"",
+      "content":"On December 21st, Ontology Network released its Technology White Paper, the first white paper since the Introductory White Paper was released along with Ontology’s launch last month. It is the second in a series of five papers which will together thoroughly lay out Ontology Network’s ecosystem."
+    },
+    {
+      "picurl":"",
+      "content":"The paper outlines Ontology Network’s structure as a public blockchain network. The framework allows projects of all shapes, sizes, technologies, and business scenario and compliance requirements to pass through Ontology’s protocols and take advantage of the decentralized network how they see fit."
+    },
+    {
+      "picurl":"",
+      "content":"What is meant by this is that an entity’s experience in Ontology Network is fully customizable; different business logic can use different chains to meet the needs of different scenarios with different access methods and governance models! In addition to using public chains for common services, in Ontology there can also be collaborations with chains related to the industry of the specific business."
+    },
+    {
+      "picurl":"/static/file/news/newspic/000801.jpg",
+      "content":""
+    },
+    {
+      "picurl":"",
+      "content":"Figure 3.1: Hyper-Converged Chain Group"
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Network and its distributed ledger technology use a decoupled architecture that can support other blockchains and traditional IT systems as the underlying layer. At the ledger level, a shared data contract model decouples data storage and business logic, and implements different business logic with the use of smart contracts to improve the scalability and flexibility of the entire architecture."
+    },
+    {
+      "picurl":"",
+      "content":"The “ONT ID” system is used to connect different ID authentication services and provide a source of trust for people, money, goods, and things in Ontology Network. ONT ID is decentralized, self-manageable, privacy-protected, and safe and easy to use. The trust framework establishes a distributed trust model and distributed trust delivery system through “verifiable claims”, and uses the CL signature algorithm and zero-knowledge proof protocol to assure privacy protection of the claims."
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Network uses a series of core protocols including those for identity authentication, authorization, and data exchange. The protocols are compatible internationally and with the W3C. The cryptographic signature protocols also support cryptography including the Chinese national cryptography standard, RSA, and ECC. In the distributed data exchange system there is also compatibility with UMA to make the data exchange system open, standardized, and ready for future cooperation and expansion."
+    },
+    {
+      "picurl":"",
+      "content":"Ontology Network provides a series of application frameworks including APIs, SDKs, and various application modules. These allow application service providers with a wide range of technical backgrounds to develop their own dApps, making decentralized systems accessible for all.Technology features in Ontology Network’s first phase:"
+    },
+    {
+      "picurl":"",
+      "content":"- Hyper-converged chain group"
+    },
+    {
+      "picurl":"",
+      "content":"- Decentralized identifiers (DIDs)"
+    },
+    {
+      "picurl":"",
+      "content":"- Anonymous claims"
+    },
+    {
+      "picurl":"",
+      "content":"- Ontorand Consensus Engine (OCE)"
+    },
+    {
+      "picurl":"",
+      "content":"- Smart contract system: NeoVM"
+    },
+    {
+      "picurl":"",
+      "content":"- Shared data contract model"
+    },
+    {
+      "picurl":"",
+      "content":"- Merkle tree store model"
+    },
+    {
+      "picurl":"",
+      "content":"- HydraDAO"
+    },
+    {
+      "picurl":"",
+      "content":"- Multi-source authentication protocol"
+    },
+    {
+      "picurl":"",
+      "content":"- Distributed data exchange protocol"
+    },
+    {
+      "picurl":"",
+      "content":"Ontology’s Technology White Paper illustrates an open, collaborative, and creative ecosystem. We welcome individuals around the globe to join the community of developers and business partners enriching application and module development in Ontology Network."
+    },
+    {
+      "picurl":"",
+      "content":"The Technology White Paper includes an overview of Ontology Network’s technology, however, as the technology develops, the Ontology team will be subsequently updating its content."
+    },
+    {
+      "picurl":"",
+      "content":"You can ask any questions you may have regarding the white paper in the new #technology channel on our Slack workspace (http://bit.ly/2izlPXl). We will then connect you with our technology team and get back to you in due course!The Technology White Paper is available for download under “Documents” at https://ont.io/. We also recommend you subscribe to our newsletter on our homepage."
+    },
+    {
+      "picurl":"",
+      "content":"The Ontology Team"
+    }
+  ]
+}

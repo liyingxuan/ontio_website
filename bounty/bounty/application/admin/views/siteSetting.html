@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>ECMS管理系统 |用心服务 思微知著 </title>
+     <{include file="library/Hlink.html" }>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>站点信息<small>请谨慎设置，影响全站信息显示</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form id="siteform" data-parsley-validate class="form-horizontal form-label-left">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website_name">站点名称 <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="website_name" name="website_name" required="required" value="<{if isset($settings['website_name'])}><{$settings['website_name']}><{/if}>" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="icp_number">ICP证书<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="icp_number"  name="icp_number" required="required" class="form-control col-md-7 col-xs-12" value="<{if isset($settings['icp_number'])}><{$settings['icp_number']}><{/if}>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="website_keywords" class="control-label col-md-3 col-sm-3 col-xs-12">网站关键字</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="website_keywords" class="form-control col-md-7 col-xs-12" type="text" name="website_keywords" value="<{if isset($settings['website_keywords'])}><{$settings['website_keywords']}><{/if}>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">公司地址 <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="address" class="date-picker form-control col-md-7 col-xs-12" name="address" required="required" type="text" value="<{if isset($settings['address'])}><{$settings['address']}><{/if}>">
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"> 网站描述<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="website_desc" required="required" class="form-control" name="website_desc" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="最多输入240个字符.." data-parsley-validation-threshold="10"><{if isset($settings['website_desc'])}><{$settings['website_desc']}><{/if}></textarea>
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button type="submit" class="btn btn-success" onclick="web_edit()">提 交</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+       <{include file="library/Copyright.html" }>
+        <!-- /footer content -->
+      </div>
+    </div>
+     <{include file="library/Flink.html" }>
+	
+  </body>
+      <script type="text/javascript">
+        function web_edit() {
+            var str = true;
+            var form_data = new FormData($("#siteform")[0]);
+            if(str) {
+                $.ajax({
+                    type: "post",
+                    url: "site_setting",
+                    data: form_data,
+                    dataType: "json",
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        if(data.state) {
+                            layer.msg(data.msg);
+                            location.reload(true);
+                        } else {
+                            layer.msg(data.msg);
+                        }
+                    }
+                })
+            } 
+        }
+    </script>
+</html>

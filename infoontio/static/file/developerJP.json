@@ -1,0 +1,19 @@
+{       
+  "Cooperation":{
+    "id":"communityPage",
+    "firstTitle1":"組織的な協力について",
+    "secondTitle1":"私たちと分散型信頼ネットワークを構築することに興味がある方は、お問い合わせください。",
+    "name":"組織名",
+    "contact":"メール",
+    "detail":"自己紹介に続き、どのようにオントロジーと連携できるかをご記入ください。",
+    "send":"送信",
+    "warnMsg":"Please complete all fields",
+    "field":"業界",
+    "phone":"電話番号",
+    "thanksword":"Thank you. We will be in contact if you are suitable for cooperation.",
+    "back":"Return"
+  },
+  "footerPage":{
+    "OntologyNetwork":"本体网络"
+  }
+}

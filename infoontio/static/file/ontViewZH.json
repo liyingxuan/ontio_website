@@ -1,0 +1,19 @@
+{ 
+  "head":{
+      "contactUs":"找到我们",
+      "home":"首页",
+      "OntScenarios":"本体场景",
+      "OntTech":"本体技术",
+      "language":"Language",
+      "zh":"中",
+      "En":"En",
+      "documents":"文档",
+      "OntIntroduction":"白皮书概览",
+      "OntECOWP":"生态白皮书（即将发布）",
+      "OntTechWP":"技术白皮书（即将发布）",
+      "OntTechYP":"技术黄皮书（敬请期待）",
+      "OntGoveYP":"治理白皮书（敬请期待）",
+      "joinus":"加入本体",
+      "News":"新闻"
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"> 
+	</head>
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>Suggestions for Ontology's Bounty Program details</h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;"> 
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="ap_name">name：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($proposalInfo['name']) && !empty($proposalInfo['name'])}><{$proposalInfo['name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="ap_width">email：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($proposalInfo['email']) && !empty($proposalInfo['email'])}><{$proposalInfo['email']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                        	<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="content">content：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($proposalInfo['content']) && !empty($proposalInfo['content'])}><{$proposalInfo['content']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                       		<label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="submit_time">submit time：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($proposalInfo['submit_time']) && !empty($proposalInfo['submit_time'])}><{$proposalInfo['submit_time']}><{else}>--<{/if}>  
+				                        </div>
+			                        </div>
+										
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="submit_time">state：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($proposalInfo['is_deal']) && !empty($proposalInfo['is_deal']) && $proposalInfo['is_deal']==1}>是<{else}><span style="color: red;">否</span><{/if}>
+			                       		 </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="admin_name">deal username：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($proposalInfo['admin_name']) && !empty($proposalInfo['admin_name'])}><{$proposalInfo['admin_name']}><{else}>--<{/if}> 
+				                        </div>
+			                        </div>
+
+									<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12 p-n" for="sure_time">deal time：</label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                        	<{if isset($proposalInfo['sure_time']) && !empty($proposalInfo['sure_time'])}><{$proposalInfo['sure_time']}><{else}>--<{/if}>
+				                        </div>
+			                        </div>
+									
+									<div class="ln_solid"></div>
+			                        <div class="form-group">
+				                        <div class="col-md-12 col-sm-12 col-xs-12 center">
+				                          <button type="submit" id="submitBtn" onclick="button()" class="btn btn-success" >Back to the previous page</button>
+				                        </div>
+				                    </div>
+			                        <!-- <div class="ln_solid"></div>
+									<div class="hr-line-dashed" style="margin:0px;"></div>
+	                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" style="margin-top:10px;text-align:center">
+	                                    <button id="submit" type="button" onclick="button()" class="btn btn-sm btn-success">返回主页</button>
+	                                </div> -->
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+		<!-- /footer content -->
+		</div>
+		</div>
+		<{include file="library/Flink.html" }>
+	</body>  
+	<script type="text/javascript">
+		function button(){
+			window.location.href = "<{base_url('admin.php/sites/proposal')}>";
+		}
+	</script>
+</html>

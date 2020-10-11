@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+	    <{include file="library/Hlink.html" }>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"> 
+		<link rel="stylesheet" href="<{TEMPLE}>js/layui/css/layui.css">
+		<script src="<{TEMPLE}>js/layui/layui.js"></script>
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>广告<{if isset($advertDetails['adv_id']) && !empty($advertDetails['adv_id'])}>编辑<{else}>添加<{/if}></h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br/>
+				                    <form id="add_form" method="post" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;">
+			                    	  <input type="hidden" name="adv_id" value="<{if isset($advertDetails['adv_id'])}><{$advertDetails['adv_id']}><{/if}>" />
+									  <input type="hidden" name="ap_id" value="<{if isset($ap_id)}><{$ap_id}><{/if}>" />
+									  <input type="hidden" name="ap_class" value="<{if isset($ap_class)}><{$ap_class}><{/if}>" />
+										<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ap_name">广告位名称
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="ap_name" name="ap_name" value="<{if isset($ap_name) && !empty($ap_name)}><{$ap_name}><{/if}>" readonly="readonly" class="form-control col-md-7 col-xs-12">
+				                        </div>
+				                      </div>
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="adv_title">广告标题<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="adv_title" name="adv_title" value="<{if isset($advertDetails['adv_title']) && !empty($advertDetails['adv_title'])}><{$advertDetails['adv_title']}><{/if}>" class="form-control col-md-7 col-xs-12" autocomplete="off"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="adv_desc">广告描述<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="adv_desc" name="adv_desc" value="<{if isset($advertDetails['adv_desc']) && !empty($advertDetails['adv_desc'])}><{$advertDetails['adv_desc']}><{/if}>" class="form-control col-md-7 col-xs-12" autocomplete="off"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+										<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="adv_link">广告链接<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="adv_link" name="adv_link" value="<{if isset($advertDetails['adv_link']) && !empty($advertDetails['adv_link'])}><{$advertDetails['adv_link']}><{/if}>" class="form-control col-md-7 col-xs-12" autocomplete="off"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+
+										<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="adv_start_date">广告开始时间<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="adv_start_date" name="adv_start_date"  value="<{if isset($advertDetails['adv_start_date']) && !empty($advertDetails['adv_start_date'])}><{$advertDetails['adv_start_date']}><{/if}>" class="form-control col-md-7 col-xs-12" autocomplete="off"><span class="err" style="color: red;"></span>  
+				                        </div>
+				                      </div>
+
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="adv_end_date">广告结束时间<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="adv_end_date" name="adv_end_date"  value="<{if isset($advertDetails['adv_end_date']) && !empty($advertDetails['adv_end_date'])}><{$advertDetails['adv_end_date']}><{/if}>" class="form-control col-md-7 col-xs-12" autocomplete="off"><span class="err" style="color: red;"></span>  
+				                        </div>
+				                      </div>
+									
+										<div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="slide_sort">广告排序
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="text" id="slide_sort" name="slide_sort" value="<{if isset($advertDetails['slide_sort']) && !empty($advertDetails['slide_sort'])}><{$advertDetails['slide_sort']}><{else}>255<{/if}>" class="form-control col-md-7 col-xs-12" autocomplete="off"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+										
+										<div class="form-group">
+											
+											<{if isset($ap_class) && $ap_class==1}>
+					                        	<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">广告内容 </label>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+													<textarea name="adv_content" id="adv_content"  class="form-control" rows="5"><{if isset($advert['adv_content']) && !empty($advert['adv_content'])}><{$advert['adv_content']}><{else}><{/if}></textarea>
+													<span class="err" style="color: red;"></span> 
+												</div>
+					                        <{else}>
+						                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mdfl_url">文件选择</label>
+						                        <div class="col-md-6 col-sm-6 col-xs-12">
+						                          <input type="file" id="file" name="file" class="form-control col-md-7 col-xs-12" value="" > 
+						                          <{if $ap_class==0}>
+						                          	<span class="info">请上传JPG|JPEG|PNG|BMP格式图片</span>
+						                          	<{else}>
+						                          	<span class="info">请上传fla|swf类FLASH文件</span>
+						                          <{/if}>
+						                          <span class="err" style="color: red;"></span> 
+						                        </div>
+					                        <{/if}>
+					                      </div> 
+										</div>
+						             
+				                      <div class="ln_solid"></div>
+				                      <div class="form-group">
+				                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				                          <button type="submit" id="submitBtn" class="btn btn-success">提 交</button>
+				                          <button type="button" class="btn btn-info" onclick="fanhui(<{if isset($ap_id)}><{$ap_id}><{/if}>,<{if isset($ap_class)}><{$ap_class}><{/if}>,'<{if isset($ap_name) && !empty($ap_name)}><{$ap_name}><{/if}>')">返 回</button>
+				                        </div> 
+				                      </div>
+				
+				                    </form>
+				                  </div> 
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content -->
+
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+		<!-- /footer content -->
+		</div>
+		</div>
+		<{include file="library/Flink.html" }>
+
+	</body>
+	<script type="text/javascript" src="<{TEMPLE}>js/jquery.form.js"></script>
+	<script src="<{TEMPLE}>js/jquery.validate.min.js"></script> 
+	<script> 
+	//按钮先执行验证再提交表
+	$(document).ready(function(){
+		layui.use('laydate', function(){
+		  var laydate = layui.laydate;
+		 	//执行一个laydate实例
+			laydate.render({
+			    elem: '#adv_start_date' //指定元素
+			    ,type: 'date'
+			});
+			laydate.render({
+			    elem: '#adv_end_date' //指定元素
+			    ,type: 'date'
+			});
+		});
+		var ap_id="<{if isset($ap_id)}><{$ap_id}><{/if}>";
+		var ap_class="<{if isset($ap_class)}><{$ap_class}><{/if}>";
+		var ap_name="<{if isset($ap_name) && !empty($ap_name)}><{$ap_name}><{/if}>";
+	    //按钮先执行验证再提交表单
+	    $("#submitBtn").click(function(){ 
+	    	if($("#add_form").valid()){
+	    		$("#add_form").ajaxSubmit({ 
+                  url:'advertDetails_edit',
+                  success:function(res) { 
+                      if( jQuery.type(res) === "string"){
+                         res=JSON.parse(res);
+                      }
+                      if(res.state=='403'){
+                        top.location.href='<{base_url("admin.php/index/login")}>';
+                        return false;
+                      }
+                      if(res.state){
+                          layer.msg(res.msg);
+                          window.setTimeout(window.location.href='<{base_url()}>admin.php/sites/advertDetails?ap_id='+ap_id+"&ap_class="+ap_class+"&ap_name="+ap_name, 1000);
+                      }else {
+                      	layer.alert(res.msg, {
+				           icon: 0,
+				           title:"提示",
+				           btn:["知道了"],
+				        });  
+						return false; 
+                      }
+                  }
+              })
+	      }
+	    });
+
+	    /**比较结束时间必须大于开始时间**/
+	    jQuery.validator.methods.compareDate = function(value, element, param) {
+            //var startDate = jQuery(param).val() + ":00";补全yyyy-MM-dd HH:mm:ss格式
+            //value = value + ":00"; 
+            var startDate = jQuery(param).val();
+            var start = new Date(Date.parse(startDate.replace("-", "/")));
+            var end = new Date(Date.parse(value.replace("-", "/")));
+            return start <= end;
+        };
+	    
+	    /*自定义宽度、高度验证*/
+	   	jQuery.validator.addMethod("is_width",function(value,element){   
+	           return this.optional(element) || /(^[1-9]\d*(\.\d{1,2})?$)|(^0(\.\d{1,2})?$)/.test(value);  
+	        },$.validator.format("请输入整数或两位内小数")  
+	    );
+	    //验证文件格式是否正确
+	   	jQuery.validator.addMethod("checkPic", function(value, element) {
+		    var filepath=$("#file").val();
+		     //获得上传文件名
+		    var fileArr=filepath.split("\\");
+		    var fileTArr=fileArr[fileArr.length-1].toLowerCase().split(".");
+		    var filetype=fileTArr[fileTArr.length-1];
+		    if(filepath.length>0){ 
+			    //切割出后缀文件名
+			    if(ap_class == '0'){
+			    	if(filetype !='png' && filetype !='jpg' && filetype !='jpeg'  && filetype !='bmp' ){
+				        return false;
+				    }else{
+				        return true;
+				    }
+			    }else if(ap_class == '3'){
+			    	if(filetype !='fla' && filetype !='swf'){
+				        return false;
+				    }else{
+				        return true;
+				    }
+			    } 
+		    }else{
+		    	return true;
+		    }
+		}, "上传文件格式不适合");
+	    /**===返回上级 ===@author MS zhang**/
+        function returnOn(){
+          window.location.href = "<{base_url('admin.php/sites/advertDetails')}>";
+        }
+	    $("#add_form").validate({
+	            errorPlacement: function(error, element){
+	                var error_td = element.siblings('span.err');
+	                error_td.append(error);
+	            },
+	            rules : {
+	                adv_title : {
+	                    required : true, 
+	                    maxlength: 100
+	                }, 
+	                adv_desc:{ 
+	                	maxlength: 255
+	                },
+	                adv_link:{
+	                	maxlength:100,
+	                	url:true
+	                },
+	                adv_start_date : {
+	                    required : true
+	                },
+	                adv_end_date : {
+	                    required : true,
+	                    compareDate:"#adv_start_date"
+	                },
+	                slide_sort:{
+	                	digits: true
+	                },
+	                file:{ 
+	                	checkPic:true
+	                },
+	                adv_content:{
+	                	maxlength: 1000
+	                }
+	            },
+	            messages : {
+	                adv_title : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>广告名称不能为空',
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>广告长度最多100位字符'
+	                },
+	                adv_desc : { 
+	                	maxlength : '<i class="fa fa-exclamation-circle"></i>广告描述长度最多为255位字符'
+	                },
+	                adv_link : { 
+	                	maxlength : '<i class="fa fa-exclamation-circle"></i>广告链接长度最多为100位字符',
+	                	url : '<i class="fa fa-exclamation-circle"></i>请输入合法的链接地址'
+	                },
+	                adv_start_date : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>广告起始时间不能为空'
+	                    
+	                },
+	                adv_end_date : {
+	                    required : '<i class="fa fa-exclamation-circle"></i>广告结束时间不能为空',
+	                    compareDate:'<i class="fa fa-exclamation-circle"></i>广告开始时间必须小于广告结束时间'
+	                },
+	                slide_sort : {
+	                	digits: '<i class="fa fa-exclamation-circle"></i>只能写入非负正整数类型'
+	                },
+	                file : { 
+	                    checkPic: '<i class="fa fa-exclamation-circle"></i>请选择指定文件类型上传。'
+	                },
+	                adv_content : {
+	                    maxlength: '<i class="fa fa-exclamation-circle"></i>广告内容长度最多1000位字符'
+	                }
+	            }
+	        });  
+	});
+	function fanhui(ap_id,ap_class,ap_name){
+		window.setTimeout(window.location.href='<{base_url()}>admin.php/sites/advertDetails?ap_id='+ap_id+"&ap_class="+ap_class+"&ap_name="+ap_name, 1000);
+	}
+</script> 
+</html>

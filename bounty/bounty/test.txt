@@ -1,0 +1,100 @@
+		if(!empty($res['data']['mdfl_url'])){
+			$is_files=ROOTPATH.$res['data']['mdfl_url'];
+			if(file_exists($is_files))
+			{
+			    if (!unlink($is_files)){
+			    	$this->db->trans_rollback();
+			    	echo exit(json_encode(array('state'=>false,'msg'=>'删除原有图片失败'.$is_files,'data'=>'')));
+			    }
+			} 
+		}
+		$res=$this->Admin->delMedia("mdfl_id IN ($mdfl_id)");
+		if(!$res['state']){
+			$this->db->trans_rollback();
+			echo exit(json_encode(array('state'=>false,'msg'=>'系统错误，数据操作失败：'.$res['msg'],'data'=>'')));
+		}
+		$this->db->trans_commit();
+		$this->System->logAction('删除媒体文件ID号为：'. $mdfl_id, __METHOD__); 
+		echo exit(json_encode(array('state'=>true,'msg'=>'删除成功','data'=>'')));
+	} 
+
+	/**
+	*方法说明：导出数据
+	*@param:Mr zhang
+    **/
+    public function export()
+    { 
+    	require_once ROOTPATH . '/libraries/PHPExcel.php'; 
+    	$objPHPExcel = new PHPExcel();
+    	$objPHPExcel->getProperties()->setCreator('jk')
+			->setLastModifiedBy('jk')
+			->setTitle('Office 2007 XLSX Document')
+			->setSubject('Office 2007 XLSX Document')
+			->setDescription('Document for Office 2007 XLSX, generated using PHP classes.')
+			->setKeywords('office 2007 openxml php')
+			->setCategory('Result file'); 
+		$this->load->model("Admin");
+    	$tag=isset($_GET['tag']) && !empty($_GET['tag']) ? $_GET['tag'] : "";//操作类型  claim 
+    	if($tag == "claim"){
+	        $searchType = isset($_POST['searchType']) ? $_POST['searchType'] : '';
+	    	$searchVal = isset($_POST['searchVal']) ? $_POST['searchVal'] : '';
+	    	$gstime = isset($_POST['gstime']) ? trim(strtotime($_POST['gstime'].' 00:00:00')) : '';
+	    	$getime = isset($_POST['getime']) ? trim(strtotime($_POST['getime'].' 23:59:59')) : ''; 
+	        $where ="1=1";
+	        if(!empty($searchVal)){
+	        	if($searchType == "project"){//项目名称
+	        		$where .= " and h.title like '%$searchVal%'";
+	        	}elseif ($searchType == "Appname") {
+	        		$where .= " and c.name like '%$searchVal%'";
+	        	}else{
+	        		$where .= " and c.email like '%$searchVal%'";
+	        	}
+	        }
+	        $where .=!empty($gstime) ? " and submit_time>='$gstime'": "";
+	    	$where .=!empty($getime) ? " and submit_time<='$getime'": "";
+	        $key ="c.*,a.admin_name,h.title";
+	        $order_by='submit_time desc'; 
+	        $res=$this->Admin->getAllClaim($where,$key,$order_by);
+			$list=$res['data']['datas'];
+			$objPHPExcel->setActiveSheetIndex(0)
+			->setCellValue('A1', '序号')
+			->setCellValue('B1', '项目名称')
+			->setCellValue('C1', '申请姓名')
+			->setCellValue('D1', '电子邮件')
+			->setCellValue('E1', 'github地址')
+			->setCellValue('F1', '提交时间')
+			->setCellValue('G1', '预估时间')
+			->setCellValue('H1', '是否处理')
+			->setCellValue('I1', '处理人')
+			->setCellValue('J1', '团队描述')
+			->setCellValue('K1', '计划描述');
+			$i = 2;
+			foreach ($list as $k => $v) {
+				$is_deal=isset($v['is_deal']) && ($v['is_deal'] =='1') ? '是' : '否';
+				$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue('A' . $i, ++$k)
+					->setCellValue('B' . $i, $v['title'])
+					->setCellValue('C' . $i, $v['name'])
+					->setCellValue('D' . $i, $v['email'])
+					->setCellValue('E' . $i, $v['github_address'])
+					->setCellValue('F' . $i, date('Y-m-d H:i:s', $v['submit_time']))
+					->setCellValue('G' . $i, date('Y-m-d H:i:s', $v['estimated_time']))
+					->setCellValue('H' . $i, $is_deal)
+					->setCellValue('I' . $i, $v['admin_name'])
+					->setCellValue('J' . $i, $v['team_desc'])
+					->setCellValue('K' . $i, $v['plan_desc']);
+				$i++;
+			}
+    	}
+		$objPHPExcel->getActiveSheet()->setTitle('claim');
+		$objPHPExcel->setActiveSheetIndex(0);
+		$filename = urlencode('项目申请') . date('YmdHis');
+		ob_end_clean();
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="' . $filename . '.xlsx"');
+		header('Cache-Control: max-age=0');
+		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+		$aaa = $objWriter->save('php://output');
+        exit; 
+    }
+}

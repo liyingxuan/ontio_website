@@ -1,0 +1,138 @@
+{ 
+  "head":{
+      "contactUs":"找到我们",
+      "home":"首页",
+      "OntScenarios":"本体场景",
+      "OntTech":"本体技术",
+      "language":"Language",
+      "zh":"中",
+      "En":"En",
+      "documents":"文档",
+      "OntIntroduction":"白皮书概览",
+      "OntECOWP":"生态白皮书（即将发布）",
+      "OntTechWP":"技术白皮书（即将发布）",
+      "OntTechYP":"技术黄皮书（敬请期待）",
+      "OntGoveYP":"治理白皮书（敬请期待）",
+      "joinus":"加入本体",
+      "News":"News"
+    },
+    "newslist":[
+      {
+        "id":"0028",
+        "newtitle":"Onchain announce Ontology – A distributed trust network",
+        "outLineFlag":true,
+        "outLine":"https://neonewstoday.com/development/onchain-announce-ontology-a-distributed-trust-network-on-neocontract/",
+        "author":"NEO News Today",
+        "newstime":"2017-11-18",
+        "newssummary":"Today at the Next Generation Blockchain Networks for Distributed Trust event in Shanghai, Onchain unveiled a new product called Ontology – a distributed trust network. Ontology incorporates multiple trust types in an integrated protocol system with various blockchains and databases. Multi-source identities and multi-source data exchange protocols have been implemented into the network, building a distributed trust system that is cross-chain, cross-industry, cross-system, cross-application, and cross-device."
+      },
+      {
+        "id":"0002",
+        "newtitle":"Blockchain Public Platform ‘Ontology’ Officially Launched in New York",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2017-12-8",
+        "newssummary":"Blockchain industry experts and investors gathered in New York City on Monday, November 27th, as Chinese blockchain startup  Onchain released Ontology,  a groundbreaking public platform for building decentralized trust systems."
+      },
+      {
+        "id":"0004",
+        "newtitle":"Ontology Joins Meetups in Tokyo, San Francisco",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2017-12-12",
+        "newssummary":"On Monday, December 11th, 2017, Li Jun, Chief Architect of Onchain and Founder of Ontology, joined NEO's meetup in Tokyo, introducing Ontology to the NEO ecosystem community in Japan."
+      },
+      {
+        "id":"0006",
+        "newtitle":"Ji Zhoudong Joins Ontology as Chief Strategy Officer",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2017-12-18",
+        "newssummary":"Ji Zhoudong has substantial experience in blockchain technology, including being Deputy General Manager of Wanda Feifan Technology Research Center and Wanda’s Chief of Blockchain Technology, Deputy Secretary-General of China’s Ministry of Industry and Information Technology’s Blockchain Technology and Industrial Development Forum, a director of Hyperledger, a member of China’s delegation of ISO/IEC TC 307, and Deputy Director of the China Blockchain Ecosystem Alliance (CBEA)."
+      },
+      {
+        "id":"0008",
+        "newtitle":"Ontology Releases its Technology White Paper",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2017-12-21",
+        "newssummary":"On December 21st, Ontology released its Technology White Paper, the first white paper since the Introductory White Paper was released along with Ontology’s launch last month. It is the second in a series of five papers which will together thoroughly lay out Ontology’s ecosystem."
+      },
+      {
+        "id":"0010",
+        "newtitle":"Ontology Zero Joins MIIT DAppLedger",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2017-12-26",
+        "newssummary":"As a subproject of Ontology, Ontology Zero just got elected as part of the MIIT (Ministry of Industry and Information Technology) Blockchain Open-Source Project, empowering the development of China’s blockchain technology and industry."
+      },
+      {
+        "id":"0012",
+        "newtitle":"Ontology Joins the Decentralized Identity Foundation as the First Chinese Blockchain Project",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2017-12-27",
+        "newssummary":"Ontology has joined DIF (Decentralized Identity Foundation) as the ever first Chinese blockchain project in the foundation. DIF was initiated by Microsoft and Tierion. Its primary members include IBM, IOTA, Netki, etc. It is a group of large companies and standups, including Microsoft and Accenture, which aims to build a standardized decentralized ecosystem for online identities.With the diversification of identity verification services and the ever-growing IoT, a universal system for identification is in desperate need. Meanwhile, big corporations monopolizing on their users’ data has encroached on data privacy and brought into serious question the ethics of handling user data."
+      },
+      {
+        "id":"0016",
+        "newtitle":"China Semantic Web Expert Ning Hu Joins Ontology",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2018-01-05",
+        "newssummary":"Hu is one of the first Semantic Web professionals in China. In 2008, he joined The Halo Project, initiated by Paul Allen, Co-Founder of Microsoft, where his contributions included big data, artificial intelligence, and work related to the Semantic Web. He is also a senior expert in IT infrastructure and integrated architecture."
+      },
+      {
+        "id":"0024",
+        "newtitle":"Blockchain Public Platform 'Ontology Network' Officially Launched in New York",
+        "outLineFlag":true,
+        "outLine":"http://markets.businessinsider.com/news/stocks/Blockchain-Public-Platform-Ontology-Network-Officially-Launched-in-New-York-1010407496",
+        "author":"Business...",
+        "newstime":"2018-01-06",
+        "newssummary":"Blockchain industry experts and investors gathered in New York City on Monday, November 27th, as Chinese blockchain startup Onchain released Ontology Network, a groundbreaking public platform for building decentralized trust systems."
+      },
+      {
+        "id":"0026",
+        "newtitle":"Ontology Network Launched In New York",
+        "outLineFlag":true,
+        "outLine":"https://www.techbullion.com/ontology-network-launched-in-new-york/",
+        "author":"TechBullion",
+        "newstime":"2018-01-06",
+        "newssummary":"A key priority for many in this space is the mainstream acceptance of crypto. An experienced Chinese start-up, Onchain, is confident that they can accelerate the adoption of blockchains across industries through the launch of their latest project: the Ontology Network."
+      },
+      {
+        "id":"0018",
+        "newtitle":"Ontology Finishes Collecting Email Addresses for the First Round of its Reward Event",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2018-01-08",
+        "newssummary":"We have now finished collecting email addresses for the first round of our reward event to thank the Ontology community! For those who are concerned as to whether they have been included or not, if you received a successful email subscription message on our website then you have been subscribed. If you did not receive the welcome email please check your spam/automatic deletion settings. To clarify, all of those who subscribed to our newsletter are included in our reward event!"
+      },
+      {
+        "id":"0022",
+        "newtitle":"Ontology – A New Public Chain Infrastructure",
+        "outLineFlag":true,
+        "outLine":"https://themerkle.com/ontology-a-new-public-chain-infrastructure/",
+        "author":"The Merkle",
+        "newstime":"2018-01-31",
+        "newssummary":"Since Ontology launched in late 2017 it has received a large following. Along with this the Ontology Team has received quite a few questions about the public chain system, for example regarding how it realizes blockchain integration with real-world businesses. We have also had individuals express their wish for the Ontology team to share the design principles, ideas, and direction of the public chain infrastructure."
+      },
+      {
+        "id":"0020",
+        "newtitle":"Ontology Attends NEO DevCon in San Francisco",
+        "outLineFlag":false,
+        "author":"Ontology",
+        "newstime":"2018-02-02",
+        "newssummary":"NEO smart economy held its first developer conference on January 30–31 in San Francisco, California. The event saw over 700 developers, investors, and community members from across the US and the world come together to share ideas and technology from the NEO ecosystem and beyond."
+      },
+      {
+        "id":"0030",
+        "newtitle":"Onchain Ranks Among KPMG’s Top 50 Fintech Companies in China for 2017",
+        "outLineFlag":true,
+        "outLine":"https://medium.com/ontologynetwork/onchain-ranks-among-kpmgs-top-50-fintech-companies-in-china-for-2017-901280aa2ae9",
+        "author":"Ontology",
+        "newstime":"2018-02-07",
+        "newssummary":"In December KPMG, a global network of professional services firms, held a press conference in Beijing to announce the top 50 fintech companies in China for 2017. Onchain made the list for a second year in a row, having already made the list in 2016.        "
+      }
+    ]
+  }

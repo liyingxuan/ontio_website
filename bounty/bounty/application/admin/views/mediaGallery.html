@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>ECMS管理系统 |用心服务 思微知著 </title>
+	  <{include file="library/Hlink.html" }>
+    <!-- <link href="<{HTTPROOT}>plugins/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet"> -->
+    <link href="<{HTTPROOT}>plugins/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="<{HTTPROOT}>plugins/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="<{HTTPROOT}>plugins/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="<{HTTPROOT}>plugins/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>media file <small> Please be careful to delete the article that will cause it to be referenced elsewhere</small></h2> 
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content"> 
+                    <div class="row "> 
+                      <div class="mediaData">
+
+                      </div>
+                    </div>
+                    <tfoot>
+                      <tr>
+                        <td colspan="20"><div id="pagination" style="text-align:center"></div></td>
+                      </tr>
+                    </tfoot>
+                  </div>
+                </div>
+              </div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /page content --> 
+		<!-- footer content -->
+		<{include file="library/Copyright.html" }>
+		<!-- /footer content -->
+		</div>
+		</div>
+		<{include file="library/Flink.html"}>
+    <script type="text/javascript" src="<{TEMPLE}>js/layui/layui.js"></script>
+    <link rel="stylesheet" href="<{TEMPLE}>js/layui/css/layui.css">
+    <script type="text/javascript">
+      $(document).ready(function() {
+          loadMedia(1,20);
+      });
+      function loadMedia(page,rp){
+        $.ajax({
+          type: "post",
+          url: "media",
+          data: {"curpage":page,"rp":rp},
+          dataType: "json",
+          success: function(data){
+            list= data.data.datas;
+            count = parseInt(data.data.count);
+            curpage = parseInt(data.data.curpage);
+            rp = parseInt(data.data.rp);
+            var html="";
+            var type="";
+            var back_image="";
+            if(count>0){
+              $.each(list,function(k, v) {
+                var url="<{HTTPROOT}>"+v['mdfl_url'];
+                if(v['mdfl_type'] == '1'){
+                  type ='picture';
+                  back_image=url;
+                }else if(v['mdfl_type'] == '2'){
+                  type ='Flash';
+                  back_image="<{TEMPLE}>images/flash.jpg";
+                }else if(v['mdfl_type'] == '3'){
+                  type ='video';
+                  back_image="<{TEMPLE}>images/video.jpg";
+                }else if(v['mdfl_type'] == '4'){
+                  type ='voice';
+                  back_image="<{TEMPLE}>images/voice.jpg";
+                }else if(v['mdfl_type'] == '5'){
+                  type ='word';
+                  back_image="<{TEMPLE}>images/word.jpg";
+                }else if(v['mdfl_type'] == '6'){
+                  type ='ppt';
+                  back_image="<{TEMPLE}>images/ppt.jpg";
+                }else if(v['mdfl_type'] == '7'){
+                  type ='excel';
+                  back_image="<{TEMPLE}>images/excel.jpg";
+                }else if(v['mdfl_type'] == '8'){
+                  type ='pdf';
+                  back_image="<{TEMPLE}>images/pdf.jpg";
+                }else if(v['mdfl_type'] == '9'){
+                  type ='others';
+                  back_image="<{TEMPLE}>images/pdf.jpg";
+                }
+                
+                html +='<div class="col-md-55">'+
+                    '<div id="remove_'+v['mdfl_id']+'" class="thumbnail">'+
+                      '<div class="image view view-first">'+
+                        '<img style="height:120px; display: block; text-align:center" src="'+back_image+'" alt="'+v['mdfl_desc']+'">'+
+                        '<div class="mask no-caption">'+
+                          '<div class="tools tools-bottom">'+
+                            '<a href="#"><i class="fa fa-link" onclick="copy(\''+url+'\')" title="复制此文件链接"></i></a>'+
+                            // '<a href="#"><i class="fa fa-pencil"></i></a>'+
+                            '<a href="javascript:void(0);" onclick="del('+v['mdfl_id']+')" title="删除媒体文件"><i class="fa fa-times"></i></a>'+
+                          '</div>'+
+                        '</div>'+
+                      '</div>'+
+                      '<div class="caption">'+
+                      '<p><strong>'+type+'</strong></p>'+
+                      '<p>'+v['mdfl_desc']+'</p>'+
+                      '</div>'+
+                    '</div>'+
+                  '</div>'; 
+              });
+            }else{
+              html +='<tr>'+
+                '<td colspan="20" class="norecord"><div class="warning-option"><i class="icon-warning-sign"></i><span>There is no qualified data record</span></div></td>'+
+                '</tr>';
+            }
+            $('.mediaData').html(html);
+
+            layui.use(['laypage', 'layer'], function() {
+              var laypage = layui.laypage,
+                  layer = layui.layer;
+                laypage.render({
+                  elem: 'pagination',
+                  count: count,
+                  curr:curpage,
+                  limit:rp,
+                  layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
+                  theme:'#41BEDD',
+                  jump: function(obj,first){
+                    if(!first){
+                      loadMedia(obj.curr,obj.limit);
+                    }
+                  }
+                });
+            });  
+          }
+        });
+      }
+
+      /**==复制链接==**/
+      function copy(id) {
+        copyTextToClipboard(id);
+        return false;
+      } 
+      function copyTextToClipboard(text) {
+          var textArea = document.createElement("textarea")
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+              var msg = document.execCommand('copy')?'success':'fail'; 
+              layer.msg("copy"+msg+"");
+          } catch (err) {
+              console.log('You may cannot copy content in this way');
+          }
+          document.body.removeChild(textArea);
+      }
+
+      /**==删除某体文件==**/
+      function del(id){
+        layer.confirm('Deletion will not be resumed. Is it confirmed？', {
+          btn: ['yes', 'no'] //按钮
+        }, function () { 
+          $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "media_del",
+            data: "mdfl_id=" + id,
+            success: function (data) {
+              if(data.state=='403'){
+                top.location.href='<{base_url("admin.php/index/login")}>';
+                return false;
+              }
+              if (data.state) {
+              //  $("#remove_"+id).closest('.col-md-55').remove();
+              //  $("#remove_"+id).remove();
+                layer.msg(data.msg);
+                window.location.reload()
+              }else{
+                layer.msg('fail to delete');
+              }
+            },
+            error:function() {
+              layer.msg("System error");
+            }
+          });
+        }); 
+      }
+  </script>
+</html>

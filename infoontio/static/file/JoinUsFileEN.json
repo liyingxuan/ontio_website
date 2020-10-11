@@ -1,0 +1,38 @@
+{ 
+  "head":{
+      "contactUs":"Contact Us",
+      "home":"Home",
+      "OntScenarios":"Scenarios",
+      "OntTech":"Technology",
+      "language":"语言",
+      "zh":"中",
+      "En":"En",
+      "documents":"Documents",
+      "OntIntroduction":"Introductory White Paper",
+      "OntECOWP":"Ecosystem White Paper (coming soon)",
+      "OntTechWP":"Technology White Paper (coming soon)",
+      "OntTechYP":"Technology Yellow Paper (TBA)",
+      "OntGoveYP":"Governance White Paper (TBA)",
+      "joinus":"Join Ont",
+      "News":"News"
+
+  },
+  "teamPage": { 
+      "id":"teamPage",
+      "firstTitle1": "Join the Team",  
+      "description":"Ontology has a diverse team composed of specialists in technology, product management, marketing, and business development. If you would like to join our growing team drop us an email at hr@ont.io."
+  },       
+  "communityPage":{
+    "id":"communityPage",
+    "firstTitle1":"Join the Community",
+    "description":"Ontology's global community shares knowledge from within the industry and beyond. Come be part of a growing community - follow us on our social media channels!"
+  },
+  "partnerPage":{
+    "id":"partnerPage",
+    "firstTitle1":"Become a Partner",
+    "description":"If you are interested in building a distributed trust network you can introduce your organization to us on our website under \"Cooperation\"."
+  },
+  "footerPage":{
+    "OntologyNetwork":"本体"
+  }
+}

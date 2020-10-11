@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>ECMS管理系统 |用心服务 思微知著 </title>
+		<link href="<{HTTPROOT}>plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		
+		<{include file="library/Hlink.html" }>
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<!-- Example Events -->
+                                  <div class="x_title">
+				                    <h2>密码修改</h2>
+				                    <div class="clearfix"></div>
+				                  </div>
+				                  <div class="x_content">
+				                    <br />
+				                    <form id="add_form" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false;"> 
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="old_password">旧密码<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="password" id="old_password" name="old_password" value="" autocomplete="off"
+ class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+									  <div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12">新密码<span class="required">*</span></label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="password" id="new_password" name="new_password" autocomplete="off"
+ value="" class="form-control col-md-7 col-xs-12"><span class="err" style="color: red;"></span> 
+				                        </div>
+									  </div>
+				                      <div class="form-group">
+				                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="repeat_password">确认密码<span class="required">*</span>
+				                        </label>
+				                        <div class="col-md-6 col-sm-6 col-xs-12">
+				                          <input type="password" id="repeat_password" name="repeat_password" autocomplete="off" value="" class="form-control col-md-7 col-xs-12"> <span class="err" style="color: red;"></span> 
+				                        </div>
+				                      </div>
+				                      <div class="ln_solid"></div>
+				                      <div class="form-group">
+				                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				                          <button type="submit" id="submitBtn" class="btn btn-success" >提 交</button> 
+				                        </div>
+				                      </div>
+				
+				                    </form>
+				                  </div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /page content -->
+
+	<!-- footer content -->
+	<{include file="library/Copyright.html" }>
+	<!-- /footer content -->
+	</div>
+	</div>
+	<{include file="library/Flink.html" }>
+
+	</body> 
+	<script type="text/javascript" src="<{HTTPROOT}>plugins/jQuery_md5/jQuery.md5.js"></script>
+  	<script type="text/javascript" src="<{HTTPROOT}>plugins/jQuery_md5/jQuery.md5.add.js"></script>
+  	<script src="<{TEMPLE}>js/jquery.validate.min.js"></script>
+	<script> 
+	//按钮先执行验证再提交表
+	$(document).ready(function(){
+	    //按钮先执行验证再提交表单
+	    $("#submitBtn").click(function(){
+	     	var old_pwd=$('#old_password').val();
+	     	var new_pwd=$('#new_password').val();
+	     	var repeat_pwd=$('#repeat_password').val();
+            var old_password=pwd_addMD5(old_pwd);
+            var new_pwd=pwd_addMD5(new_pwd);
+	    	if($("#add_form").valid()){
+	          $.ajax({  
+	            url:'change_pwd',
+	            type:'post',
+	            data:{"old_password":old_password,
+	            	  "new_password":new_pwd,
+	            	  "repeat_password":repeat_pwd
+	        	},
+	            dataType:'json',
+	            success:function(data){
+	            	if(data.state=='403'){
+	                    top.location.href='<{base_url("admin.php/index/login")}>';
+	                    return false;
+	                  }
+	                if(data.state){
+	                    layer.msg(data.msg);
+	                    window.setTimeout("window.location.href='<{base_url('admin.php/Index/login')}>'", 1000);
+	                }else {
+	                    layer.msg(data.msg);
+	                }
+	            }
+	          })
+	      }
+	    });
+
+	    $("#add_form").validate({
+	            errorPlacement: function(error, element){
+	                var error_td = element.siblings('span.err');
+	                error_td.append(error);
+	            },
+	            
+	            rules : {
+                  old_password: {
+                      required : true,
+                      minlength:6, 
+	                },
+	                new_password:{
+                      required : true, 
+                      minlength:6, 
+	                }, 
+	                repeat_password:{
+	                    required : true, 
+                      equalTo: "#new_password"
+	                }, 
+	            },
+	            messages : {
+                  old_password: {
+                      required : '请输入旧密码',
+                      minlength:'密码至少6位', 
+	                },
+	                new_password: {
+	                    required : '请输入新密码',
+                      minlength:'密码至少6位', 
+	                },
+	                repeat_password: {
+	                    required : '请重复输入上面输入的新密码',
+                      equalTo: "两次输入密码不一致"
+	                }
+	            }
+	       }); 
+	}); 
+</script> 
+</html>
